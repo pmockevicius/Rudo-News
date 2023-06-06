@@ -1,0 +1,31 @@
+
+<div class="inicioWrapper">
+
+<img src="./assets/images/icon.svg" alt="">
+
+<form [formGroup]="inicioForm" (ngSubmit)="onLoginPressed()">
+  <label for="name">
+    <input class="rounded-corners" type="text" id="name" placeholder="Name" formControlName="loginEmail">
+    <span class="floating-label">Mail</span>
+</label>
+<label class="icon-parent" for="Contraseña">
+  <input class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" id="Contraseña" placeholder="Email" formControlName="loginPassword" >
+  <span class="floating-label">Contraseña</span>
+  <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-icon>
+</label>
+
+
+  <div class="example-container"  >
+<div class="olvidado">
+    <p>¿Has olvidado tu contraseña?</p>
+</div>
+  
+  </div>
+
+  <button class="btn">INICIAR SESIÓN</button>
+  <br>
+  <button routerLink="/registro" class="btn btnTransparent"  color="primary">REGISTRO</button>
+</form>
+

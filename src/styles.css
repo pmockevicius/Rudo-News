@@ -1,1 +1,131 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%; 
+background-color: #F9F9F9
+;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Department dialog rounded corners */
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: 40px !important;
+    width: 399px !important;  
+  }
+
+
+/* INPUT STYLE */
+
+
+label{
+    margin-bottom:15px;
+    position:relative;
+   
+
+}
+input.rounded-corners {
+
+    height: 30px;
+    padding:10px 0px;
+width: 300px;
+    border:none;
+    outline:none;
+    border-radius: 25px;
+   
+}
+input.rounded-corners::placeholder{
+    opacity:0;
+}
+.floating-label{
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translateY(15px);
+    font-size:16px;
+    transition-duration:600ms;
+    margin-left: 10px;
+}
+
+
+label:focus-within > .floating-label,
+input.rounded-corners:not(:placeholder-shown) + span{
+    color:#ff4081;
+    transform:translateY(5px);
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+/* INPUT STYLE */
+
+
+.btn {
+
+    height: 48px;
+    width:300px;
+    background-color: #FF005F;
+    border-radius: 50px;
+    box-shadow: none;
+    border: none;
+    color: #F9F9F9;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px 2px rgba(255, 0, 95, 0.5);
+  }
+
+.mat-icon-eye{
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translate(260px, 15px);
+}
+
+.icon-parent{
+    position: relative;
+
+}
+
+/* @media only screen and (max-width: 480px) {
+
+    input.rounded-corners{
+        width: 300px;
+    }
+
+    .btn{
+        width: 300px;
+    }
+  
+} */
+
+@media only screen and (min-width: 480px) {
+
+    input.rounded-corners{
+        width: 356px;
+    }
+    .btn{
+        width: 356px;
+    }
+    .validation-box {
+        width: 356px;
+    } 
+    .mat-icon-eye{
+        transform:translate(310px, 15px);
+    }
+    
+}
+
+.invalid-input {
+    background-color: rgba(219, 68, 55, 0.06);
+    border: 1px solid #F07E3D !important
+  }
+
+  
+  
+  
+  
+  
+  
+  
+

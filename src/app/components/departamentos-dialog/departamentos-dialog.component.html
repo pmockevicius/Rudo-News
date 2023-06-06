@@ -1,0 +1,61 @@
+
+<div class="wrapper">
+<div class="mat-dialog-title">
+<h1 mat-dialog-title>Departamentos <span id="closeX" (click)="onXClicked()">X</span></h1>
+</div>
+<form [formGroup]="departamentosDialog" (ngSubmit)="onSubmit()">
+<div mat-dialog-content class="mat-dialog-content">
+    <ul>
+        <li [class.highlighted]="checkedOptions[0]">
+          <input type="checkbox" id="option1" name="options" value="Option 1" [(ngModel)]="checkedOptions[0]" formControlName="back">
+          <label for="option1">Back</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[1]">
+          <input type="checkbox" id="option2" name="options" value="Option 2" [(ngModel)]="checkedOptions[1]" formControlName="RRHH">
+          <label for="option2">RRHH</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[2]">
+          <input  type="checkbox" id="option3" name="options" value="Option 3" [(ngModel)]="checkedOptions[2]" formControlName="iOS">
+          <label for="option3">iOS</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[3]">
+          <input  type="checkbox" id="option4" name="options" value={{checkedOptions[3]}} [(ngModel)]="checkedOptions[3]" formControlName="Android">
+          <label for="option4">Android</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[4]">
+          <input  type="checkbox" id="option5" name="options" value="Option 5" [(ngModel)]="checkedOptions[4]" formControlName="Diseño" >
+          <label for="option5">Diseño</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[5]">
+          <input  type="checkbox" id="option6" name="options" value="Option 6" [(ngModel)]="checkedOptions[5]" formControlName="Proyectos">
+          <label for="option6">Proyectos</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[6]">
+          <input  type="checkbox" id="option7" name="options" value="Option 7" [(ngModel)]="checkedOptions[6]" formControlName="Ventas">
+          <label for="option7">Ventas</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[7]">
+          <input  type="checkbox" id="option8" name="options" value="Option 8" [(ngModel)]="checkedOptions[7]" formControlName="Academy">
+          <label for="option8">Academy</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[8]">
+          <input  type="checkbox" id="option9" name="options" value="Option 9" [(ngModel)]="checkedOptions[8]" formControlName="Flutter">
+          <label for="option9">Flutter</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[9]">
+          <input  type="checkbox" id="option10" name="options" value="Option 10" [(ngModel)]="checkedOptions[9]" formControlName="Ionic">
+          <label for="option10">Ionic</label>
+        </li>
+        <li [class.highlighted]="checkedOptions[10]">
+          <input  type="checkbox" id="option11" name="options" value="Option 11" [(ngModel)]="checkedOptions[10]" formControlName="JP">
+          <label for="option11">JP</label>
+        </li>
+
+      </ul>
+</div>
+<div class="btnContainer">
+<button class="btn" mat-raised-button color="accent">Aceptar</button>
+</div>
+
+</form>
+</div>
