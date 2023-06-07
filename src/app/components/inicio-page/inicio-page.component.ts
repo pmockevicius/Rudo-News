@@ -27,4 +27,8 @@ this.inicioFormValue = this.inicioForm.value
 console.log("inicioFormValue", this.inicioFormValue)
   }
 
+  onOlvidadoPressed=()=>{
+    console.log("olvidado pressed")
+  }
+
 }

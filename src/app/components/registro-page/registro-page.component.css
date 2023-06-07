@@ -24,9 +24,9 @@ label{
     display:flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    /* height: 100%; */
     justify-content: center;
-    margin-top: -90px;
+    /* margin-top: -90px; */
 }
 
 .validation-box{
@@ -47,6 +47,7 @@ label{
     align-items: center;
     height: 100%;
     justify-content: center;
+    margin-top: 10%;
 
 }
 
@@ -131,6 +132,7 @@ width: 95%;
 .politicas-container{
     width: 300px;
     display: flex;
+    margin: 10px 0 10px 0;
     
 }
 
@@ -144,7 +146,11 @@ width: 95%;
 
 
 #departamentos {
-    color: #f436cb;
+    color: #FF005F;
+}
+
+.continuar-btn {
+    margin-top: -50px;
 }
 
 /* @media only screen and (max-width: 480px) {

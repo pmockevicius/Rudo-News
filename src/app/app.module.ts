@@ -18,6 +18,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DepartamentosDialogComponent } from './components/departamentos-dialog/departamentos-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { OlvidadoPageComponent } from './components/olvidado-page/olvidado-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HeaderComponent } from './components/header/header.component';
     InicioPageComponent,
     RegistroPageComponent,
     DepartamentosDialogComponent,
-    HeaderComponent
+    HeaderComponent,
+    OlvidadoPageComponent
   ],
   imports: [
     BrowserModule,

@@ -17,19 +17,17 @@
 
 <div class="registerWrapper">
 
-  <form (ngSubmit)="onRegisterPressed()" [formGroup]="registerForm" class="formWrapper">
+  <form  [formGroup]="registerForm" class="formWrapper">
     <label for="name">
-      <input id="departamentos" (click)="openDialog()" class="rounded-corners" type="text" id="name"
-        placeholder="Departamento/s" formControlName="departamentos">
+      <input id="departamentos" (click)="openDialog()" class="rounded-corners" type="text"
+        placeholder="Departamento/s" formControlName="departamentos" readonly>
       <span class="floating-label" *ngIf="this._dataSharingService.selectedDepartments === ''">Departamento/s</span>
       <div class="errorMsgContainer">
         <div class="errorMsg" *ngIf="departamentos && departamentos.invalid && departamentos.touched">
-          <span>Su correo electrónico ingresado no es válido </span>
+          <span>Este campo no puede quedar vacío </span>
           <img src="./assets/images/error.svg" alt="">
         </div>
       </div>
-      <pre>is valid {{ registerForm.controls['politicas'].valid}}</pre>
-    <!-- <pre>is invalid {{ registerForm.controls['departamentos'].invalid}}</pre> -->
 
     </label>
 
@@ -49,7 +47,7 @@
 
     <label for="mail">
       <input class="rounded-corners" type="text" id="mail" placeholder="mail" formControlName="regEmail"
-        [class.invalid-input]="regEmail && regEmail.invalid && regEmail.touched" (change)="enableInputs()">
+        [class.invalid-input]="regEmail && regEmail.invalid && regEmail.touched">
       <span class="floating-label">Mail</span>
 
 
@@ -64,7 +62,7 @@
 
     <label class="icon-parent" for="Contraseña">
       <input class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" id="Contrasena"
-        placeholder="Contrasena" formControlName="regContrasena" (ngModelChange)="passwordValueChanged($event)">
+        placeholder="Contrasena" formControlName="regContrasena" (ngModelChange)="passwordValueChanged($event)" [class.invalid-input]="regContrasena && regContrasena.invalid && regContrasena.touched">
       <span class="floating-label">Contraseña</span>
       <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
         [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
@@ -72,13 +70,12 @@
       </mat-icon>
       <div class="errorMsgContainer">
         <div class="errorMsg" *ngIf="regContrasena && regContrasena.invalid && regContrasena.touched">
-          <span>Su correo electrónico ingresado no es válido </span>
+          <span>Ha ingresado una contraseña inválida </span>
           <img src="./assets/images/error.svg" alt="">
         </div>
       </div>
      
     </label>
-
 
 
     <div class="validation-box">
@@ -97,7 +94,8 @@
     </label>
   </div>
 
-    <button (click)="onRegisterPressed()" class="btn">CONTINUAR</button>
-
   </form>
+  <button (click)="submitFormValue()" form="registerForm" class="continuar-btn" [style.opacity]="!registerForm.valid ? '50%' : '100%'" class="btn" [disabled]="!registerForm.valid">CONTINUAR</button>
 </div>
+
+

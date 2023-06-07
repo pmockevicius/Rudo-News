@@ -8,6 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 
+
 @Component({
   selector: 'app-registro-page',
   templateUrl: './registro-page.component.html',
@@ -43,15 +44,12 @@ export class RegistroPageComponent {
   
   hide = true;
 
-  onRegisterPressed = () =>{
+  submitFormValue = () =>{
     this.registerFormValue = this.registerForm.value
     // this.registerForm.controls.regNombre.disable()
     console.log("pressed",this.registerFormValue)
- 
-
       }
-    
-      // this.dialogRef.afterClosed().subscribe(() => ());
+
 
 
       openDialog() {
@@ -59,6 +57,9 @@ export class RegistroPageComponent {
     
         dialogRef.afterClosed().subscribe(() => {
           this.updateDepartamentosInputValue();
+          if(this.registerForm.controls.departamentos.valid){
+            this.enableInputs()
+          }
         });
       }
     
@@ -95,26 +96,24 @@ get politicas(){
 
 
 ngOnInit() {
-  // this.registerForm.controls.regNombre.disable()
-  // this.registerForm.controls.regEmail.disable()
-  // this.registerForm.controls.regContraseña.disable()
- 
+  this.registerForm.controls.regNombre.disable()
+  this.registerForm.controls.regEmail.disable()
+  this.registerForm.controls.regContrasena.disable()
 }
 
 enableInputs() {
-console.log("testing")
-
-  const inputValue = this._dataSharingService.selectedDepartments;
-  if (inputValue !== '') {
-   
+console.log("enabling Inputs")
     this.registerForm.controls.regNombre.enable()
     this.registerForm.controls.regEmail.enable()
     this.registerForm.controls.regContrasena.enable()
-  }
+  
 }
 
 doSomething(){
   console.log("ngIf")
 }
+
+
+
 
 }

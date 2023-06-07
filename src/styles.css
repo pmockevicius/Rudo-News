@@ -9,10 +9,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 /* Department dialog rounded corners */
-.mat-mdc-dialog-container .mdc-dialog__surface {
-    border-radius: 40px !important;
-    width: 399px !important;  
-  }
+
 
 
 /* INPUT STYLE */
@@ -28,10 +25,12 @@ input.rounded-corners {
 
     height: 30px;
     padding:10px 0px;
-width: 300px;
+    width: 300px;
     border:none;
     outline:none;
     border-radius: 25px;
+    text-indent: 10px;
+  
    
 }
 input.rounded-corners::placeholder{

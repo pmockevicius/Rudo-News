@@ -17,6 +17,19 @@ export class DepartamentosDialogComponent {
 
   checkedOptions: boolean[] = [];
     selectedDepartments : string = ''
+    // departamentos: string[] = [
+    //   "Back",
+    //   "RRHH",
+    //   "iOS",
+    //   "Android",
+    //   "Diseño",
+    //   "Proyectos",
+    //   "Ventas",
+    //   "Academy",
+    //   "Flutter",
+    //   "Ionic",
+    //   "JP",
+    // ];
 
 
   departamentosDialog: any = new FormGroup({

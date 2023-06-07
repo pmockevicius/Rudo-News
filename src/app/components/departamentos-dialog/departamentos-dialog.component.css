@@ -1,7 +1,5 @@
  li {
     list-style: none;
-    
-  
     height: 40px;
     display: flex;
     align-items: center;
@@ -42,13 +40,21 @@ ul {
     margin: 0 10px 20px 0;
   }
 
-  button {
-    border-radius: 32px;
-    width: 90px ;
-    background-color: #FF005F !important
-  }
-
   .wrapper {
     margin: 5px;
+  }
+
+  .dialog-btn{
+    width: 142px;
+    height: 40px;
+  }
+
+  /* .mat-mdc-dialog-container .mdc-dialog__content{
+    width: 200px;
+  } */
+
+  .mdc-dialog__surface {
+    border-radius: 40px !important;
+    width: 399px !important;  
   }
 
