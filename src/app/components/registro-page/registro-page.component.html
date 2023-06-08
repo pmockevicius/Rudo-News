@@ -1,19 +1,6 @@
 <app-header></app-header>
 
-<div class="navigatorContainer">
-  <div class="backIcon">
-    <img src="./assets/images/Vector 108.svg" alt="">
-  </div>
-  <div routerLink="" class="navigationBtn">
-    Inicio
-  </div>
-  <div class="navigationBtn">
-    /
-  </div>
-  <div class="navigationBtn">
-    <strong>Registro</strong>
-  </div>
-</div>
+<app-breadcrumbs-navigation [currentPage]="'Registro'"></app-breadcrumbs-navigation>
 
 <div class="registerWrapper">
 
@@ -78,6 +65,7 @@
     </label>
 
 
+
     <div class="validation-box">
       <p [style.color]="doesIncludeUpperCase ? '#53D487' : '#9D9FA7'">· MAYÚSCULA</p>
       <p [style.color]="doesIncludeLowerCase ? '#53D487' : '#9D9FA7'">· minúscula</p>
@@ -94,8 +82,9 @@
     </label>
   </div>
 
+
   </form>
-  <button (click)="submitFormValue()" form="registerForm" class="continuar-btn" [style.opacity]="!registerForm.valid ? '50%' : '100%'" class="btn" [disabled]="!registerForm.valid">CONTINUAR</button>
+  <button (click)="submitFormValue()" form="registerForm" class="continuar-btn" [class.disabled-btn] = "!registerForm.valid" class="btn" [disabled]="!registerForm.valid">CONTINUAR</button>
 </div>
 
 

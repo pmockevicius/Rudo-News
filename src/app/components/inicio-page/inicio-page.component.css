@@ -35,7 +35,7 @@
     
 }
 
-form {
+.inicio-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,27 +51,3 @@ form {
 
 
 
-/* Test */
-
-
-
-/* form{
-    width:90vw;
-    max-width:768px;
-    border:1px solid #ddd;
-    padding:3vw;
-    display:flex;
-    flex-direction:column;
-    border-radius:5px;
-} */
-
-/* .mat-icon-eye{
-    position: absolute;
-    bottom: 12px;
-    right: 20px;
-}
-
-.icon-parent{
-    position: relative;
-
-} */

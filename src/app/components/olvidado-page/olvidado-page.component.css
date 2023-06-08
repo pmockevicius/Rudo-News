@@ -1,0 +1,49 @@
+.floating-label{
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translateY(15px);
+    font-size:16px;
+    transition-duration:600ms;
+    margin-left: 10px;
+   
+}
+/* 
+input {
+    position: relative;
+} */
+
+label{
+    margin-bottom:0px;
+}
+
+.olvidado-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   
+    
+}
+
+.olvidado-msg{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FF005F;
+    margin: 15px;
+    font-size: 14px;
+}
+
+.main-wrapper {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.olvidad-form{
+    display: flex;
+}

@@ -1,0 +1,27 @@
+.olvidad-dialog-container{
+    height: 130px;
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: 32px !important
+}
+
+.olvidad-dialog-container p {
+    margin: 20px 0 0 10px;
+    font-size: 12px;
+}
+
+.text-container{
+    width: 96%;
+}
+
+.dialog-btn{
+    width: 112px;
+    height: 34px;
+    margin-left: 103px;
+    margin-top: 14px;
+  }

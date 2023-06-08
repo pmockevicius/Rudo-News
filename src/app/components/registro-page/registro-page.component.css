@@ -51,18 +51,7 @@ label{
 
 }
 
-.navigatorContainer{
-    display: flex;
-}
 
-.backIcon  {
-    margin-left: 15px;
-    margin-right: 30px;
-}
-
-.navigationBtn{
-    margin-left: 10px;
-}
 
 a{
     text-decoration: none;
@@ -70,64 +59,17 @@ a{
 
 }
 
-.errorMsg {
-width: 95%;
-    transform: translate(-40px, 0px);
-    color:  #F07E3D;
-    font-size: 12px;
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-between;
 
 
-}
 
-/* .mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {
-    color: #f436cb !important
-    
-}
 
-.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {
-    color: #f436cb;
-}
-
-.mdc-floating-label {
-    color: rgb(37, 14, 60) !important
-} */
-
-.errorMsgContainer {
-    width: 100%;
-    display: flex;
-    padding-left: 50px;
-    
-}
 
 .politicasContainer {
    width: 100%;
    display: flex;
    align-items: end;
 }
-/* 
-.btn {
-    width: 30vw;
-    height: 48px;
-    max-width: 358px;
-    min-width: 300px;
-    background-color: transparent;
-    border-radius: 50px;
-    box-shadow: none;
-} */
 
-
-/* .politicasContainer input[type="radio"],
-.politicasContainer label {
-  display: inline-block;
-  vertical-align: middle;
-} */
-
-/* .politicasContainer label {
-  margin-left: 5px; 
-} */
 
 .politicas-container{
     width: 300px;

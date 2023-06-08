@@ -1,0 +1,65 @@
+<app-header [displayLinks]="false"></app-header>
+
+<app-breadcrumbs-navigation [currentPage]="'Nueva contraseña'"></app-breadcrumbs-navigation>
+
+<div class="nueva-main-wrapper">
+<div class="nueva-form-wrapper">
+
+    <form class="nueva-contr-form" [formGroup]="nuevaContracenaForm">
+
+<label class="icon-parent" for="actual">
+    <input class="rounded-corners" [type]="hidePasswordActual ? 'password' : 'text'" id="actual" placeholder="Email" formControlName="contracenaActual" 
+    [class.invalid-input]="contracenaActual && contracenaActual.invalid && contracenaActual.touched">
+    <span class="floating-label">Contraseña actual</span>
+    <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePasswordActual = !hidePasswordActual" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePasswordActual">
+      <mat-icon>{{hidePasswordActual ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-icon>
+    <div class="errorMsgContainer">
+      <div class="errorMsg" *ngIf="contracenaActual && contracenaActual.invalid && contracenaActual.touched">
+        <span>Este campo no puede quedar vacío </span>
+        <img src="./assets/images/error.svg" alt="">
+      </div>
+    </div>
+  </label>
+
+
+
+  <label class="icon-parent" for="nueva">
+    <input class="rounded-corners" [type]="hidePasswordNueva ? 'password' : 'text'" id="nueva" placeholder="Email" formControlName="contracenaNueva" 
+    [class.invalid-input]="contracenaNueva && contracenaNueva.invalid && contracenaNueva.touched">
+    <span class="floating-label">Contraseña nueva</span>
+    <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePasswordNueva = !hidePasswordNueva" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePasswordNueva">
+      <mat-icon>{{hidePasswordNueva ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-icon>
+    <div class="errorMsgContainer">
+      <div class="errorMsg" *ngIf="contracenaNueva && contracenaNueva.invalid && contracenaNueva.touched">
+        <span>Este campo no puede quedar vacío </span>
+        <img src="./assets/images/error.svg" alt="">
+      </div>
+    </div>
+  </label>
+
+
+
+  <label class="icon-parent" for="repetir">
+    <input class="rounded-corners" [type]="hidePasswordRepetir ? 'password' : 'text'" id="repetir" placeholder="Email" formControlName="contracenaRepetir" 
+    [class.invalid-input]="contracenaRepetir && contracenaRepetir.invalid && contracenaRepetir.touched">
+    <span class="floating-label">Repetir contraseña nueva</span>
+    <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePasswordRepetir = !hidePasswordRepetir" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePasswordRepetir">
+      <mat-icon>{{hidePasswordRepetir ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-icon>
+    <div class="errorMsgContainer">
+      <div class="errorMsg" *ngIf="contracenaRepetir && contracenaRepetir.invalid && contracenaRepetir.touched">
+        <span>Este campo no puede quedar vacío </span>
+        <img src="./assets/images/error.svg" alt="">
+      </div>
+    </div>
+  </label>
+
+</form>
+
+  <button class="btn" (click)="onGuardarClicked()" [class.disabled-btn] = "!nuevaContracenaForm.valid"  [disabled]="!nuevaContracenaForm.valid">GUARDAR CONTRASEÑA NUEVA</button>
+</div>
+
+</div>
+

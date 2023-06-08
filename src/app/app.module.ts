@@ -19,6 +19,9 @@ import { DepartamentosDialogComponent } from './components/departamentos-dialog/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { OlvidadoPageComponent } from './components/olvidado-page/olvidado-page.component';
+import { OlvidadaDialogComponent } from './components/olvidada-dialog/olvidada-dialog.component';
+import { BreadcrumbsNavigationComponent } from './components/breadcrumbs-navigation/breadcrumbs-navigation.component';
+import { NuevaContrPageComponent } from './components/nueva-contr-page/nueva-contr-page.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { OlvidadoPageComponent } from './components/olvidado-page/olvidado-page.
     RegistroPageComponent,
     DepartamentosDialogComponent,
     HeaderComponent,
-    OlvidadoPageComponent
+    OlvidadoPageComponent,
+    OlvidadaDialogComponent,
+    BreadcrumbsNavigationComponent,
+    NuevaContrPageComponent
   ],
   imports: [
     BrowserModule,

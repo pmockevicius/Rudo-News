@@ -3,7 +3,7 @@
 
 <img src="./assets/images/icon.svg" alt="">
 
-<form [formGroup]="inicioForm" (ngSubmit)="onLoginPressed()">
+<form class="inicio-form" [formGroup]="inicioForm" (ngSubmit)="onLoginPressed()">
   <label for="name">
     <input class="rounded-corners" type="text" id="name" placeholder="Name" formControlName="loginEmail">
     <span class="floating-label">Mail</span>
@@ -27,3 +27,9 @@
   <button routerLink="/registro" class="btn btnTransparent"  color="primary">REGISTRO</button>
 </form>
 
+
+
+
+<br>
+
+<button  style="height: 50px; width: 50px;" routerLink="/nueva">Nueva</button>

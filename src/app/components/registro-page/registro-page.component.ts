@@ -36,6 +36,22 @@ export class RegistroPageComponent {
     politicas: new FormControl('', [Validators.required])
   })
 
+  get regNombre(){
+    return this.registerForm.get('regNombre')
+  }
+  get regEmail(){
+    return this.registerForm.get('regEmail')
+  }
+  get regContrasena(){
+    return this.registerForm.get('regContrasena')
+  }
+  get departamentos(){
+    return this.registerForm.get('departamentos')
+  }
+  get politicas(){
+    return this.registerForm.get('politicas')
+  }
+
   passwordValue: string = ''
   doesIncludeNumber: boolean = false
   doesIncludeUpperCase: boolean  = false
@@ -78,21 +94,7 @@ export class RegistroPageComponent {
     
   }
 
-get regNombre(){
-  return this.registerForm.get('regNombre')
-}
-get regEmail(){
-  return this.registerForm.get('regEmail')
-}
-get regContrasena(){
-  return this.registerForm.get('regContrasena')
-}
-get departamentos(){
-  return this.registerForm.get('departamentos')
-}
-get politicas(){
-  return this.registerForm.get('politicas')
-}
+
 
 
 ngOnInit() {

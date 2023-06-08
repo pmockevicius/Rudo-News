@@ -1,0 +1,12 @@
+.nueva-contr-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.nueva-main-wrapper{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

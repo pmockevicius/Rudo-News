@@ -1,7 +1,33 @@
+<app-header></app-header>
 
+
+<app-breadcrumbs-navigation [currentPage]="'Contraseña olvidada'"></app-breadcrumbs-navigation>
+
+<div class="main-wrapper">
+<div class="olvidado-wrapper">
+    <form class="olvidad-form" [formGroup]="olvidadForm" >
 <label for="name">
-    <input class="rounded-corners" type="text" id="name" placeholder="Name" >
-    <span class="floating-label">Mail</span>
+    <input class="rounded-corners" type="text" id="name" placeholder="Name" formControlName="olvidEmail" 
+    [class.invalid-input]="olvidEmail && olvidEmail.invalid && olvidEmail.touched">
+    <span class="floating-label">Mail*</span>
+    <div class="errorMsgContainer">
+        <div class="errorMsg" *ngIf="olvidEmail && olvidEmail.invalid && olvidEmail.touched">
+          <span>Este campo no puede quedar vacío </span>
+          <img src="./assets/images/error.svg" alt="">
+        </div>
+      </div>
 </label>
+</form>
 
-<button class="btn">CONTINUAR</button>
+<div class="olvidado-msg">
+    <p>Introduce tu mail y recibirás un correo para reestablecer tu contraseña.</p>
+</div>
+
+
+<button (click)="onContinuarOlvidadClicked()" class="btn " [class.disabled-btn] = "!olvidadForm.valid"  [disabled]="!olvidadForm.valid">CONTINUAR</button>
+</div>
+
+
+
+<!-- [style.opacity]="!olvidadForm.valid ? '50%' : '100%'" -->
+

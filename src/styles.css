@@ -8,19 +8,14 @@ background-color: #F9F9F9
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-/* Department dialog rounded corners */
-
-
-
 /* INPUT STYLE */
 
 
 label{
     margin-bottom:15px;
     position:relative;
-   
-
 }
+
 input.rounded-corners {
 
     height: 30px;
@@ -86,17 +81,6 @@ input.rounded-corners:not(:placeholder-shown) + span{
 
 }
 
-/* @media only screen and (max-width: 480px) {
-
-    input.rounded-corners{
-        width: 300px;
-    }
-
-    .btn{
-        width: 300px;
-    }
-  
-} */
 
 @media only screen and (min-width: 480px) {
 
@@ -120,7 +104,28 @@ input.rounded-corners:not(:placeholder-shown) + span{
     border: 1px solid #F07E3D !important
   }
 
-  
+
+  .errorMsg {
+    width: 95%;
+        transform: translate(-40px, 0px);
+        color:  #F07E3D;
+        font-size: 12px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+  .disabled-btn {
+    opacity: 50%;
+  }
+
+  .errorMsgContainer {
+    width: 100%;
+    display: flex;
+    padding-left: 50px;
+    
+}
   
   
   
