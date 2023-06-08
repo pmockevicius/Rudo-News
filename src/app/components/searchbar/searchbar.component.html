@@ -1,0 +1,9 @@
+<div class="filters-container">
+    <form [formGroup]="searchboxInput">
+    <label class="search-label">
+    <img id="loopa" src="./assets/images/loopa.svg" alt="">
+<input class="searchbar" type="text" id="search" placeholder="Buscar..." formControlName="searchbox" (keyup)="updateInputValue(this.searchboxInput.controls.searchbox.value)">
+
+</label>
+</form>
+</div>

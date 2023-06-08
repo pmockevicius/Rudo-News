@@ -22,6 +22,9 @@ import { OlvidadoPageComponent } from './components/olvidado-page/olvidado-page.
 import { OlvidadaDialogComponent } from './components/olvidada-dialog/olvidada-dialog.component';
 import { BreadcrumbsNavigationComponent } from './components/breadcrumbs-navigation/breadcrumbs-navigation.component';
 import { NuevaContrPageComponent } from './components/nueva-contr-page/nueva-contr-page.component';
+import { NoticiasPageComponent } from './components/noticias-page/noticias-page.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { NuevaContrPageComponent } from './components/nueva-contr-page/nueva-con
     OlvidadoPageComponent,
     OlvidadaDialogComponent,
     BreadcrumbsNavigationComponent,
-    NuevaContrPageComponent
+    NuevaContrPageComponent,
+    NoticiasPageComponent,
+    SearchbarComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

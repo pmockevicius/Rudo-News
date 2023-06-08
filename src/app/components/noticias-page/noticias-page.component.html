@@ -1,0 +1,26 @@
+ <app-header  [displayLinks]="true"></app-header>
+ <app-searchbar (inputValue)="handleInputValue($event)"></app-searchbar>
+
+<div class="noticias-wrapper">
+
+  <div class="card" *ngFor="let noticia of noticias | search: searchTerm ">
+    <img src="./assets/images/picture.png" alt="News Image" class="card-image">
+    <div class="card-content">
+      <div class="location">{{noticia.locationName}}</div>
+      <div class="date">{{noticia.dateOfArticle}}</div>
+      <div class="description">
+        <p>{{noticia.articleDescription}}</p>
+      </div>
+
+      <div class="clearfix">
+        <div class="category">{{noticia.category}}</div>
+        <div class="actions">
+          <img src="./assets/images/heart.svg" alt="">
+          <img src="./assets/images/share.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
