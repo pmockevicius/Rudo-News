@@ -25,6 +25,9 @@ import { NuevaContrPageComponent } from './components/nueva-contr-page/nueva-con
 import { NoticiasPageComponent } from './components/noticias-page/noticias-page.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { FavoritosPageComponent } from './components/favoritos-page/favoritos-page.component';
+import { PerfilPageComponent } from './components/perfil-page/perfil-page.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { SearchPipe } from './pipes/search.pipe';
     NuevaContrPageComponent,
     NoticiasPageComponent,
     SearchbarComponent,
-    SearchPipe
+    SearchPipe,
+    FavoritosPageComponent,
+    PerfilPageComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

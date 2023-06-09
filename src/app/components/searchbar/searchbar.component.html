@@ -1,8 +1,34 @@
 <div class="filters-container">
+<div class="filter-tags-container">
+  <strong>Filtrar por:</strong>
+<div class="tag" (click)="onTagClicked('Comida')" [ngClass]="{ 'tag-selected': isComidaClicked }">
+    <img [ngClass]="{ 'img-not-showing': !isComidaClicked }" src="./assets/images/checker.svg" >
+    <span> Comida</span>
+</div>
+
+<div class="tag" (click)="onTagClicked('Gaming')" [ngClass]="{ 'tag-selected': isGamingClicked }">
+    <img [ngClass]="{ 'img-not-showing': !isGamingClicked }" src="./assets/images/checker.svg" >
+    <span>Gaming</span>
+</div>
+
+<div class="tag" (click)="onTagClicked('Ocio')" [ngClass]="{ 'tag-selected': isOcioClicked }">
+    <img [ngClass]="{ 'img-not-showing': !isOcioClicked }" src="./assets/images/checker.svg" >
+    <span>Ocio</span>
+</div>
+
+<div class="tag" (click)="onTagClicked('Deporte')" [ngClass]="{ 'tag-selected': isDeporteClicked }">
+    <img [ngClass]="{ 'img-not-showing': !isDeporteClicked }" src="./assets/images/checker.svg" >
+    <span>Deporte</span>
+</div>
+
+
+</div>
+
+
     <form [formGroup]="searchboxInput">
     <label class="search-label">
     <img id="loopa" src="./assets/images/loopa.svg" alt="">
-<input class="searchbar" type="text" id="search" placeholder="Buscar..." formControlName="searchbox" (keyup)="updateInputValue(this.searchboxInput.controls.searchbox.value)">
+<input class="searchbar" type="text" id="search" placeholder="Buscar..." formControlName="searchbox" (keyup)="updateInputValueInParent(this.searchboxInput.controls.searchbox.value)">
 
 </label>
 </form>

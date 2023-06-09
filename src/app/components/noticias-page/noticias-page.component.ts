@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-noticias-page',
@@ -7,43 +8,26 @@ import { Component } from '@angular/core';
 })
 export class NoticiasPageComponent {
 
+  constructor(public _dataSharingService: DataSharingService,){}
+
   searchTerm: string | any
+  // filterTagsSelected: string[] = []
+  noticias = this._dataSharingService.noticias
 
-noticias = [
-  {
-    imgUrl: "./assets/images/picture.png",
-    locationName: "New location1",
-    dateOfArticle: "12-31-2005",
-    articleDescription: "You can choose - only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
-    category: "Comida"
-  },
-  {
-    imgUrl: "./assets/images/picture.png",
-    locationName: "New location2",
-    dateOfArticle: "12-31-2005",
-    articleDescription: "You can choose - labas only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
-    category: "Ocio"
-  },
-  {
-    imgUrl: "./assets/images/picture.png",
-    locationName: "New location3",
-    dateOfArticle: "12-31-2005",
-    articleDescription: "You can choose laba- only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
-    category: "Gaming"
-  },
-  {
-    imgUrl: "./assets/images/picture.png",
-    locationName: "New location4",
-    dateOfArticle: "12-31-2005",
-    articleDescription: "You can choose la - only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
-    category: "Deporte"
-  },
-]
+  filterTagsSelected: string = '';
 
+
+
+  handleTagValues(tagsSelected: any){
+console.log("receiving tags selected in parent",tagsSelected)
+this.filterTagsSelected = tagsSelected.join(',');
+
+  }
 
 handleInputValue(value: any) {
+  console.log("receiving search value in parent")
   this.searchTerm = value
-  console.log("value",value)
+
 }
 
 }
