@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { OlvidadaDialogComponent } from '../olvidada-dialog/olvidada-dialog.component';
+import { OlvidadaDialogComponent } from '../../shared-components/message-dialog/olvidada-dialog.component';
 
 @Component({
   selector: 'app-nueva-contr-page',

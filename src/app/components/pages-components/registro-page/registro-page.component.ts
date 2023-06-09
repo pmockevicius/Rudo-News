@@ -2,7 +2,7 @@ import {Component, Inject, ViewEncapsulation} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
 import {NgIf} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
-import { DepartamentosDialogComponent } from '../departamentos-dialog/departamentos-dialog.component';
+import { DepartamentosDialogComponent } from './departamentos-dialog/departamentos-dialog.component';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 

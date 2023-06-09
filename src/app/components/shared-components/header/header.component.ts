@@ -9,4 +9,9 @@ export class HeaderComponent {
 
   @Input() displayLinks: boolean = false
 
+isLinkActive(link: string): boolean {
+  return window.location.pathname === link;
+}
+
+
 }

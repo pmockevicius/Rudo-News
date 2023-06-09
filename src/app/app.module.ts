@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InicioPageComponent } from './components/inicio-page/inicio-page.component';
+import { InicioPageComponent } from './components/pages-components/inicio-page/inicio-page.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -13,21 +13,22 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { RegistroPageComponent } from './components/registro-page/registro-page.component';
+import { RegistroPageComponent } from './components/pages-components/registro-page/registro-page.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DepartamentosDialogComponent } from './components/departamentos-dialog/departamentos-dialog.component';
+import { DepartamentosDialogComponent } from './components/pages-components/registro-page/departamentos-dialog/departamentos-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './components/header/header.component';
-import { OlvidadoPageComponent } from './components/olvidado-page/olvidado-page.component';
-import { OlvidadaDialogComponent } from './components/olvidada-dialog/olvidada-dialog.component';
-import { BreadcrumbsNavigationComponent } from './components/breadcrumbs-navigation/breadcrumbs-navigation.component';
-import { NuevaContrPageComponent } from './components/nueva-contr-page/nueva-contr-page.component';
-import { NoticiasPageComponent } from './components/noticias-page/noticias-page.component';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { HeaderComponent } from './components/shared-components/header/header.component';
+import { OlvidadoPageComponent } from './components/pages-components/olvidado-page/olvidado-page.component';
+import { OlvidadaDialogComponent } from './components/shared-components/message-dialog/olvidada-dialog.component';
+import { BreadcrumbsNavigationComponent } from './components/shared-components/breadcrumbs-navigation/breadcrumbs-navigation.component';
+import { NuevaContrPageComponent } from './components/pages-components/nueva-contr-page/nueva-contr-page.component';
+import { NoticiasPageComponent } from './components/pages-components/noticias-page/noticias-page.component';
+import { SearchbarComponent } from './components/shared-components/searchbar/searchbar.component';
 import { SearchPipe } from './pipes/search.pipe';
-import { FavoritosPageComponent } from './components/favoritos-page/favoritos-page.component';
-import { PerfilPageComponent } from './components/perfil-page/perfil-page.component';
+import { FavoritosPageComponent } from './components/pages-components/favoritos-page/favoritos-page.component';
+import { PerfilPageComponent } from './components/pages-components/perfil-page/perfil-page.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { NoticiaComponent } from './components/pages-components/noticias-page/noticia/noticia.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     SearchPipe,
     FavoritosPageComponent,
     PerfilPageComponent,
-    FilterPipe
+    FilterPipe,
+    NoticiaComponent
   ],
   imports: [
     BrowserModule,

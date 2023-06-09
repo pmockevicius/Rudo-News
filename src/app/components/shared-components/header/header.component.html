@@ -1,0 +1,10 @@
+
+
+<div class="header" [class.header-w-links]="displayLinks">
+    <img routerLink="" src="./assets/images/logo-no-background.svg" alt="">
+    <div class="links-container" [class.remove-header-links]="!displayLinks">
+        <a href="/noticias" [class.active]="isLinkActive('/noticias')">Noticias</a>
+        <a href="/favoritos" [class.active]="isLinkActive('/favoritos')">Favoritos</a>
+        <a href="/perfil" [class.active]="isLinkActive('/perfil')">Perfil</a>
+    </div>
+</div>
