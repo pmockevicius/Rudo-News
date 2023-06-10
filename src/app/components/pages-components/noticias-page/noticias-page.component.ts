@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-noticias-page',
@@ -8,7 +9,7 @@ import { DataSharingService } from 'src/app/services/data-sharing.service';
 })
 export class NoticiasPageComponent {
 
-  constructor(public _dataSharingService: DataSharingService,){}
+  constructor(public _dataSharingService: DataSharingService, private router: Router){}
 
   searchTerm: string | any
   // filterTagsSelected: string[] = []
@@ -19,15 +20,21 @@ export class NoticiasPageComponent {
 
 
   handleTagValues(tagsSelected: any){
-console.log("receiving tags selected in parent",tagsSelected)
+// console.log("receiving tags selected in parent",tagsSelected)
 this.filterTagsSelected = tagsSelected.join(',');
 
   }
 
 handleInputValue(value: any) {
-  console.log("receiving search value in parent")
+  // console.log("receiving search value in parent")
   this.searchTerm = value
 
+}
+
+noticiaClicked(noticia: any){
+  this.router.navigate(['/noticia', noticia.id], {
+    state: { noticia: noticia }
+  })
 }
 
 }

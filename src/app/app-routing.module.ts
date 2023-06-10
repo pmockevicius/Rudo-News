@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'olvidado', component: OlvidadoPageComponent },
   { path: 'nueva', component: NuevaContrPageComponent },
   { path: 'noticias', component: NoticiasPageComponent },
-  { path: 'noticias/:id', component: NoticiaComponent },
+  { path: 'noticia/:id', component: NoticiaComponent },
   { path: 'perfil', component: PerfilPageComponent },
   { path: 'favoritos', component: FavoritosPageComponent},
 ];

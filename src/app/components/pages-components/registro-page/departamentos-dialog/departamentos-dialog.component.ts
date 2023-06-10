@@ -61,7 +61,7 @@ export class DepartamentosDialogComponent {
 
   this.selectedDepartments = selectedDepartments.join(',')
 
-  //  console.log("keysArray", selectedDepartments.join('/'))
+
   this.data
 
 
@@ -72,9 +72,6 @@ export class DepartamentosDialogComponent {
   console.log(this._dataSharingService.selectedDepartments)
 
   this.dialogRef.close();
-
-
-    // const keysArray = Object.keys(this.departamentosDialog).filter(key => this.departamentosDialog[key] === true);
    
   }
 }

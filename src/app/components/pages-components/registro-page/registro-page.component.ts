@@ -104,7 +104,6 @@ ngOnInit() {
 }
 
 enableInputs() {
-console.log("enabling Inputs")
     this.registerForm.controls.regNombre.enable()
     this.registerForm.controls.regEmail.enable()
     this.registerForm.controls.regContrasena.enable()

@@ -57,8 +57,5 @@ if ( this.nuevaContracenaForm.controls.contracenaActual.value !== this.actualPas
   return "Ha habido un error, revisa que ambas contraseñas coinciden."
 } else { return ""}
 
-
-
-console.log(this.nuevaContracenaForm.controls.contracenaActual.value)
   }
 }

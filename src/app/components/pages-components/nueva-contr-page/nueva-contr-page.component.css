@@ -10,3 +10,13 @@
     align-items: center;
     
 }
+
+
+
+.nueva-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+    
+}

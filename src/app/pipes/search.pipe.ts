@@ -8,7 +8,6 @@ import { NewsArticle } from '../services/interface';
 export class SearchPipe implements PipeTransform {
 
   transform(noticias: NewsArticle[], searchTerm: string): NewsArticle[] {
-    console.log("im in search pipe doing stuff ")
     if (!searchTerm) {
       return noticias;
     }

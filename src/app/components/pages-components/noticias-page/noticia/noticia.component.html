@@ -1,1 +1,46 @@
-<p>noticia works!</p>
+<app-header  [displayLinks]="true"></app-header>
+
+
+<div class="noticia-wrapper">
+<div class="noticia-container">
+    <div class="title">
+    <p>{{noticia.title}}</p>
+</div>
+    <div class="image-container">
+        <img src={{noticia.imgUrl}} alt="">
+    </div>
+   <div class="location-date">
+    <span>{{noticia.locationName}}</span>
+    <span>{{noticia.dateOfArticle}}</span>
+   </div>
+  <div class="article-description">
+    <p>{{noticia.articleDescription}}</p>
+  </div>
+  <div class="article-body">
+    <p>{{noticia.articleBody}}</p>
+  </div>
+  <div *ngFor="let comment of noticia.comments" class="comment-container">
+    <div class="comment-top">
+        <img src={{comment.userImg}} alt="">
+        <div class="name-when">
+            <div class="name-department">
+                <span>{{comment.userName}}</span>
+                <span class="departament">{{comment.departments}}</span>
+            </div>
+            <div>
+                <!-- <span>{{comment.datePosted}}</span> -->
+                <span class="posted-at">{{calculateTime(comment.datePosted)}}</span>
+                
+            
+        </div>
+       
+        </div>
+        
+    </div>
+    <p>{{comment.commentBody}}</p>
+   
+   
+  </div>
+</div>
+
+</div>
