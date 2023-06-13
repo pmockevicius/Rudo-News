@@ -2,9 +2,9 @@
 color: brown;
 }
 
-label{
+/* label{
     margin: 15px;
-}
+} */
 
 .input-email{
     position: absolute;
@@ -13,6 +13,7 @@ label{
     width: 100%;
     border-bottom-style: none !important;
     content: "";
+    margin-bottom: 15px;
 }
 
 /* .mdc-line-ripple::active {
@@ -58,9 +59,6 @@ a{
     color: blue;
 
 }
-
-
-
 
 
 

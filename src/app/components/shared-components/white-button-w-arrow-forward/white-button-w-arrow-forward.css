@@ -1,0 +1,20 @@
+.departamentos-box{
+    display: flex;
+    
+}
+.departamentos-box img{
+
+    position: absolute;
+    top: 13px;
+    right: 15px;
+}
+
+
+label{
+    margin: 15px !important;
+    position: relative;
+}
+
+.rounded-corners{
+    color: #FF005F;
+}

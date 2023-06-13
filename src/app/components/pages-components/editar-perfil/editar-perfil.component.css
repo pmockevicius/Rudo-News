@@ -1,0 +1,15 @@
+#departamentos{
+    color: #FF005F;
+}
+
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editar-main-wrapper{
+    display: flex;
+    justify-content: center;
+}
+

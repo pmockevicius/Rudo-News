@@ -1,3 +1,18 @@
 <app-header  [displayLinks]="true"></app-header>
 
 <app-back-title-for-perfil [pageName]="'Editar perfil'"></app-back-title-for-perfil>
+
+<div class="editar-main-wrapper">
+<form  [formGroup]="editPerfilForm" class="formWrapper">
+
+  <white-button-w-arrow-forward (click)="openDialog()" [control]="editPerfilForm.controls.departamentos" [labelName]="'Departamentos'"></white-button-w-arrow-forward>
+
+    <app-input-w-floating-label [control]="editPerfilForm.controls.nombre" [labelName]="'Nombre y Apellido'" ></app-input-w-floating-label>
+
+    <app-input-w-floating-label [control]="editPerfilForm.controls.mail" [labelName]="'Mail'" ></app-input-w-floating-label>
+    
+    <white-button-w-arrow-forward (click)="navigateToNueva()" [control]="editPerfilForm.controls.cambiar" [labelName]="'Departamentos'"></white-button-w-arrow-forward>
+    
+<app-simple-fusia-button (click)="submitChanges()" [buttonText]="'GUARDAR CAMBIOS'"></app-simple-fusia-button>
+</form>
+</div>

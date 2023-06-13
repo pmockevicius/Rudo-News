@@ -5,6 +5,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { DepartamentosDialogComponent } from './departamentos-dialog/departamentos-dialog.component';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DepartamentosDialogButtonComponent } from '../../shared-components/white-button-w-arrow-forward/white-button-w-arrow-forward'; 
 
 
 
@@ -17,6 +18,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RegistroPageComponent {
   constructor(public dialog: MatDialog, public _dataSharingService: DataSharingService, ) {}
+
+
 
   hidePassword: boolean = false
 

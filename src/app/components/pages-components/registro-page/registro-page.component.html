@@ -5,6 +5,7 @@
 <div class="registerWrapper">
 
   <form  [formGroup]="registerForm" class="formWrapper">
+
     <label for="name">
       <input id="departamentos" (click)="openDialog()" class="rounded-corners" type="text"
         placeholder="Departamento/s" formControlName="departamentos" readonly>
@@ -17,6 +18,9 @@
       </div>
 
     </label>
+
+    <!-- <app-departamentos-dialog-button [formControlName]="'departamentos'" ></app-departamentos-dialog-button> -->
+
 
 
     <label for="Nombre">

@@ -3,8 +3,8 @@
 
 <div class="perfil-main-wrapper">
     <div class="perfil-button-wrapper">
-<p class="user-label" for="user">{{userName}}</p>
-        <input type="text" id="user" placeholder={{userEmail}} readonly>
+<p class="user-label" for="user">{{user.nombre}}</p>
+        <input type="text" id="user" placeholder={{user.mail}} readonly>
 
         <app-prefil-button [buttonName]="'Edit perfil'" [navigateTo]="'/editar-perfil'"></app-prefil-button>
         <app-prefil-button [buttonName]="'FAQ'" [navigateTo]="'/FAQ'"></app-prefil-button>

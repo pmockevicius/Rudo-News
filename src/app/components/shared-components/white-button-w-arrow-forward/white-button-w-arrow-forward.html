@@ -1,0 +1,18 @@
+
+
+<div class="departamentos-box">
+    
+<label [for]="inputId">
+    <img src="./assets/images/arrow_forward_ios_24px.svg" alt="">
+    <input [formControl]="control" [id]="inputId"  class="rounded-corners" type="text" placeholder="Departamentos"
+        readonly>
+    <!-- <span class="floating-label" *ngIf="this._dataSharingService.selectedDepartments !== ''">Departamento/s</span> -->
+    <div class="errorMsgContainer">
+      <div class="errorMsg" *ngIf="departamentos && departamentos.invalid && departamentos.touched" >
+        <span>Este campo no puede quedar vacío </span>
+        <img src="./assets/images/error.svg" alt="">
+      </div>
+    </div>
+
+  </label>
+</div>

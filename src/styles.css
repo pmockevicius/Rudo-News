@@ -12,7 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 
 
 label{
-    margin-bottom:15px;
+    margin :15px;
     position:relative;
 }
 
@@ -24,10 +24,10 @@ input.rounded-corners {
     border:none;
     outline:none;
     border-radius: 25px;
-    text-indent: 10px;
-  
+    text-indent: 10px;  
    
 }
+
 input.rounded-corners::placeholder{
     opacity:0;
 }

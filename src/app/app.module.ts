@@ -37,6 +37,9 @@ import { TerminosCondicionesComponent } from './components/pages-components/term
 import { PoliticasPrivacidadComponent } from './components/pages-components/politicas-privacidad/politicas-privacidad.component';
 import { FAQTermsPoliticasComponent } from './components/shared-components/faq-terms-politicas/faq-terms-politicas.component';
 import { BackTitleForPerfilComponent } from './components/shared-components/back-title-for-perfil/back-title-for-perfil.component';
+import { DepartamentosDialogButtonComponent } from './components/shared-components/white-button-w-arrow-forward/white-button-w-arrow-forward';
+import { InputWFloatingLabelComponent } from './components/shared-components/input-w-floating-label/input-w-floating-label.component';
+import { SimpleFusiaButtonComponent } from './components/shared-components/simple-fusia-button/simple-fusia-button.component';
 
 
 @NgModule({
@@ -64,7 +67,10 @@ import { BackTitleForPerfilComponent } from './components/shared-components/back
     TerminosCondicionesComponent,
     PoliticasPrivacidadComponent,
     FAQTermsPoliticasComponent,
-    BackTitleForPerfilComponent
+    BackTitleForPerfilComponent,
+    DepartamentosDialogButtonComponent,
+    InputWFloatingLabelComponent,
+    SimpleFusiaButtonComponent
   ],
   imports: [
     BrowserModule,

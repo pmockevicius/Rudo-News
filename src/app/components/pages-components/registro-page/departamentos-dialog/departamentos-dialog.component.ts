@@ -71,7 +71,6 @@ export class DepartamentosDialogComponent {
 
   console.log(this._dataSharingService.selectedDepartments)
 
-  this.dialogRef.close();
-   
+  this.dialogRef.close({data: this.selectedDepartments});
   }
 }
