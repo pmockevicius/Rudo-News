@@ -1,0 +1,17 @@
+.noticias-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(10px, auto);
+    justify-items: center;
+  }
+
+.card {
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    margin: 20px;
+    display: inline-block;
+  }
+ 

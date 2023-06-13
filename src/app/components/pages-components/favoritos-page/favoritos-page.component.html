@@ -1,1 +1,10 @@
 <app-header  [displayLinks]="true"></app-header>
+
+  
+  <div class="noticias-wrapper">
+  <ng-container *ngFor="let noticia of noticias ">
+    <div class="card" *ngIf="noticia.isFavorite">
+  <app-noticia-card [oneNoticia]="noticia"></app-noticia-card>
+    </div>
+</ng-container>
+</div>

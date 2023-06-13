@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-perfil-page',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil-page.component.css']
 })
 export class PerfilPageComponent {
+
+  userName: string = "Paulius Mockevicius"
+  userEmail: string = "paulius@rudo.es"
+
+  
 
 }

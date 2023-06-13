@@ -29,6 +29,14 @@ import { FavoritosPageComponent } from './components/pages-components/favoritos-
 import { PerfilPageComponent } from './components/pages-components/perfil-page/perfil-page.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NoticiaComponent } from './components/pages-components/noticias-page/noticia/noticia.component';
+import { NoticiaCardComponent } from './components/shared-components/noticia-card/noticia-card.component';
+import { PrefilButtonComponent } from './components/shared-components/prefil-button/prefil-button.component';
+import { EditarPerfilComponent } from './components/pages-components/editar-perfil/editar-perfil.component';
+import { FAQComponent } from './components/pages-components/faq/faq.component';
+import { TerminosCondicionesComponent } from './components/pages-components/terminos-condiciones/terminos-condiciones.component';
+import { PoliticasPrivacidadComponent } from './components/pages-components/politicas-privacidad/politicas-privacidad.component';
+import { FAQTermsPoliticasComponent } from './components/shared-components/faq-terms-politicas/faq-terms-politicas.component';
+import { BackTitleForPerfilComponent } from './components/shared-components/back-title-for-perfil/back-title-for-perfil.component';
 
 
 @NgModule({
@@ -48,7 +56,15 @@ import { NoticiaComponent } from './components/pages-components/noticias-page/no
     FavoritosPageComponent,
     PerfilPageComponent,
     FilterPipe,
-    NoticiaComponent
+    NoticiaComponent,
+    NoticiaCardComponent,
+    PrefilButtonComponent,
+    EditarPerfilComponent,
+    FAQComponent,
+    TerminosCondicionesComponent,
+    PoliticasPrivacidadComponent,
+    FAQTermsPoliticasComponent,
+    BackTitleForPerfilComponent
   ],
   imports: [
     BrowserModule,

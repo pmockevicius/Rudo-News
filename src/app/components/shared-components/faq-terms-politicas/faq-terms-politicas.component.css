@@ -1,0 +1,11 @@
+.conditions-main-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conditions-wrapper{
+    width: 550px;
+    margin: 10px;
+}
+

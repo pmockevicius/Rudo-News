@@ -1,0 +1,56 @@
+.perfil-main-wrapper{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.perfil-button-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+    position: relative;
+    
+}
+
+.cerrar-img{
+    position: absolute;
+    bottom: 15px;
+    left: 68px;
+}
+
+.user-label{
+    position: absolute;
+    top: -22px;
+    left: 2px;
+}
+
+#user{
+    width: 300px;
+    border: none;
+    background-color: #F9F9F9;
+    height: 41px;
+    margin-bottom: 15px; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    outline: none;
+}
+
+#user::placeholder{
+   position: absolute;
+   bottom: 10px;
+}
+
+@media only screen and (min-width: 480px) {
+    #user{
+        width: 356px;
+    }
+    .cerrar-img{
+        left: 91px;
+    }
+    
+    }
+    

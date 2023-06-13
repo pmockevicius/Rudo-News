@@ -11,7 +11,10 @@
     </div>
    <div class="location-date">
     <span>{{noticia.locationName}}</span>
+    <div class="date-fav">
     <span>{{noticia.dateOfArticle}}</span>
+    <img [class.not-favorite]="!noticia.isFavorite"  src="./assets/images/heartFilled.svg" alt="" >
+</div>
    </div>
   <div class="article-description">
     <p>{{noticia.articleDescription}}</p>
@@ -41,6 +44,23 @@
    
    
   </div>
+  
+
+  <div class="escribe-box">
+    <label for="comentarios" [class.active]="isInputFocused || inputValue !== ''">Comentarios</label>
+    <input [class.active-input]="isInputFocused || inputValue !== ''" type="text" id="comentarios" placeholder="Escribe tu comentario" [(ngModel)]="inputValue" (focus)="isInputFocused = true" (blur)="isInputFocused = false" maxlength="250">
+    <img [class.send-disabled]="inputValue !== ''" class="sent-message-button" src="./assets/images/messageDisabled.svg" alt="">
+    <img [class.enabled]="inputValue === ''" class="sent-message-button" src="./assets/images/messageEnabled.svg" alt="" (click)="submitComment()">
+    <div>
+        
+    </div>
+    
+  </div>
+  <div class="char-count-box">
+  <p class="character-count">{{calculateCommentLength()}}/250</p>
 </div>
+</div>
+
+
 
 </div>

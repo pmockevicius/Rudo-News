@@ -1,0 +1,37 @@
+.prefil-button{
+    width: 300px;
+    height: 56px;
+    border-radius: 28px;
+    background-color: #FFFFFF;
+    border: none;
+    text-align: left;
+    text-indent: 20px;
+    color: #FF005F;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom:15px;
+ 
+}
+
+.prefil-button-box{
+    position: relative;
+}
+
+
+.prefil-button-box img{
+    position: absolute;
+    bottom: -1px;
+    right: 18px;
+}
+
+
+@media only screen and (min-width: 480px) {
+
+    .prefil-button{
+        width: 356px;
+    }
+
+}

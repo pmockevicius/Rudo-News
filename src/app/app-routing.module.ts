@@ -8,6 +8,10 @@ import { NoticiasPageComponent } from './components/pages-components/noticias-pa
 import { PerfilPageComponent } from './components/pages-components/perfil-page/perfil-page.component';
 import { FavoritosPageComponent } from './components/pages-components/favoritos-page/favoritos-page.component';
 import { NoticiaComponent } from './components/pages-components/noticias-page/noticia/noticia.component';
+import { EditarPerfilComponent } from './components/pages-components/editar-perfil/editar-perfil.component';
+import { FAQComponent } from './components/pages-components/faq/faq.component';
+import { TerminosCondicionesComponent } from './components/pages-components/terminos-condiciones/terminos-condiciones.component';
+import { PoliticasPrivacidadComponent } from './components/pages-components/politicas-privacidad/politicas-privacidad.component';
 
 const routes: Routes = [
   { path: '', component: InicioPageComponent },
@@ -18,6 +22,10 @@ const routes: Routes = [
   { path: 'noticia/:id', component: NoticiaComponent },
   { path: 'perfil', component: PerfilPageComponent },
   { path: 'favoritos', component: FavoritosPageComponent},
+  { path: 'editar-perfil', component: EditarPerfilComponent},
+  { path: 'FAQ', component: FAQComponent},
+  { path: 'terminos-y-condiciones', component: TerminosCondicionesComponent},
+  { path: 'politicas-de-privacidad', component: PoliticasPrivacidadComponent},
 ];
 
 @NgModule({

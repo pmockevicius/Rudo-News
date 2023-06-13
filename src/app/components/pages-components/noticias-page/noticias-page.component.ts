@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import {Router} from '@angular/router';
+import { NewsArticle, Noticia } from 'src/app/services/interface';
 
 @Component({
   selector: 'app-noticias-page',
@@ -12,10 +13,10 @@ export class NoticiasPageComponent {
   constructor(public _dataSharingService: DataSharingService, private router: Router){}
 
   searchTerm: string | any
-  // filterTagsSelected: string[] = []
   noticias = this._dataSharingService.noticias
 
   filterTagsSelected: string = '';
+
 
 
 
@@ -31,10 +32,16 @@ handleInputValue(value: any) {
 
 }
 
-noticiaClicked(noticia: any){
-  this.router.navigate(['/noticia', noticia.id], {
-    state: { noticia: noticia }
-  })
-}
+// noticiaClicked(noticia: any){
+//   this.router.navigate(['/noticia', noticia.id], {
+//     state: { noticia: noticia }
+//   })
+// }
+
+// changeFavStatus(noticia : NewsArticle){
+
+// noticia.isFavorite = !noticia.isFavorite
+// console.log("favorite pressed", noticia.isFavorite)
+// }
 
 }
