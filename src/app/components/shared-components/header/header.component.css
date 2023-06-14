@@ -59,6 +59,15 @@ img{
       .header-w-links img{
         margin-left: 20px;
     }
+
+    
     
 }
-  
+
+
+@media only screen and (max-width: 500px) {
+    .links-container {
+flex-direction: column;
+align-items: flex-end;
+    }
+}
