@@ -18,7 +18,7 @@ export class EditarPerfilComponent {
 
   constructor(public dialog: MatDialog, public _dataSharingService: DataSharingService, private router: Router ) {
 
-    this.editPerfilForm.valueChanges.subscribe((value)=>{console.log(value)})
+    // this.editPerfilForm.valueChanges.subscribe((value)=>{console.log(value)})
   }
 
   user:Perfil = this._dataSharingService.perfils[0] 
@@ -68,7 +68,7 @@ export class EditarPerfilComponent {
 
   showConfirmationMessage(){
     const dialogRef = this.dialog.open(OlvidadaDialogComponent, {
-      data: { message: this.dialogMessage }
+      data: { message: this.dialogMessage, needCancelarButton: false, messageTitle: "", buttonText: "Aceptar" }
     });
 
   }

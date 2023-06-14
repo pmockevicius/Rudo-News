@@ -1,9 +1,26 @@
 
-<div class="olvidad-dialog-container">
+<div *ngIf="!needCancelarButton" class="olvidad-dialog-container">
     <div class="text-container">
-        <p>{{data.message}}</p>
+        <p>{{dialogMessage}}</p>
     </div>
     <div class="btnContainer">
-        <button (click)="onCloseClicked()" class="btn dialog-btn" >Aceptar</button>
+        <button (click)="onCloseClicked()" class="btn dialog-btn" >{{buttonText}}</button>
+        </div>
+</div>
+
+
+
+
+<div *ngIf="needCancelarButton" class="olvidad-dialog-container-cancelar">
+    <div class="text-container-cancelar">
+        <div class="message-title">
+        <span>{{messageTitle}} </span>
+    </div>
+        <!-- <p>{{data.message}}</p> -->
+        <p>{{dialogMessage}}</p>
+    </div>
+    <div class="btnContainer-cancelar">
+        <button (click)="onCloseClicked()" class="btn dialog-btn cancelar" >Cancelar</button>
+        <button (click)="onCerrarConfirmed()" class="btn dialog-btn" >{{buttonText}}</button>
         </div>
 </div>

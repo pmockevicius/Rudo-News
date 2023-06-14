@@ -25,3 +25,39 @@
     margin-left: 103px;
     margin-top: 14px;
   }
+
+  .cancelar{
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+  }
+
+
+  .olvidad-dialog-container-cancelar{
+    height: 148px;
+    width: 262px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .btnContainer-cancelar{
+    display: flex;
+    justify-content: center;
+  }
+
+  .btnContainer-cancelar button{
+   margin-left: 0;
+   width: 130px;
+   font-size: 16px;
+  }
+
+  .message-title{
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .text-container-cancelar{
+   font-size: 12px;
+}

@@ -11,5 +11,7 @@
 .editar-main-wrapper{
     display: flex;
     justify-content: center;
+    height: 80%;
+    align-items: center;
 }
 

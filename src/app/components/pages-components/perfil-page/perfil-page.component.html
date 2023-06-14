@@ -11,7 +11,7 @@
         <app-prefil-button [buttonName]="'Términos y condiciones'" [navigateTo]="'/terminos-y-condiciones'"></app-prefil-button>
         <app-prefil-button [buttonName]="'Políticas de privacidad'" [navigateTo]="'/politicas-de-privacidad'"></app-prefil-button>
 
-        <button class="btn">CERRAR SESIÓN</button>
+        <button (click)="cerrarSessionClicked()" class="btn">CERRAR SESIÓN</button>
         <img class="cerrar-img" src="./assets/images/cerrar.svg" alt="">
     </div>
 </div>
