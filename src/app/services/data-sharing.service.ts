@@ -47,7 +47,7 @@ noticias = [
     imgUrl: "./assets/images/screen.png", 
     locationName: "New location2",
     dateOfArticle: "12-31-2005",
-    articleDescription: "Use Array.prototype.every() method to check whether all elements in an array pass the test implemented by the provided function;.",
+    articleDescription: "Article Description",
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Ocio",
     isFavorite: true,
@@ -76,7 +76,7 @@ noticias = [
     imgUrl: "./assets/images/screen2.png",
     locationName: "New location3",
     dateOfArticle: "12-31-2005",
-    articleDescription: "H for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",    
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Ocio",
     isFavorite: false,
@@ -105,7 +105,7 @@ noticias = [
     imgUrl: "./assets/images/office.png",
     locationName: "New location4",
     dateOfArticle: "12-31-2005",
-    articleDescription: " He You can choose 1 - only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",    
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Deporte",
     isFavorite: false,
@@ -134,7 +134,7 @@ noticias = [
     imgUrl: "./assets/images/picture.png",
     locationName: "New location1",
     dateOfArticle: "12-31-2005",
-    articleDescription: " Hel You can choose - only  12345real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",    
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Comida",
     isFavorite: false,
@@ -163,7 +163,7 @@ noticias = [
     imgUrl: "./assets/images/picture.png", 
     locationName: "New location2",
     dateOfArticle: "12-31-2005",
-    articleDescription: "Hell You can choose - 123labas only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",    
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Gaming",
     isFavorite: false,
@@ -192,7 +192,7 @@ noticias = [
     imgUrl: "./assets/images/picture.png",
     locationName: "New location3",
     dateOfArticle: "12-31-2005",
-    articleDescription: "You Hello can choose 12 laba- only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",     
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Gaming",
     isFavorite: false,
@@ -221,7 +221,7 @@ noticias = [
     imgUrl: "./assets/images/picture.png",
     locationName: "New location4",
     dateOfArticle: "12-31-2005",
-    articleDescription: "You can Hello! choose 1 - only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",     
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Deporte",
     isFavorite: false,
@@ -250,7 +250,7 @@ noticias = [
     imgUrl: "./assets/images/picture.png",
     locationName: "New location43",
     dateOfArticle: "12-31-2005",
-    articleDescription: "You can Hello! choose 1 - only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",     
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Deporte",
     isFavorite: false,
@@ -279,7 +279,7 @@ noticias = [
     imgUrl: "./assets/images/picture.png",
     locationName: "New location12",
     dateOfArticle: "12-31-2005",
-    articleDescription: "You can Hello! choose 1 - only real convention for name format is to start constructor and classes with a capital (and even then it's your own choice).",
+    articleDescription: "Article Description",     
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Deporte",
     isFavorite: false,
@@ -305,42 +305,31 @@ noticias = [
 ]
 
 
-
-
-
-// Mock FAQ
-
 FAQ = [
   {
     title: "FAQ1",
-    body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum.
-    At et leo a nam. Mattis porttitor integer et scelerisque ut. Odio phasellus pulvinar urna, sed scelerisque maecenas pulvinar. Mauris, elit habitasse massa et dolor id mauris amet, at. Eget sed semper urna tincidunt quam vulputate lorem pretium. Orci metus non tortor massa elementum. Tellus malesuada dictum congue vitae, ornare dis. Eu ut id sagittis a, tortor, purus. Auctor habitasse ipsum viverra gravida sapien sit. A mauris eget eros, ultrices. Interdum pharetra, egestas volutpat amet.`
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum."
   },
   {
    title: "FAQ2",
-   body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum.
-    At et leo a nam. Mattis porttitor integer et scelerisque ut. Odio phasellus pulvinar urna, sed scelerisque maecenas pulvinar. Mauris, elit habitasse massa et dolor id mauris amet, at. Eget sed semper urna tincidunt quam vulputate lorem pretium. Orci metus non tortor massa elementum. Tellus malesuada dictum congue vitae, ornare dis. Eu ut id sagittis a, tortor, purus. Auctor habitasse ipsum viverra gravida sapien sit. A mauris eget eros, ultrices. Interdum pharetra, egestas volutpat amet.`
+   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum."
   }
 ];
 
 
-// Mock Terminos y condiciones
-
 TerminosYCondiciones = [
   {
     title: "Terminos 1",
-    body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum.
-    At et leo a nam. Mattis porttitor integer et scelerisque ut. Odio phasellus pulvinar urna, sed scelerisque maecenas pulvinar. Mauris, elit habitasse massa et dolor id mauris amet, at. Eget sed semper urna tincidunt quam vulputate lorem pretium. Orci metus non tortor massa elementum. Tellus malesuada dictum congue vitae, ornare dis. Eu ut id sagittis a, tortor, purus. Auctor habitasse ipsum viverra gravida sapien sit. A mauris eget eros, ultrices. Interdum pharetra, egestas volutpat amet.`
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum."
   },
   {
-    title: "Terminos 2",
-    body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum.
-    At et leo a nam. Mattis porttitor integer et scelerisque ut. Odio phasellus pulvinar urna, sed scelerisque maecenas pulvinar. Mauris, elit habitasse massa et dolor id mauris amet, at. Eget sed semper urna tincidunt quam vulputate lorem pretium. Orci metus non tortor massa elementum. Tellus malesuada dictum congue vitae, ornare dis. Eu ut id sagittis a, tortor, purus. Auctor habitasse ipsum viverra gravida sapien sit. A mauris eget eros, ultrices. Interdum pharetra, egestas volutpat amet.`
-  }
+    title: "Terminos 1",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tristique duis sagittis at lacus, gravida neque, dictumst. Tellus bibendum augue lacinia ligula. Malesuada aliquet molestie commodo quisque pellentesque. Diam tempor amet ornare amet lobortis enim. Augue dui vitae et, porta nulla. Sagittis urna sit scelerisque morbi in. Amet sed eu, blandit eget vitae, viverra vel. Amet, penatibus lorem ac dignissim donec enim. Mi diam velit commodo mattis ipsum. Cras ultricies nisl enim elit nulla tempus, sed dictumst. Viverra ultricies egestas potenti quam felis. Eu mus a amet urna condimentum."
+  },
 ]
 
 
-// Mock Terminos y condiciones
+
 
 politicasDePrivacidad = [
   {
@@ -355,7 +344,6 @@ politicasDePrivacidad = [
   }
 ]
 
-// Mock Perfil
 
 perfils = [{
   id: 1,
@@ -363,6 +351,14 @@ perfils = [{
   nombre: 'Paulius Mockevicius',
   mail: 'paulius@rudo.es',
   contrasena: '12345'
-}]
+},
+{
+  id: 2,
+  departamentos: ['Back', 'Android', 'Proyectos'],
+  nombre: 'Test Mockevicius',
+  mail: 'test@rudo.es',
+  contrasena: '12345'
+}
+]
 
 }

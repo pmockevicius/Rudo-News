@@ -1,0 +1,63 @@
+<!-- 
+
+
+
+<label class="icon-parent" for="Contraseña">
+    <input class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" id="Contrasena"
+      placeholder="Contrasena" [class.invalid-input]="{{control}} && {{control}}.invalid && {{control}}.touched">
+    <span class="floating-label">{{labelName}}</span>
+    <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+      [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-icon>
+    <div class="errorMsgContainer">
+      <div class="errorMsg" *ngIf="regContrasena && regContrasena.invalid && regContrasena.touched">
+        <span>Ha ingresado una contraseña inválida </span>
+        <img src="./assets/images/error.svg" alt="">
+      </div>
+    </div>
+   
+  </label>
+ -->
+
+
+
+
+
+<!-- 
+<label class="icon-parent" for="Contraseña">
+    <input class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" id="Contrasena"
+      placeholder="Contrasena">
+    <span class="floating-label">{{labelName}}</span>
+    <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+      [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-icon>
+    <div class="errorMsgContainer">
+      <div class="errorMsg" >
+        <span>Ha ingresado una contraseña inválida </span>
+        <img src="./assets/images/error.svg" alt="">
+      </div>
+    </div>
+   
+  </label> -->
+
+
+
+
+<label class="icon-parent" [for]="inputId">
+  <input [formControl]="control"  class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" [id]="inputId" [placeholder]="placeholder"
+  [class.invalid-input]="control && control.invalid && control.touched">
+    
+  <span class="floating-label">{{label}}</span>
+  <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="togglePasswordVisibility()"
+    [attr.aria-label]="hidePassword ? 'Hide password' : 'Show password'" [attr.aria-pressed]="hidePassword">
+    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-icon>
+  <div class="errorMsgContainer">
+    <div class="errorMsg" *ngIf="control && control.invalid && control.touched">
+      <span>Ha ingresado una contraseña inválida </span>
+      <img src="./assets/images/error.svg" alt="">
+    </div>
+  </div>
+</label>

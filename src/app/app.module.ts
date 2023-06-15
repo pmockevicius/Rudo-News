@@ -47,6 +47,9 @@ import { FirebaseTestComponent } from './components/firebase-test/firebase-test.
 import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
 import { HttpClientModule } from '@angular/common/http';
+import { ContrasenaInputWEyeComponent } from './components/shared-components/contrasena-input-w-eye/contrasena-input-w-eye.component';
+import { ButtonTransparentComponent } from './components/shared-components/button-transparent/button-transparent.component';
+
 
 @NgModule({
   declarations: [
@@ -77,7 +80,10 @@ import { HttpClientModule } from '@angular/common/http';
     DepartamentosDialogButtonComponent,
     InputWFloatingLabelComponent,
     SimpleFusiaButtonComponent,
-    FirebaseTestComponent
+    FirebaseTestComponent,
+    ContrasenaInputWEyeComponent,
+    ButtonTransparentComponent,
+   
   ],
   imports: [
     BrowserModule,

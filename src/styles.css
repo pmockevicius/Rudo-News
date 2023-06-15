@@ -12,19 +12,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 
 
 label{
-    margin :15px;
+    margin: 10px 0 10px 0;
     position:relative;
 }
 
 input.rounded-corners {
 
-    height: 30px;
+    height: 56px;
     padding:10px 0px;
     width: 300px;
     border:none;
     outline:none;
     border-radius: 25px;
-    text-indent: 10px;  
+    text-indent: 20px;  
+
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+
+box-sizing: border-box;
+padding-top: 27px;
+
    
 }
 
@@ -34,27 +44,38 @@ input.rounded-corners::placeholder{
 .floating-label{
     position:absolute;
     top:0;
-    left:0;
+    left:9px;
     transform:translateY(15px);
     font-size:16px;
     transition-duration:600ms;
     margin-left: 10px;
+    color: #9D9FA7;
+
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
 }
 
 
 label:focus-within > .floating-label,
 input.rounded-corners:not(:placeholder-shown) + span{
     color:#ff4081;
-    transform:translateY(5px);
-    font-size: 10px;
+    transform:translateY(10px);
     margin-left: 10px;
+
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 12px;
 }
 
 /* INPUT STYLE */
 
 
 .btn {
-
     height: 48px;
     width:300px;
     background-color: #FF005F;
@@ -62,6 +83,7 @@ input.rounded-corners:not(:placeholder-shown) + span{
     box-shadow: none;
     border: none;
     color: #F9F9F9;
+   
 }
 
 .btn:active {
@@ -82,22 +104,7 @@ input.rounded-corners:not(:placeholder-shown) + span{
 }
 
 
-@media only screen and (min-width: 480px) {
 
-    input.rounded-corners{
-        width: 356px;
-    }
-    .btn{
-        width: 356px;
-    }
-    .validation-box {
-        width: 356px;
-    } 
-    .mat-icon-eye{
-        transform:translate(310px, 15px);
-    }
-    
-}
 
 .invalid-input {
     background-color: rgba(219, 68, 55, 0.06);
@@ -130,6 +137,21 @@ input.rounded-corners:not(:placeholder-shown) + span{
   
   
   
-  
+@media only screen and (min-width: 480px) {
+
+    input.rounded-corners{
+        width: 357px;
+    }
+    .btn{
+        width: 357px;
+    }
+    .validation-box {
+        width: 357px;
+    } 
+    .mat-icon-eye{
+        transform:translate(310px, 15px);
+    }
+    
+}
   
 

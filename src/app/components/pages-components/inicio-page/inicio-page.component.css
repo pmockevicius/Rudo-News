@@ -1,9 +1,5 @@
 
 
-/* .white{
-    background-color: aliceblue;
-} */
-
 
 .inicioWrapper {
     display:flex;
@@ -11,8 +7,9 @@
     align-items: center
 }
 
-.inicioWrapper img {
-    height: 100px;
+
+
+#logo{
     margin-bottom: 40px;
 }
 
@@ -24,7 +21,7 @@
 }
 
 .olvidado p{
-    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .inicioWrapper {

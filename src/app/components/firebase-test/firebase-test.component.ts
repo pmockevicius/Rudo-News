@@ -23,10 +23,10 @@ export class FirebaseTestComponent {
     //   console.log("result from db", this.courses);
     // });
 
-    this.holamundo();
+    this.callDb();
   }
 
-  async holamundo() {
+  async callDb() {
     const res = await this.db.list("/courses").valueChanges().subscribe(data => {
       this.courses = data;
       console.log("result from db", this.courses);

@@ -1,41 +1,26 @@
 
 <div class="inicioWrapper">
+<img id="logo" src="./assets/images/icon.svg" alt="">
 
-<img src="./assets/images/icon.svg" alt="">
+<form class="inicio-form" [formGroup]="inicioForm" >
 
-<form class="inicio-form" [formGroup]="inicioForm" (ngSubmit)="onLoginPressed()">
-  <label for="name">
-    <input class="rounded-corners" type="text" id="name" placeholder="Name" formControlName="loginEmail">
-    <span class="floating-label">Mail</span>
-</label>
-<label class="icon-parent" for="Contraseña">
-  <input class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" id="Contraseña" placeholder="Email" formControlName="loginPassword" >
-  <span class="floating-label">Contraseña</span>
-  <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
-    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-  </mat-icon>
-</label>
-
-
-
+  <app-input-w-floating-label [control]="inicioForm.controls.loginEmail" [labelName]="'Mail'" ></app-input-w-floating-label>
+  <app-contrasena-input-w-eye [inputId]="'1'" [label]="'Contraseña'" [control]="inicioForm.controls.loginPassword" [placeholder]="'Contraseña'"></app-contrasena-input-w-eye>
 <div class="olvidado">
     <p routerLink="/olvidado" >¿Has olvidado tu contraseña?</p>
   </div>
-
-  <button class="btn">INICIAR SESIÓN</button>
-  <br>
-  <button routerLink="/registro" class="btn btnTransparent"  color="primary">REGISTRO</button>
 </form>
 
-
+<app-simple-fusia-button (click)="onLoginPressed()" [buttonText]="'INICIAR SESIÓN'"  [class.disabled-btn] = "!inicioForm.valid" class="btn"></app-simple-fusia-button>
+<br>
+<app-button-transparent (click)="navigateToRegistro()" [buttonText]="'REGISTRO'"></app-button-transparent>
 
 
 <br>
 
-<button routerLink="/nueva" class="btn btnTransparent"  >nueva</button>
+<!-- <button routerLink="/nueva" class="btn btnTransparent"  >nueva</button>
 <button routerLink="/noticias" class="btn btnTransparent" >noticias</button>
+ -->
 
-<!-- <button  style="height: 50px; width: 50px;" routerLink="/nueva">Nueva</button>
-<button  style="height: 50px; width: 50px;" routerLink="/noticias">Noticias</button> -->
 
-<app-firebase-test></app-firebase-test>
+

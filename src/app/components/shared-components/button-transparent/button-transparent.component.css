@@ -1,0 +1,17 @@
+.transparent-btn {
+  
+        background-color: transparent !important;
+        border: 1px solid #FF005F !important;
+        color: #FF005F !important;
+        font-weight:600
+    
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .fucsia-btn{
+        width: 300px;
+    }
+
+}
