@@ -2,10 +2,16 @@
     display: flex;
     
 }
-.departamentos-box img{
+/* .departamentos-box img{
 
     position: absolute;
-    top: 13px;
+    top: 18px;
+    right: 15px;
+} */
+
+#arrow-forwad {
+    position: absolute;
+    top: 18px;
     right: 15px;
 }
 
@@ -17,4 +23,8 @@ label{
 
 .rounded-corners{
     color: #FF005F;
+}
+
+.centered-input-text{
+    padding: 0px 
 }

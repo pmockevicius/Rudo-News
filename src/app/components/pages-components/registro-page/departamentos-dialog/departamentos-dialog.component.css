@@ -21,17 +21,15 @@ ul {
     border-radius: 8px;
     margin-top: 25px;
     position: relative;
+    height: 56.11px;
+    align-items: center;
 }
 
-#closeX{
-    position: absolute;
-    right: -50px;
-    bottom: 10px;
-}
 
 .highlighted {
     background-color: #FF005F;
     border-radius: 10px;
+    color: white;
   }
 
   .btnContainer{
@@ -54,7 +52,49 @@ ul {
   } */
 
   .mdc-dialog__surface {
-    border-radius: 40px !important;
+    border-radius: 32px !important;
     width: 399px !important;  
   }
 
+ul input{
+  margin-left: 18px;
+}
+
+ul label {
+  margin: 10px;
+}
+
+.mdc-dialog .mdc-dialog__content {
+  padding: 20px 10px 20px 10px;
+  
+}
+
+.dialog-title {
+  font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+
+
+.mat-mdc-dialog-container .mdc-dialog__title{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 0px;
+}
+
+#closeX{
+  position: absolute;
+  right: 25px;
+  top: 20px;
+}
+
+.checkbox {
+  outline: 2px solid white;
+    accent-color: #FF005F;
+}

@@ -10,9 +10,7 @@ import { FormControl } from '@angular/forms';
 export class InputWFloatingLabelComponent {
 
   @Input() labelName: string = ""
-  @Input() initialValue: any = ""
-  @Input() formControlName: string = ""
-  @Input() formGroupName: any = ""
+  @Input() inputId: any = ""
   @Input() control = new FormControl()
 
 }

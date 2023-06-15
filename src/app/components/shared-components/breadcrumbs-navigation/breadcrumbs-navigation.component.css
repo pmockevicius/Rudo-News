@@ -9,13 +9,27 @@
 
 .navigationBtn{
     margin-left: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
 }
 
-.back-arrow{
+.back-arrow, .slash{
     display: flex;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+margin-left: 10px;
+align-items: center;
+    
 }
 
 .back-arrow img{
     margin-right: 20px;
     height: 15px;
 }
+

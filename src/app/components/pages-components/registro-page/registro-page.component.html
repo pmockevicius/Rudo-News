@@ -2,72 +2,15 @@
 
 <app-breadcrumbs-navigation [currentPage]="'Registro'"></app-breadcrumbs-navigation>
 
-<div class="registerWrapper">
+<div class="wrapper-template">
 
   <form  [formGroup]="registerForm" class="formWrapper">
 
-    <label for="name">
-      <input id="departamentos" (click)="openDialog()" class="rounded-corners" type="text"
-        placeholder="Departamento/s" formControlName="departamentos" readonly>
-      <span class="floating-label" *ngIf="this._dataSharingService.selectedDepartments === ''">Departamento/s</span>
-      <div class="errorMsgContainer">
-        <div class="errorMsg" *ngIf="departamentos && departamentos.invalid && departamentos.touched">
-          <span>Este campo no puede quedar vacío </span>
-          <img src="./assets/images/error.svg" alt="">
-        </div>
-      </div>
+    <white-button-w-arrow-forward (click)="openDepartamentosDialog()" [inputId]="'11'" [control]="registerForm.controls.departamentos" [labelName]="'Departamento/s'"></white-button-w-arrow-forward>
 
-    </label>
-
-    <!-- <app-departamentos-dialog-button [formControlName]="'departamentos'" ></app-departamentos-dialog-button> -->
-
-
-
-    <label for="Nombre">
-      <input class="rounded-corners" type="text" id="Nombre" placeholder="Name" formControlName="regNombre"
-        [class.invalid-input]="regNombre && regNombre.invalid && regNombre.touched">
-      <span class="floating-label">Nombre y Apellidos*</span>
-      <div class="errorMsgContainer">
-        <div class="errorMsg" *ngIf="regNombre && regNombre.invalid && regNombre.touched">
-          <span>Este campo no puede quedar vacío </span>
-          <img src="./assets/images/error.svg" alt="">
-        </div>
-      </div>
-    </label>
-
-
-    <label for="mail">
-      <input class="rounded-corners" type="text" id="mail" placeholder="mail" formControlName="regEmail"
-        [class.invalid-input]="regEmail && regEmail.invalid && regEmail.touched">
-      <span class="floating-label">Mail</span>
-
-
-      <div class="errorMsgContainer">
-        <div class="errorMsg" *ngIf="regEmail && regEmail.invalid && regEmail.touched">
-          <span>Su correo electrónico ingresado no es válido </span>
-          <img src="./assets/images/error.svg" alt="">
-        </div>
-      </div>
-    </label>
-
-
-    <label class="icon-parent" for="Contraseña">
-      <input class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" id="Contrasena"
-        placeholder="Contrasena" formControlName="regContrasena" (ngModelChange)="passwordValueChanged($event)" [class.invalid-input]="regContrasena && regContrasena.invalid && regContrasena.touched">
-      <span class="floating-label">Contraseña</span>
-      <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
-        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
-        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </mat-icon>
-      <div class="errorMsgContainer">
-        <div class="errorMsg" *ngIf="regContrasena && regContrasena.invalid && regContrasena.touched">
-          <span>Ha ingresado una contraseña inválida </span>
-          <img src="./assets/images/error.svg" alt="">
-        </div>
-      </div>
-     
-    </label>
-
+    <app-input-w-floating-label [inputId]="'1'" [control]="registerForm.controls.regNombre" [labelName]="'Nombre y Apellidos'" ></app-input-w-floating-label>
+    <app-input-w-floating-label [inputId]="'2'" [control]="registerForm.controls.regEmail" [labelName]="'Mail'" ></app-input-w-floating-label>
+    <app-contrasena-input-w-eye (input)="passwordValueChanged()" [inputId]="'1'" [label]="'Contraseña'" [control]="registerForm.controls.regContrasena" [placeholder]="'Contraseña'"></app-contrasena-input-w-eye>
 
 
     <div class="validation-box">
@@ -76,13 +19,12 @@
       <p [style.color]="passwordValue.length >= 8 ? '#53D487' : '#9D9FA7'">· 8 CARÁCTERES</p>
       <p [style.color]=" doesIncludeNumber ? '#53D487' : '#9D9FA7'">· NÚMEROS</p>
       <p [style.color]=" doesIncludeSpecialChar ? '#53D487' : '#9D9FA7'">· CARÁCTER ESPECIAL</p>
-
     </div>
 
     <div class="politicas-container" >
     <label  >
-      <input  type="radio" name="politicas" value="HTML" formControlName="politicas" />Si, he leído y acepto las <a href="">políticas de
-        privacidad</a>
+      <input id="radio-input" type="radio" name="politicas" value="HTML" formControlName="politicas" />Si, he leído y acepto las&nbsp;<a href="">políticas de privacidad</a>
+
     </label>
   </div>
 
@@ -90,5 +32,7 @@
   </form>
   <button (click)="submitFormValue()" form="registerForm" class="continuar-btn" [class.disabled-btn] = "!registerForm.valid" class="btn" [disabled]="!registerForm.valid">CONTINUAR</button>
 </div>
+
+
 
 

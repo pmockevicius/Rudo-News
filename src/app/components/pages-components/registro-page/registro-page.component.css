@@ -1,11 +1,5 @@
-.mdc-line-ripple--active.mdc-line-ripple--deactivating {
-color: brown;
-}
 
-/* label{
-    margin: 15px;
-} */
-
+/* 
 .input-email{
     position: absolute;
     bottom: 0;
@@ -14,21 +8,16 @@ color: brown;
     border-bottom-style: none !important;
     content: "";
     margin-bottom: 15px;
-}
-
-/* .mdc-line-ripple::active {
-    border-bottom: none!important;
-    border-bottom-color:white!important;
 } */
 
-.registerWrapper{
+
+/* .registerWrapper{
     display:flex;
     flex-direction: column;
     align-items: center;
-    /* height: 100%; */
+    height: calc(100% - 139px);
     justify-content: center;
-    /* margin-top: -90px; */
-}
+} */
 
 .validation-box{
     display: flex;
@@ -39,16 +28,16 @@ color: brown;
 }
 
 .validation-box p{
-    width: 50%
+    width: 50%;
+
 }
 
 .formWrapper{
     display:flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
     justify-content: center;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 
 }
 
@@ -79,7 +68,13 @@ a{
 .politicas-container label{
     margin: 0;
     margin-bottom: 20px;
-    font-size: 13px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+display: flex;
+align-items: center;
 }
 
 
@@ -93,12 +88,13 @@ a{
     margin-top: -50px;
 }
 
-/* @media only screen and (max-width: 480px) {
-
-    .validation-box{
-        width: 300px;
-    }
-} */
+#radio-input{
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    accent-color: #FF005F;
+ 
+}
 
 @media only screen and (min-width: 480px) {
     .validation-box{

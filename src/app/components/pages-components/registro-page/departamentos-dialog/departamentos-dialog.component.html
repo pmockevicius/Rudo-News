@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="wrapper">
 <div class="mat-dialog-title">
 <h1 mat-dialog-title>Departamentos <span id="closeX" (click)="onXClicked()">X</span></h1>
@@ -58,4 +58,24 @@
 </div>
 
 </form>
+</div> -->
+
+<div class="wrapper">
+  <div class="mat-dialog-title">
+    <span class="dialog-title" >Departamentos </span>
+    <img id="closeX" (click)="onXClicked()" src="./assets/images/close_24px.svg" alt="">
+  </div>
+  <form [formGroup]="departamentosDialog" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content class="mat-dialog-content">
+      <ul>
+        <li *ngFor="let departamento of departamentos; let i = index" [class.highlighted]="checkedOptions[i]">
+          <input type="checkbox" class="checkbox" [id]="'option' + (i+1)" name="options" [value]="departamento" [(ngModel)]="checkedOptions[i]" [formControlName]="departamento">
+          <label [for]="'option' + (i+1)">{{ departamento }}</label>
+        </li>
+      </ul>
+    </div>
+    <div class="btnContainer">
+      <button class="btn dialog-btn">Aceptar</button>
+    </div>
+  </form>
 </div>

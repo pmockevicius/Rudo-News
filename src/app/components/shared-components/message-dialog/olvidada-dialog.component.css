@@ -12,7 +12,7 @@
 }
 
 .olvidad-dialog-container p {
-  padding: 24px 16px;
+  padding: 17px 14px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -32,7 +32,7 @@
     margin-top: 14px;
     position: absolute;
     left: 151px;
-    bottom: 7px;
+    bottom: 14px;
   }
 
   .cancelar{
@@ -79,7 +79,7 @@
 
   .dialog-btn{
     left: 124px;
-    bottom: 7px;
+    bottom: 14px;
   }
   
 }

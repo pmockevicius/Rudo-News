@@ -1,8 +1,15 @@
 
 
 <div class="flex-wrapper">
-<label for="name">
-    <input [formControl]="control" class="rounded-corners" type="text" id="name" placeholder="Name" >
+<label [for]="inputId">
+    <input [formControl]="control" class="rounded-corners" type="text" [id]="inputId" placeholder="Name"
+     [class.invalid-input]="control && control.invalid && control.touched">
     <span class="floating-label">{{labelName}}</span>
+    <div class="errorMsgContainer">
+        <div class="errorMsg" *ngIf="control && control.invalid && control.touched">
+          <span>Este campo no puede quedar vacío </span>
+          <img src="./assets/images/error.svg" alt="">
+        </div>
+      </div>
 </label>
 </div>

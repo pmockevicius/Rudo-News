@@ -44,7 +44,7 @@ export class NuevaContrPageComponent {
 
   openDialog() {
     const dialogRef = this.dialog.open(OlvidadaDialogComponent, {
-      data: { message: this.dialogMessage },
+      data: { message: this.dialogMessage, needCancelarButton: false, messageTitle: "", buttonText: "Aceptar" },
     });
   }
 

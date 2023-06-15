@@ -32,16 +32,12 @@ label{
     align-items: center;
     text-align: center;
     color: #FF005F;
-    margin: 15px;
+    margin-bottom: 15px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
     font-size: 14px;
-}
-
-.main-wrapper {
-    display: flex;
-    height: 80%;
-    justify-content: center;
-    align-items: center;
-
+    line-height: 16px;
 }
 
 .olvidad-form{

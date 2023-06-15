@@ -11,16 +11,15 @@
   </div>
 </form>
 
-<app-simple-fusia-button (click)="onLoginPressed()" [buttonText]="'INICIAR SESIÓN'"  [class.disabled-btn] = "!inicioForm.valid" class="btn"></app-simple-fusia-button>
-<br>
+<app-simple-fusia-button (click)="onLoginPressed()" [buttonText]="'INICIAR SESIÓN'"  [class.disabled-btn] = "!inicioForm.valid" ></app-simple-fusia-button>
 <app-button-transparent (click)="navigateToRegistro()" [buttonText]="'REGISTRO'"></app-button-transparent>
 
 
 <br>
 
-<!-- <button routerLink="/nueva" class="btn btnTransparent"  >nueva</button>
+<button routerLink="/nueva" class="btn btnTransparent"  >nueva</button>
 <button routerLink="/noticias" class="btn btnTransparent" >noticias</button>
- -->
+
 
 
 

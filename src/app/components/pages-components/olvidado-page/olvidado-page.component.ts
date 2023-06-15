@@ -26,15 +26,15 @@ export class OlvidadoPageComponent {
 
   openDialog() {
     const dialogRef = this.dialog.open(OlvidadaDialogComponent, {
-      data: { message: this.dialogMessage }
+      data: { message: this.dialogMessage, needCancelarButton: false, messageTitle: "", buttonText: "Aceptar" }
     });
   }
 
   checkIfEmailValid(){
     if (this.testEmails.includes(this.inputedEmail) ){
-      this.dialogMessage = "correct email"
+      this.dialogMessage = "Vas a recibir un mail de recuperación, revisa tu bandeja de entrada y en Spam."
     } else {
-      this.dialogMessage = " try again wrong email"
+      this.dialogMessage = " No hay ninguna cuenta registrada con este mail, revisa que has introducido el mail correctamente."
     }
   }
 

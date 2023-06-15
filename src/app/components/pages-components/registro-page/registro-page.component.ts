@@ -32,7 +32,7 @@ export class RegistroPageComponent {
 
 
   registerForm = new FormGroup({
-    departamentos: new FormControl('', [Validators.required]),
+    departamentos: new FormControl('Departamento/s', [Validators.required]),
     regNombre: new FormControl('',[Validators.required]),
     regEmail: new FormControl('', [Validators.email, Validators.required]),
     regContrasena: new FormControl('', [Validators.required, Validators.pattern(this.contrasenaRegex)]),
@@ -55,7 +55,7 @@ export class RegistroPageComponent {
     return this.registerForm.get('politicas')
   }
 
-  passwordValue: string = ''
+  passwordValue: any = ''
   doesIncludeNumber: boolean = false
   doesIncludeUpperCase: boolean  = false
   doesIncludeLowerCase: boolean  = false
@@ -71,7 +71,7 @@ export class RegistroPageComponent {
 
 
 
-      openDialog() {
+      openDepartamentosDialog() {
         const dialogRef = this.dialog.open(DepartamentosDialogComponent);
     
         dialogRef.afterClosed().subscribe(() => {
@@ -88,8 +88,8 @@ export class RegistroPageComponent {
         });
       }
 
-  passwordValueChanged(value: string){
-    this.passwordValue =value
+  passwordValueChanged(){
+    this.passwordValue =this.registerForm.controls.regContrasena.value
     this.doesIncludeNumber = this.passwordValue !== null && /\d/.test(this.passwordValue);
     this.doesIncludeUpperCase = this.passwordValue !== null && /[A-Z]/.test(this.passwordValue);
     this.doesIncludeLowerCase = this.passwordValue !== null && /[a-z]/.test(this.passwordValue);
@@ -104,12 +104,14 @@ ngOnInit() {
   this.registerForm.controls.regNombre.disable()
   this.registerForm.controls.regEmail.disable()
   this.registerForm.controls.regContrasena.disable()
+  this.registerForm.controls.politicas.disable()
 }
 
 enableInputs() {
     this.registerForm.controls.regNombre.enable()
     this.registerForm.controls.regEmail.enable()
     this.registerForm.controls.regContrasena.enable()
+    this.registerForm.controls.politicas.enable()
   
 }
 

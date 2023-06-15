@@ -2,7 +2,7 @@
 
 <app-breadcrumbs-navigation [currentPage]="'Nueva contraseña'"></app-breadcrumbs-navigation>
 
-<div class="nueva-main-wrapper">
+<div class="wrapper-template">
 <div class="nueva-form-wrapper">
 
     <form class="nueva-contr-form" [formGroup]="nuevaContracenaForm">
@@ -13,8 +13,7 @@
 
 
 </form>
-
-  <button class="btn" (click)="onGuardarClicked()" [class.disabled-btn] = "!nuevaContracenaForm.valid"  [disabled]="!nuevaContracenaForm.valid">GUARDAR CONTRASEÑA NUEVA</button>
+  <app-simple-fusia-button (click)="onGuardarClicked()" [buttonText]="'GUARDAR CONTRASEÑA NUEVA'"  [class.disabled-btn] = "!nuevaContracenaForm.valid" ></app-simple-fusia-button>
 </div>
 
 </div>
