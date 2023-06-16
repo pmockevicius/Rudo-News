@@ -49,6 +49,8 @@ import { initializeApp } from 'firebase/app';
 import { HttpClientModule } from '@angular/common/http';
 import { ContrasenaInputWEyeComponent } from './components/shared-components/contrasena-input-w-eye/contrasena-input-w-eye.component';
 import { ButtonTransparentComponent } from './components/shared-components/button-transparent/button-transparent.component';
+import { CommentComponent } from './components/shared-components/comment/comment.component';
+import { EscribeCommentInputComponent } from './components/shared-components/escribe-comment-input/escribe-comment-input.component';
 
 
 @NgModule({
@@ -83,6 +85,8 @@ import { ButtonTransparentComponent } from './components/shared-components/butto
     FirebaseTestComponent,
     ContrasenaInputWEyeComponent,
     ButtonTransparentComponent,
+    CommentComponent,
+    EscribeCommentInputComponent,
    
   ],
   imports: [

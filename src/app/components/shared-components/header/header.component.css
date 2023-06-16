@@ -22,18 +22,27 @@ img{
     display: none !important
 }
 
-.links-container a {
+ a {
     text-decoration: none;
     color: #5E6270;
     font-family: Roboto;
+    font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+
 }
 
 
   .links-container {
     margin-right: 80px;
-    width: 30vw;
+    width: 49vw;
     display: flex;
     justify-content: space-between;
+  }
+
+  .links-container a{
+   margin-right: 20px;
   }
 
   a:current{
@@ -43,7 +52,7 @@ img{
 
     a.active {
        color:black;
-       font-weight: bolder;
+       font-weight: 700;
     }
     
 
@@ -69,5 +78,13 @@ img{
     .links-container {
 flex-direction: column;
 align-items: flex-end;
+margin-right: 26px;
+
+    }
+
+    a{
+        margin: 3px;
+        font-size: 14px;
+        font-weight: 500;
     }
 }

@@ -18,7 +18,7 @@ noticias = [
     imgUrl: "./assets/images/picture.png",
     locationName: "New location1",
     dateOfArticle: "05-31-2023",
-    articleDescription: "Article Description",
+    articleDescription: "etium porttitor orci, ut sed proin id morbi. Ac tincidunt donec",
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Comida",
     isFavorite: true,

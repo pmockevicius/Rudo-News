@@ -11,8 +11,8 @@ export class NoticiaComponent {
 
   noticia: Noticia 
  
-currentDate = new Date();
-milliseconds = this.currentDate.getTime();
+// currentDate = new Date();
+// milliseconds = this.currentDate.getTime();
 
 inputValue = '';
 commentLength = this.inputValue.length

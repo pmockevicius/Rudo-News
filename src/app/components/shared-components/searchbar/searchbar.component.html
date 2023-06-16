@@ -1,6 +1,14 @@
 <div class="filters-container">
+    <div class="filtrar-por-box">
+        <span class="filtrar-por">Filtrar por:</span>
+    </div>
+   
+    <div class="filters">
+
+
+  
 <div class="filter-tags-container">
-  <strong>Filtrar por:</strong>
+  
 <div class="tag" (click)="onTagClicked('Comida')" [ngClass]="{ 'tag-selected': isComidaClicked }">
     <img [ngClass]="{ 'img-not-showing': !isComidaClicked }" src="./assets/images/checker.svg" >
     <span> Comida</span>
@@ -32,4 +40,6 @@
 
 </label>
 </form>
+
+</div>
 </div>

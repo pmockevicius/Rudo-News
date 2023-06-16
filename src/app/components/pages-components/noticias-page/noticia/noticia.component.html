@@ -6,13 +6,14 @@
     <div class="title">
     <p>{{noticia.title}}</p>
 </div>
-    <div class="image-container">
+<div class="image-container"  >
+
         <img src={{noticia.imgUrl}} alt="">
     </div>
    <div class="location-date">
-    <span>{{noticia.locationName}}</span>
+    <span class="location-name" >{{noticia.locationName}}</span>
     <div class="date-fav">
-    <span>{{noticia.dateOfArticle}}</span>
+    <span class="date-article">{{noticia.dateOfArticle}}</span>
     <img [class.not-favorite]="!noticia.isFavorite"  src="./assets/images/heartFilled.svg" alt="" >
 </div>
    </div>
@@ -22,31 +23,15 @@
   <div class="article-body">
     <p>{{noticia.articleBody}}</p>
   </div>
-  <div *ngFor="let comment of noticia.comments" class="comment-container">
-    <div class="comment-top">
-        <img src={{comment.userImg}} alt="">
-        <div class="name-when">
-            <div class="name-department">
-                <span>{{comment.userName}}</span>
-                <span class="departament">{{comment.departments}}</span>
-            </div>
-            <div>
-                <!-- <span>{{comment.datePosted}}</span> -->
-                <span class="posted-at">{{calculateTime(comment.datePosted)}}</span>
-                
-            
-        </div>
-       
-        </div>
-        
-    </div>
-    <p>{{comment.commentBody}}</p>
-   
-   
-  </div>
-  
 
-  <div class="escribe-box">
+
+  <ng-container *ngFor="let comment of noticia.comments">
+  <app-comment [comment]="comment"></app-comment>
+</ng-container>
+
+<app-escribe-comment-input></app-escribe-comment-input>
+
+  <!-- <div class="escribe-box">
     <label for="comentarios" [class.active]="isInputFocused || inputValue !== ''">Comentarios</label>
     <input [class.active-input]="isInputFocused || inputValue !== ''" type="text" id="comentarios" placeholder="Escribe tu comentario" [(ngModel)]="inputValue" (focus)="isInputFocused = true" (blur)="isInputFocused = false" maxlength="250">
     <img [class.send-disabled]="inputValue !== ''" class="sent-message-button" src="./assets/images/messageDisabled.svg" alt="">
@@ -58,7 +43,7 @@
   </div>
   <div class="char-count-box">
   <p class="character-count">{{calculateCommentLength()}}/250</p>
-</div>
+</div> -->
 </div>
 
 

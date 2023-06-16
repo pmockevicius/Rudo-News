@@ -1,124 +1,31 @@
-
+/* 
 .noticias-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(10px, auto);
     justify-items: center;
-  }
+  } */
 
-.card {
-    border-radius: 32px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    width: 300px;
-    margin: 20px;
-    display: inline-block;
-  }
-  
-  .card-image {
-    width: 100%;
-    height: 176px;
-  }
-  
-  /* .card-content {
-    padding: 10px;
-  }
-   */
-  /* .location {
-    float: left;
-  } */
-  
-  /* .date {
-    float: right;
-  }
-   */
-  /* .description {
-    clear: both;
-    margin-top: 10px;
-    max-height: 50px;
-    overflow: auto;
-  }
-  
-  .category {
-    float: left;
-    border: 1px solid grey;
-    border-radius: 50px;
-    padding: 7px 15px;
-   
-  } */
-  
-  /* .actions {
-    float: right;
-    display: flex;
-    height: 100%;
+
+  /* .noticias-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    justify-items: center;
     align-items: center;
-  } */
-
-  /* .actions img {
-    margin-right: 8px;
+    justify-content: center;
   }
+  
 
-  .clearfix {
-    border-top: 1px solid grey;
-    padding-top: 10px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
+   */
 
-  .favorite{
-    display: none;
-  }
-
-  .not-favorite{
-    display: none;
-  } */
-
-  @media only screen and (max-width: 500px) {
-    .card {
-      width: 100%;
-      border-radius: 32px;
-    }
-    
-    .card-image {
-      height: auto;
-    }
-    
-    .category {
-      float: none;
    
-    }
-    
-    .actions {
-      float: none;
-      justify-content: flex-end;
-    }
-    
-    .actions img {
-      margin-right: 0;
-    }
-    
-    .clearfix {
-      padding-top: 5px;
-    }
-
-    .noticias-wrapper {
-       display: block;
-     
-      }
+  .noticias-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
+  
 
-  @media only screen and (max-width: 1050px) {
-    .noticias-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-     
-      }
-}
-
-@media only screen and (max-width: 700px) {
-    .card {
-      width: 200px;
-      border-radius: 16px;
-    }
-}

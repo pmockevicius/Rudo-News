@@ -7,7 +7,7 @@ export interface NewsArticle {
     isFavorite: boolean;
   }
 
-  interface Comment {
+  export interface Comment {
     id: number;
     userName: string;
     departments: string;
