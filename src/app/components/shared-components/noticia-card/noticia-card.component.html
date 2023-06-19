@@ -2,23 +2,23 @@
   
     <div class="card" >
         <div class="image-box">
-      <img src={{oneNoticia.imgUrl}} alt="News Image" class="card-image" (click)="noticiaClicked(oneNoticia)">
+      <img src={{oneNoticia.image}} alt="News Image" class="card-image" (click)="noticiaClicked(oneNoticia)">
       <h2>{{oneNoticia.title}}</h2>
     </div>
       <div class="card-content">
-        <div class="location">{{oneNoticia.locationName}}</div>
-        <div class="date">{{oneNoticia.dateOfArticle}}</div>
+        <div class="location">{{oneNoticia.title}}</div>
+        <div class="date">{{oneNoticia.creation_date | date :'dd-MM-yyyy'}}</div>
         <div class="description" (click)="noticiaClicked(oneNoticia)">
-          <p>{{oneNoticia.articleDescription}}</p>
+          <p>{{oneNoticia.subtitle}}</p>
         </div>
  
       </div>
       <div class="clearfix">
-        <div class="category">{{oneNoticia.category}}</div>
+        <div class="category">{{oneNoticia.category.name}}</div>
         <div class="actions">
         
-            <img [class.favorite]="!oneNoticia.isFavorite"  src="./assets/images/heartFilled.svg" alt="" (click)="changeFavStatus(oneNoticia)">
-            <img [class.not-favorite]="oneNoticia.isFavorite"  src="./assets/images/heart.svg" alt="" (click)="changeFavStatus(oneNoticia)">
+            <img [class.favorite]="!oneNoticia.is_Favorite"  src="./assets/images/heartFilled.svg" alt="" (click)="changeFavStatus(oneNoticia)">
+            <img [class.not-favorite]="oneNoticia.is_Favorite"  src="./assets/images/heart.svg" alt="" (click)="changeFavStatus(oneNoticia)">
             <img src="./assets/images/share.svg" alt="">
        
         </div>

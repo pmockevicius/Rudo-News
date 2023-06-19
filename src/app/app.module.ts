@@ -101,6 +101,7 @@ import { EscribeCommentInputComponent } from './components/shared-components/esc
     MatDialogModule,
     AngularFireDatabaseModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),   
     provideFirebaseApp(() => initializeApp(environment.firebase)),

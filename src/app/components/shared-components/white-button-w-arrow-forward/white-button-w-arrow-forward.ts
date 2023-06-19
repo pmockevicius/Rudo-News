@@ -18,6 +18,7 @@ export class DepartamentosDialogButtonComponent {
   @Input() control = new FormControl()
   @Input() inputId: any
   @Input() labelName: string = ""
+  @Input() validationErrorMsg: string = ""
 
 
 

@@ -46,7 +46,7 @@ outline: none;
 .filter-tags-container{
     display: flex;
     align-items: center;
-    margin-left: 30px;
+
 }
 
 .tag img{
@@ -72,11 +72,40 @@ margin-right: 15px;
 
   }
 
+  .filters{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 
-  @media only screen and (max-width: 850px) {
+  .filtrar-por-box{
+    width: 119px;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+  }
+
+
+  @media only screen and (max-width: 870px) {
     .filters-container {
       flex-direction: column;
       align-items: center;
-    
+    }
+
+    .filters{
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #search{
+      margin: 15px 0 5px 0;
+    }
+
+    .filtrar-por{
+      margin-right: 0px;
+    }
+
+    .filtrar-por-box{
+      margin-left: 0px;
     }
 }

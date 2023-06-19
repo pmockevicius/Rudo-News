@@ -24,7 +24,7 @@ export class NoticiaCardComponent {
     })
   }
   
-  changeFavStatus(noticia : NewsArticle){
+  changeFavStatus(noticia : any){
   
   noticia.isFavorite = !noticia.isFavorite
   console.log("favorite pressed", noticia.isFavorite)

@@ -7,7 +7,7 @@
 <div class="olvidado-wrapper">
     <form class="olvidad-form" [formGroup]="olvidadForm" >
 
-<app-input-w-floating-label [control]="olvidadForm.controls.olvidEmail" [labelName]="'Mail*'" ></app-input-w-floating-label>
+<app-input-w-floating-label [control]="olvidadForm.controls.olvidEmail" [labelName]="'Mail*'" [validationErrorMsg]="'Este campo no puede quedar vacío'"></app-input-w-floating-label>
 
 </form>
 

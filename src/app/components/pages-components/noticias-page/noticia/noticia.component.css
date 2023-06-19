@@ -16,7 +16,6 @@
     margin-bottom: 5px;
   }
 
-
 .image-container img{
     width: 100%;
     margin-bottom: 15px;
@@ -48,37 +47,6 @@ font-size: 20px;
 line-height: 23px;
 }
 
-.comment-container {
-    border-top: 1px rgba(0, 0, 0, 0.12) solid;
-    padding: 10px 0 10px 0;
-
-}
-.name-when{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.comment-top {
-    display: flex;
-    align-items: center;
-}
-.name-department{
-    display: flex;
-    flex-direction: column;
-}
-.comment-top img {
-    height: fit-content;
-}
-
-.departament{
-    color: rgba(0, 0, 0, 0.6)
-}
-
-.posted-at{
-    color: #5E6270;
-}
 .article-description{
     color: #5E6270;
     font-weight: 400;
@@ -108,92 +76,3 @@ line-height: 24px;
     display: none;
 }
 
-.escribe-box{
-    background-color: #ffffff;
-    height: 90px;
-    box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.12);
-}
-
-.escribe-box input{
-    border-radius: 44px;
-    width: 98%;
-    height: 46px;
-    border: none;
-    background-color: rgba(51, 51, 51, 0.06) ;
-    margin-top: 15px;
-    text-indent: 14px;
-
-}
-
-/* test */
-.escribe-box {
-    position: relative;
-    text-indent: 10px;
-    display: flex;
-    justify-content: center;
-
-  }
-  
-  .escribe-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.2s ease-out;
-    transform-origin: top left;
-    transform: translate(13%, 12px);
-    opacity: 0.5;
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-  
-  
-  .escribe-box input[type="text"]:not(:placeholder-shown) + label,
-  .escribe-box label.active {
-    opacity: 0;
-    border: none;
-  }
-  
-
-  .escribe-box input::placeholder{
-    color: black;
-    font-size: 14px;
-    transform: translateY(6px);
-  }
-
-  .escribe-box .active-input::placeholder{
-    color: black;
-    transform: translateY(0px);
-    transition: 0.2s ease-out;
-
-  }
-
- 
-
-.sent-message-button{
-    height: 18px;
-    position: absolute;
-    bottom: 42px;
-    right: 13px;
-}
-
-.send-disabled{
-    display: none;
-}
-
-.enabled{
-    display:none
-}
-
-.char-count-box{
-    position: relative;
-}
-
-.character-count{
-    position: absolute;
-    right: 9px;
-    bottom: -15px;
-}
-
-.escribe-box .active-input {
-   outline: none;
-}

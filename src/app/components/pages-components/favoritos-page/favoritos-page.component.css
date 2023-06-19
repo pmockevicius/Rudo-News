@@ -1,10 +1,4 @@
-.noticias-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-auto-rows: minmax(10px, auto);
-    justify-items: center;
-  }
+
 
 .card {
     border-radius: 32px;
@@ -15,3 +9,9 @@
     display: inline-block;
   }
  
+  .noticias-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }

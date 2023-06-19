@@ -2,10 +2,10 @@
 
 <app-back-title-for-perfil [pageName]="'Editar perfil'"></app-back-title-for-perfil>
 
-<div class="editar-main-wrapper">
+<div class="wrapper-template">
 <form  [formGroup]="editPerfilForm" class="formWrapper">
 
-  <white-button-w-arrow-forward (click)="openDialog()" [control]="editPerfilForm.controls.departamentos" [labelName]="'Departamentos'"></white-button-w-arrow-forward>
+  <white-button-w-arrow-forward (click)="openDialog()" [control]="editPerfilForm.controls.departamentos" [labelName]="'Departamentos'" ></white-button-w-arrow-forward>
 
     <app-input-w-floating-label [control]="editPerfilForm.controls.nombre" [labelName]="'Nombre y Apellido'" ></app-input-w-floating-label>
 

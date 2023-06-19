@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import {Router} from '@angular/router';
-import { NewsArticle, Noticia } from 'src/app/services/interface';
+import { NewsArticle, Noticia, Post, PostResponse } from 'src/app/services/interface';
+import { DBCallsService } from 'src/app/services/db-calls.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-noticias-page',
@@ -10,10 +12,35 @@ import { NewsArticle, Noticia } from 'src/app/services/interface';
 })
 export class NoticiasPageComponent {
 
-  constructor(public _dataSharingService: DataSharingService, private router: Router){}
+  noticias: any = []
+
+  constructor(
+    public _dataSharingService: DataSharingService, 
+    public _dbCallService: DBCallsService, 
+    private router: Router, 
+    ){
+  }
+
+
+
+
+  ngOnInit(): void {
+    this._dbCallService.getPosts().subscribe(
+      (result: PostResponse) => {
+        console.log("res", result);
+        this.noticias = result.results;
+      },
+      (error: any) => {
+        console.error("Error fetching posts:", error);
+      }
+    );
+  }
+
+
 
   searchTerm: string | any
-  noticias = this._dataSharingService.noticias
+  // noticias = this._dataSharingService.noticias
+  
 
   filterTagsSelected: string = '';
 
@@ -23,6 +50,8 @@ export class NoticiasPageComponent {
   handleTagValues(tagsSelected: any){
 // console.log("receiving tags selected in parent",tagsSelected)
 this.filterTagsSelected = tagsSelected.join(',');
+console.log("dddd",this.noticias
+  )
 
   }
 

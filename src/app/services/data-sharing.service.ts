@@ -108,7 +108,7 @@ noticias = [
     articleDescription: "Article Description",    
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Deporte",
-    isFavorite: false,
+    isFavorite: true,
     comments:[
       {
         id: 1,
@@ -166,7 +166,7 @@ noticias = [
     articleDescription: "Article Description",    
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Gaming",
-    isFavorite: false,
+    isFavorite: true,
     comments:[
       {
         id: 1,
@@ -195,7 +195,7 @@ noticias = [
     articleDescription: "Article Description",     
     articleBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium porttitor orci, ut sed proin id morbi. Ac tincidunt donec imperdiet venenatis aliquet ipsum. Facilisi iaculis scelerisque sit vitae lectus dis turpis ac cum.",
     category: "Gaming",
-    isFavorite: false,
+    isFavorite: true,
     comments:[
       {
         id: 1,

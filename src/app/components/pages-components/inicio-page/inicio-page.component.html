@@ -4,8 +4,8 @@
 
 <form class="inicio-form" [formGroup]="inicioForm" >
 
-  <app-input-w-floating-label [control]="inicioForm.controls.loginEmail" [labelName]="'Mail'" ></app-input-w-floating-label>
-  <app-contrasena-input-w-eye [inputId]="'1'" [label]="'Contraseña'" [control]="inicioForm.controls.loginPassword" [placeholder]="'Contraseña'"></app-contrasena-input-w-eye>
+  <app-input-w-floating-label [control]="inicioForm.controls.loginEmail" [labelName]="'Mail'" [validationErrorMsg]="'Este campo no puede quedar vacío'" ></app-input-w-floating-label>
+  <app-contrasena-input-w-eye [inputId]="'1'" [label]="'Contraseña'" [control]="inicioForm.controls.loginPassword" [placeholder]="'Contraseña'" [validationErrorMsg]="'Ha ingresado una contraseña inválida'"></app-contrasena-input-w-eye>
 <div class="olvidado">
     <p routerLink="/olvidado" >¿Has olvidado tu contraseña?</p>
   </div>

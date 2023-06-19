@@ -7,7 +7,7 @@
     <span class="floating-label">{{labelName}}</span>
     <div class="errorMsgContainer">
         <div class="errorMsg" *ngIf="control && control.invalid && control.touched">
-          <span>Este campo no puede quedar vacío </span>
+          <span>{{validationErrorMsg}} </span>
           <img src="./assets/images/error.svg" alt="">
         </div>
       </div>

@@ -28,12 +28,11 @@
 .dialog-btn{
     width: 142px;
     height: 40px;
-
     margin-top: 14px;
     position: absolute;
-    left: 151px;
-    bottom: 14px;
-  }
+    bottom: 15px;
+}
+  
 
   .cancelar{
     background-color: transparent;
@@ -43,8 +42,8 @@
 
 
   .olvidad-dialog-container-cancelar{
-    height: 148px;
-    width: 262px;
+    height: 166px;
+    width: 312px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,21 +53,35 @@
   .btnContainer-cancelar{
     display: flex;
     justify-content: center;
+    position: absolute;
+    align-items: center;
+    bottom: 15px;
+    left: 19px;
   }
 
   .btnContainer-cancelar button{
    margin-left: 0;
-   width: 130px;
+   width: 140px;
+   height: 40px;
    font-size: 16px;
   }
 
   .message-title{
+    font-weight: 700;
     font-size: 20px;
-    font-weight: 400;
+    line-height: 23px;
   }
 
   .text-container-cancelar{
    font-size: 12px;
+   position: absolute;
+   top:42px;
+}
+
+.text-cancel{
+  font-weight: 400;
+font-size: 16px;
+line-height: 19px;
 }
 
 

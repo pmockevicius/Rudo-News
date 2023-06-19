@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NewsArticle } from '../services/interface';
+import { NewsArticle, Post } from '../services/interface';
 
 @Pipe({
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(noticias: NewsArticle[], filterTags: string): NewsArticle[] {
+  transform(noticias: Post[], filterTags: any): Post[] {
     if (!filterTags) {
       return noticias;
     }

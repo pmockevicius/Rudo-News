@@ -3,6 +3,11 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { getDatabase } from 'firebase/database';
 import { environment } from 'src/environments/environment';
+import { addDoc, getFirestore } from 'firebase/firestore';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Post, PostResponse } from './interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,30 +20,28 @@ export class DBCallsService {
 
   app = initializeApp(environment.firebase);
   database = getDatabase(this.app);
+  firestore = getFirestore()
 
-  constructor(private db: AngularFireDatabase) {
+
+
+
+  constructor(private db: AngularFireDatabase, private http: HttpClient) {
   }
 
-  async getAllNoticias(): Promise<any> {
-    const res = await this.db.list("/noticias").valueChanges().subscribe(data => {
-      this.noticias = data;
-      // console.log("result from db", this.noticias);
-      return this.noticias
-    });
-  }
+  baseUrl = 'https://academy.rudo.es'
 
-
-  // async callDb(): Promise<any> {
-  //   try {
-  //     const data = await this.db.list('/noticias').valueChanges()
-  //     this.courses = data;
-  //     console.log('result from db', this.courses);
-  //     return data; // Return the retrieved data if needed
-  //   } catch (error) {
-  //     console.error('Error retrieving data from the database:', error);
-  //     throw error; // Throw the error to handle it in the caller function
-  //   }
+  // async getAllNoticias(): Promise<any> {
+  //   const res = await this.db.list("/noticias").valueChanges().subscribe(data => {
+  //     this.noticias = data;
+  //     console.log("result from db", this.noticias);
+  //     return this.noticias
+  //   });
   // }
 
+
+  
+  getPosts(): Observable<PostResponse> {
+    return this.http.get<PostResponse>(`${this.baseUrl}/posts/?title=asd&page=1`)
+  }
 
 }

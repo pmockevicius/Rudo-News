@@ -16,11 +16,10 @@
         <div class="message-title">
         <span>{{messageTitle}} </span>
     </div>
-        <!-- <p>{{data.message}}</p> -->
-        <p>{{dialogMessage}}</p>
+        <p class="text-cancel">{{dialogMessage}}</p>
     </div>
     <div class="btnContainer-cancelar">
-        <button (click)="onCloseClicked()" class="btn dialog-btn cancelar" >Cancelar</button>
-        <button (click)="onCerrarConfirmed()" class="btn dialog-btn" >{{buttonText}}</button>
+        <button (click)="onCloseClicked()" class="btn cancelar" >Cancelar</button>
+        <button (click)="onCerrarConfirmed()" class="btn " >{{buttonText}}</button>
         </div>
 </div>

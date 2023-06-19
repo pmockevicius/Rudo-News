@@ -6,11 +6,11 @@
 
   <form  [formGroup]="registerForm" class="formWrapper">
 
-    <white-button-w-arrow-forward (click)="openDepartamentosDialog()" [inputId]="'11'" [control]="registerForm.controls.departamentos" [labelName]="'Departamento/s'"></white-button-w-arrow-forward>
+    <white-button-w-arrow-forward (click)="openDepartamentosDialog()" [inputId]="'11'" [control]="registerForm.controls.departamentos" [labelName]="'Departamento/s'" [validationErrorMsg]="'Este campo no puede quedar vacío'"></white-button-w-arrow-forward>
 
-    <app-input-w-floating-label [inputId]="'1'" [control]="registerForm.controls.regNombre" [labelName]="'Nombre y Apellidos'" ></app-input-w-floating-label>
-    <app-input-w-floating-label [inputId]="'2'" [control]="registerForm.controls.regEmail" [labelName]="'Mail'" ></app-input-w-floating-label>
-    <app-contrasena-input-w-eye (input)="passwordValueChanged()" [inputId]="'1'" [label]="'Contraseña'" [control]="registerForm.controls.regContrasena" [placeholder]="'Contraseña'"></app-contrasena-input-w-eye>
+    <app-input-w-floating-label [inputId]="'nombre'" [control]="registerForm.controls.regNombre" [labelName]="'Nombre y Apellidos'" [validationErrorMsg]="'Este campo no puede quedar vacío'" ></app-input-w-floating-label>
+    <app-input-w-floating-label [inputId]="'2'" [control]="registerForm.controls.regEmail" [labelName]="'Mail'" [validationErrorMsg]="'Este campo no puede quedar vacío'" ></app-input-w-floating-label>
+    <app-contrasena-input-w-eye (input)="passwordValueChanged()" [inputId]="'1'" [label]="'Contraseña'" [control]="registerForm.controls.regContrasena" [placeholder]="'Contraseña'" [validationErrorMsg]="'Este campo no puede quedar vacío'"></app-contrasena-input-w-eye>
 
 
     <div class="validation-box">
@@ -32,6 +32,7 @@
   </form>
   <button (click)="submitFormValue()" form="registerForm" class="continuar-btn" [class.disabled-btn] = "!registerForm.valid" class="btn" [disabled]="!registerForm.valid">CONTINUAR</button>
 </div>
+
 
 
 

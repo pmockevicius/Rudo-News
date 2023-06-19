@@ -1,15 +1,11 @@
 
-<!-- <div class="title-box">
-    <img (click)="navigateBack()" src="./assets/images/Vector 108.svg" alt="">
-    <h3>{{PageName}}</h3>
-</div> -->
 <div class="conditions-main-wrapper">
 
     <div  class="conditions-wrapper">
         
-        <div *ngFor="let part of Conditions ">
-<h5>{{part.title}}</h5>
-<p>{{part.body}}</p>
+        <div  *ngFor="let part of Conditions ">
+<h5 class="title">{{part.title}}</h5>
+<p class="condicions">{{part.body}}</p>
 </div>
     </div>
 </div>

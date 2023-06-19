@@ -3,6 +3,9 @@
     display: flex;
     justify-content: center;
     position: relative;
+    font-weight: 700;
+font-size: 20px;
+line-height: 23px;
 }
 
 h3{
@@ -12,5 +15,17 @@ h3{
 .title-box img{
     position: absolute;
     left: 33px;
-    top: 15px;
+    top: 25px;
+}
+
+@media only screen and (max-width: 560px) {
+
+    .title-box img{
+        left: 13px;
+    }
+
+    .title-box{
+        font-size: 16px;
+    }
+    
 }

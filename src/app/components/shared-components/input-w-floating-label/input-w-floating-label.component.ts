@@ -11,6 +11,7 @@ export class InputWFloatingLabelComponent {
 
   @Input() labelName: string = ""
   @Input() inputId: any = ""
+  @Input() validationErrorMsg: any = ""
   @Input() control = new FormControl()
 
 }

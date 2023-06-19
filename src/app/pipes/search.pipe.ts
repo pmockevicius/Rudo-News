@@ -1,20 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NewsArticle } from '../services/interface';
-
+import { NewsArticle, Post } from '../services/interface';
 
 @Pipe({
   name: 'search'
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(noticias: NewsArticle[], searchTerm: string): NewsArticle[] {
+  transform(noticias: Post[], searchTerm: string): Post[] {
     if (!searchTerm) {
       return noticias;
     }
-    searchTerm = searchTerm.toLowerCase();``
+    searchTerm = searchTerm.toLowerCase();
     return noticias.filter(noticia =>
-      noticia.articleDescription.toLowerCase().includes(searchTerm)
-    )
+      noticia.title.toLowerCase().includes(searchTerm)
+    );
   }
-
 }

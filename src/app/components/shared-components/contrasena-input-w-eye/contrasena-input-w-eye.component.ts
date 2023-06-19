@@ -11,6 +11,7 @@ export class ContrasenaInputWEyeComponent {
   @Input() inputId: string = ''
   @Input() placeholder: string = ''
   @Input() control = new FormControl()
+  @Input() validationErrorMsg: string = ''
 
   isInvalid = false;
   hidePassword = true;

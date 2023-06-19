@@ -41,10 +41,7 @@ this.showErrorMessage("El mail o la contraseña son erróneos, vuelve a intentar
   }
 
 ngOnInit(){
-  const noticias = this._dbCallService.getAllNoticias()
-  .then((result) =>{console.log("result", result)})
-
-  console.log("noticias",noticias) 
+  
 }
 
 
