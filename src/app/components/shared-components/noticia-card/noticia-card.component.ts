@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
-import { NewsArticle } from 'src/app/services/interface';
+import { DBCallsService } from 'src/app/services/db-calls.service';
 
 @Component({
   selector: 'app-noticia-card',
@@ -10,7 +10,7 @@ import { NewsArticle } from 'src/app/services/interface';
 })
 export class NoticiaCardComponent {
 
-  constructor( private router: Router){}
+  constructor( private router: Router,){}
 
   searchTerm: string | any
 
@@ -20,14 +20,14 @@ export class NoticiaCardComponent {
 
   noticiaClicked(noticia: any){
     this.router.navigate(['/noticia', noticia.id], {
-      state: { noticia: noticia }
+      state: { noticia: noticia, noticiaId: noticia.id }
     })
   }
   
   changeFavStatus(noticia : any){
   
-  noticia.isFavorite = !noticia.isFavorite
-  console.log("favorite pressed", noticia.isFavorite)
+  noticia.is_Favorite = !noticia.is_Favorite
+  console.log("favorite pressed", noticia.is_Favorite)
   }
 
 }

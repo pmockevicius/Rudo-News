@@ -2,8 +2,8 @@
 
   
   <div class="noticias-wrapper">
-  <ng-container *ngFor="let noticia of noticias ">
-    <div *ngIf="noticia.isFavorite">
+  <ng-container *ngFor="let noticia of favoriteNoticias ">
+    <div *ngIf="favoriteNoticias">
   <app-noticia-card [oneNoticia]="noticia"></app-noticia-card>
     </div>
 </ng-container>

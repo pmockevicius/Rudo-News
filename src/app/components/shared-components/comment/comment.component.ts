@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Comment } from 'src/app/services/interface';
+
 
 @Component({
   selector: 'app-comment',
@@ -9,6 +9,12 @@ import { Comment } from 'src/app/services/interface';
 export class CommentComponent {
 
 @Input() comment: any 
+userImagePlaceholder: string = "./assets/images/user-photo.png"
+
+
+getDepartmentNames(departments: any[]): string {
+  return departments.map(department => department.name).join(', ');
+}
 
 
 calculateTime(date: any){

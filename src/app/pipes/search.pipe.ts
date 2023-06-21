@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NewsArticle, Post } from '../services/interface';
+import { Post } from '../services/interface';
 
 @Pipe({
   name: 'search'

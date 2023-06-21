@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import {Router} from '@angular/router';
-import { NewsArticle, Noticia, Post, PostResponse } from 'src/app/services/interface';
+import { PostResponse,  } from 'src/app/services/interface';
 import { DBCallsService } from 'src/app/services/db-calls.service';
 import { DatePipe } from '@angular/common';
 
@@ -25,13 +25,12 @@ export class NoticiasPageComponent {
 
 
   ngOnInit(): void {
-    this._dbCallService.getPosts().subscribe(
+    this._dbCallService.listPosts().subscribe(
       (result: PostResponse) => {
-        console.log("res", result);
         this.noticias = result.results;
       },
       (error: any) => {
-        console.error("Error fetching posts:", error);
+        console.error("Error getting posts from DB:", error);
       }
     );
   }

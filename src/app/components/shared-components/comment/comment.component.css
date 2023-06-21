@@ -2,6 +2,7 @@
 .comment-container {
     border-top: 1px rgba(0, 0, 0, 0.12) solid;
     padding: 10px 0 10px 0;
+    word-wrap: break-word;
 
 }
 .name-when{

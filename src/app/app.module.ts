@@ -43,14 +43,15 @@ import { SimpleFusiaButtonComponent } from './components/shared-components/simpl
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
-import { FirebaseTestComponent } from './components/firebase-test/firebase-test.component';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ContrasenaInputWEyeComponent } from './components/shared-components/contrasena-input-w-eye/contrasena-input-w-eye.component';
 import { ButtonTransparentComponent } from './components/shared-components/button-transparent/button-transparent.component';
 import { CommentComponent } from './components/shared-components/comment/comment.component';
 import { EscribeCommentInputComponent } from './components/shared-components/escribe-comment-input/escribe-comment-input.component';
+import { HttpAuthInterceptor } from './interceptors/http.auth.interceptor';
+import { HttpErrorInterceptor } from './interceptors/error.auth.interceptor';
 
 
 @NgModule({
@@ -82,7 +83,6 @@ import { EscribeCommentInputComponent } from './components/shared-components/esc
     DepartamentosDialogButtonComponent,
     InputWFloatingLabelComponent,
     SimpleFusiaButtonComponent,
-    FirebaseTestComponent,
     ContrasenaInputWEyeComponent,
     ButtonTransparentComponent,
     CommentComponent,
@@ -103,10 +103,13 @@ import { EscribeCommentInputComponent } from './components/shared-components/esc
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),   
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // AngularFireModule.initializeApp(environment.firebase),   
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpAuthInterceptor, multi: true,  },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true,  },
+  ],
   bootstrap: [AppComponent],
   exports: []
 })

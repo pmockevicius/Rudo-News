@@ -3,13 +3,11 @@ import { getDatabase } from "firebase/database";
 
 export const environment = {
     production: false,
-    firebase: {
-        apiKey: "AIzaSyAQqXz57to8bmoAa_wwaFawOudofQDOJbQ",
-        authDomain: "rudo-news.firebaseapp.com",
-        databaseURL: "https://rudo-news-default-rtdb.europe-west1.firebasedatabase.app",
-        projectId: "rudo-news",
-        storageBucket: "rudo-news.appspot.com",
-        messagingSenderId: "749205423807",
-        appId: "1:749205423807:web:d2870d222e09326e81280a"
-      }
+    appData: {
+      baseApiUrl: '/api',
+      grant_type: 'password',
+      client_id: "MC836ujfkHA77dkYbaE6nmiVf5furYWrBBGJK7Y0",
+      client_secret: "eJDrPNaGEn7QkxT2aunCbCEbxViJ4Dv6iyi6AziCnFlv91jMFtOG5kRDqv2QzTMqgb6ti0SkjjCLBmbBAY7RiNuKzfxOnpBW9pH6OOe4m2wLW8OOehyYxfnzdNnzoz7u"
+    }
+    
 };

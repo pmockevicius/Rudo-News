@@ -4,6 +4,7 @@ import { DBCallsService } from 'src/app/services/db-calls.service';
 import { OlvidadaDialogComponent } from '../../shared-components/message-dialog/olvidada-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -18,7 +19,12 @@ import { Router } from '@angular/router';
 })
 export class InicioPageComponent {
 
-constructor(public _dbCallService: DBCallsService,public dialog: MatDialog, private router: Router){
+constructor(
+  public _dbCallService: DBCallsService,
+  public _authService: AuthService,
+  public dialog: MatDialog, 
+  private router: Router){
+
 
 }
 
@@ -26,14 +32,20 @@ constructor(public _dbCallService: DBCallsService,public dialog: MatDialog, priv
   inicioFormValue: any = {}
 
   inicioForm = new FormGroup({
-    loginEmail: new FormControl('',[Validators.required]),
-    loginPassword: new FormControl("",[Validators.required])
+    loginEmail: new FormControl('ramonpuchades@rudo.es',[Validators.required]),
+    loginPassword: new FormControl("Puchades123!",[Validators.required])
   })
 
    onLoginPressed = () =>{
 this.inicioFormValue = this.inicioForm.value
-console.log("inicioFormValue", this.inicioFormValue)
-this.showErrorMessage("El mail o la contraseña son erróneos, vuelve a intentarlo")
+console.log("inicioFormValue", this.inicioForm.controls.loginEmail.value)
+// this.showErrorMessage("El mail o la contraseña son erróneos, vuelve a intentarlo")
+ 
+ let data: any = {
+  login: this.inicioForm.controls.loginEmail.value,
+   password: this.inicioForm.controls.loginPassword.value,
+}
+this._authService.loginUser(data.login, data.password).subscribe((res)=>{console.log("121212",res)})
   }
 
   onOlvidadoPressed=()=>{
@@ -41,7 +53,6 @@ this.showErrorMessage("El mail o la contraseña son erróneos, vuelve a intentar
   }
 
 ngOnInit(){
-  
 }
 
 
@@ -54,5 +65,4 @@ showErrorMessage(message: string) {
 navigateToRegistro(){
   this.router.navigate(['/registro'])
 }
-
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
-import { Perfil } from 'src/app/services/interface';
 import { DepartamentosDialogComponent } from '../registro-page/departamentos-dialog/departamentos-dialog.component';
 import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputWFloatingLabelComponent } from '../../shared-components/input-w-floating-label/input-w-floating-label.component';
@@ -21,7 +20,7 @@ export class EditarPerfilComponent {
     // this.editPerfilForm.valueChanges.subscribe((value)=>{console.log(value)})
   }
 
-  user:Perfil = this._dataSharingService.perfils[0] 
+  user:any = this._dataSharingService.perfils[0] 
   departamentos: any= this.user.departamentos
   nombre: string= this.user.nombre
   mail: string= this.user.mail

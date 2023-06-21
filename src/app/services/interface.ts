@@ -1,33 +1,4 @@
-export interface NewsArticle {
-    imgUrl: string;
-    locationName: string;
-    dateOfArticle: string;
-    articleDescription: string;
-    category: string;
-    isFavorite: boolean;
-  }
 
-  export interface Comment {
-    id: number;
-    userName: string;
-    departments: string;
-    userImg: string;
-    datePosted: string;
-    commentBody: string;
-  }
-
-  export interface Noticia {
-    id: string;
-    title: string;
-    imgUrl: string;
-    locationName: string;
-    dateOfArticle: string;
-    articleDescription: string;
-    articleBody: string;
-    category: string;
-    isFavorite: boolean;
-    comments: any;
-  };
 
   export interface FAQ {
     title: string;
@@ -44,13 +15,6 @@ export interface NewsArticle {
     body: string;
   }
 
-  export interface Perfil {
-    id: number;
-    departamentos: string[];
-    nombre: string;
-    mail: string;
-    contrasena: string;
-  }
 
   export interface PostResponse {
     count: number;
@@ -60,19 +24,28 @@ export interface NewsArticle {
     previous: string | null;
     results: Post[];
   }
-  
-  export interface Post {
-    category: Category;
-    creation_date: string;
-    id: number;
-    image: string;
-    is_favorite: boolean;
-    short_description: string;
-    subtitle: string;
-    title: string;
-  }
-  
+    
   export interface Category {
     id: number;
     name: string;
   }
+
+  export interface Post {
+    id: number;
+    creation_date: string;
+    category: Category;
+    title: string;
+    subtitle: string;
+    description: string;
+    short_description: string;
+    image: string;
+    video: string | null;
+    comments: Comment[];
+  }
+  
+  export interface Comment {
+    id: number;
+    user: any | null;
+    text: string;
+  }
+  

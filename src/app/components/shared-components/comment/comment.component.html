@@ -1,23 +1,23 @@
 
-<div  class="comment-container">
+
+  <div *ngIf="comment" class="comment-container">
     <div class="comment-top">
-        <img src={{comment.userImg}} alt="">
-        <div class="name-when">
-            <div class="name-department">
-                <span>{{comment.userName}}</span>
-                <span class="departament">{{comment.departments}}</span>
-            </div>
-            <div>
-                <!-- <span>{{comment.datePosted}}</span> -->
-                <span class="posted-at">{{calculateTime(comment.datePosted)}}</span>
-                
-            
+      <img [src]="comment.userImg || userImagePlaceholder" alt="user-image">
+      
+      <div class="name-when">
+        <div class="name-department">
+          <span *ngIf="comment.user">{{ comment.user.fullname }}</span>
+          <ng-container *ngIf="comment.user">
+            <span *ngIf="comment.user.departments && comment.user.departments.length > 0" class="departament">
+              {{ getDepartmentNames(comment.user.departments) }}
+            </span>
+          </ng-container>
         </div>
-       
+        <div>
+          <span class="posted-at">{{ calculateTime(comment.datePosted) }}</span>
         </div>
-        
+      </div>
     </div>
-    <p>{{comment.commentBody}}</p>
-   
-   
+    <p>{{ comment.text }}</p>
   </div>
+  

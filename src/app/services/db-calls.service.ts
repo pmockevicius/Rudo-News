@@ -2,46 +2,51 @@ import { Injectable } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { getDatabase } from 'firebase/database';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.development';
 import { addDoc, getFirestore } from 'firebase/firestore';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
 import { Post, PostResponse } from './interface';
+import constants from '../constants'
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DBCallsService {
+  constructor( private http: HttpClient) {}
+
+  baseUrl = environment.appData.baseApiUrl
+
+  //************** API CALS *****************/
 
 
-
-  noticias: any
-
-  app = initializeApp(environment.firebase);
-  database = getDatabase(this.app);
-  firestore = getFirestore()
-
-
-
-
-  constructor(private db: AngularFireDatabase, private http: HttpClient) {
-  }
-
-  baseUrl = 'https://academy.rudo.es'
-
-  // async getAllNoticias(): Promise<any> {
-  //   const res = await this.db.list("/noticias").valueChanges().subscribe(data => {
-  //     this.noticias = data;
-  //     console.log("result from db", this.noticias);
-  //     return this.noticias
-  //   });
-  // }
 
 
   
-  getPosts(): Observable<PostResponse> {
+  listPosts(): Observable<PostResponse> {
     return this.http.get<PostResponse>(`${this.baseUrl}/posts/?title=asd&page=1`)
   }
 
-}
+
+  retrievePost(postId:string){
+    return this.http.get<Post>(`${this.baseUrl}/posts/${postId}/`)
+  }
+
+
+  listFavoritePosts(pageNr: string): Observable<Post> {
+    const params = new HttpParams().append('page', pageNr);
+    // const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.getToken());
+    return this.http.get<Post>(`${this.baseUrl}/posts/saved/`, {  params });
+  }
+
+
+  }
+
+
+
+
+
+
+
+

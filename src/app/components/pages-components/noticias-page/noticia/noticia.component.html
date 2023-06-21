@@ -1,7 +1,7 @@
 <app-header  [displayLinks]="true"></app-header>
 
 
-<div class="noticia-wrapper">
+<div class="noticia-wrapper" *ngIf="noticia">
 <div class="noticia-container">
     <div class="title">
     <p>{{noticia.title}}</p>
@@ -25,9 +25,9 @@
   </div>
 
 
-  <!-- <ng-container *ngFor="let comment of noticia.comments">
+  <ng-container *ngFor="let comment of noticia.comments">
   <app-comment [comment]="comment"></app-comment>
-</ng-container> -->
+</ng-container>
 
 <app-escribe-comment-input></app-escribe-comment-input>
 

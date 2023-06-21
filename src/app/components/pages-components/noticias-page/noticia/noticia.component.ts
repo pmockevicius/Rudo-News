@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Noticia } from 'src/app/services/interface';
+import { Post } from 'src/app/services/interface';
+import { DBCallsService } from 'src/app/services/db-calls.service';
+
 
 @Component({
   selector: 'app-noticia',
@@ -9,9 +11,33 @@ import { Noticia } from 'src/app/services/interface';
 })
 export class NoticiaComponent {
 
-  noticia: any 
+
  
-  constructor(private route: ActivatedRoute, private router: Router){
-    this.noticia = this.router.getCurrentNavigation()?.extras?.state?.['noticia'];
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router,
+    public _dbCallService: DBCallsService, ){
+      this.loadNoticia()
+  }
+
+  noticia: any 
+  noticiaId: any
+
+
+  loadNoticia(){
+    this.noticiaId = this.router.getCurrentNavigation()?.extras?.state?.['noticiaId'];
+    this._dbCallService.retrievePost(this.noticiaId).subscribe(
+      (result: Post) => {
+        console.log("resres",result)
+        this.noticia = result;
+      },
+      (error: any) => {
+        console.error("Error getting posts from DB:", error);
+      }
+    );
+
+  }
+
+  ngOnInit(){ 
   }
 }
