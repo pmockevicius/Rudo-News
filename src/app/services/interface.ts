@@ -49,3 +49,17 @@
     text: string;
   }
   
+  export interface Department {
+    id: number;
+    name: string;
+}
+
+  export interface User {
+    id: number;
+    fullName: string;
+    mail: string;
+    phone: string;
+    departments: Department[];
+    platform: string;
+    device_id: string | null;
+}

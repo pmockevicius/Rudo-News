@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import { DBCallsService } from 'src/app/services/db-calls.service';
+
 
 
 @Component({
@@ -13,7 +15,9 @@ export class FavoritosPageComponent {
 
   constructor(public _dataSharingService: DataSharingService, 
     private router: Router,
-    public _dbCallService: DBCallsService,)
+    public _dbCallService: DBCallsService,
+    public _authService: AuthService
+    )
     { 
       this.loadFavoriteNoticias('1')
     }
@@ -36,6 +40,10 @@ loadFavoriteNoticias(pageNr:string){
     this._dbCallService.listFavoritePosts(pageNr).subscribe(
       (result: any) => {
         console.log("favorites",result)
+        console.log("current time",this._authService.getCurrentTime())
+        console.log("expiry time",this._authService.getTokenExpiryTime())
+        console.log("token expires in" , this._authService.getTokenExpiryTime() - this._authService.getCurrentTime(), "seconds" )
+        console.log("current token" , this._authService.getToken() )
         this.favoriteNoticias = result.results
       },
       (error: any) => {

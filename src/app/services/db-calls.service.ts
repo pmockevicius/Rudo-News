@@ -6,8 +6,9 @@ import { environment } from 'src/environments/environment.development';
 import { addDoc, getFirestore } from 'firebase/firestore';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { Post, PostResponse } from './interface';
-import constants from '../constants'
+import { Post, PostResponse, User } from './interface';
+import constants from '../constants';
+import { IS_PUBLIC_API } from '../interceptors/http.auth.interceptor';
 
 
 @Injectable({
@@ -33,11 +34,28 @@ export class DBCallsService {
     return this.http.get<Post>(`${this.baseUrl}/posts/${postId}/`)
   }
 
-
   listFavoritePosts(pageNr: string): Observable<Post> {
     const params = new HttpParams().append('page', pageNr);
     // const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.getToken());
     return this.http.get<Post>(`${this.baseUrl}/posts/saved/`, {  params });
+  }
+
+  async retrieveLoggedInUserInfo(): Promise<User> {
+    const response = await this.http.get<User>(`${this.baseUrl}/users/profile/`).toPromise();
+    if (response === undefined) {
+      throw new Error('User data not found.');
+    }
+    return response;
+  }
+
+  async saveFavoritePost(postId: string): Promise<User> {
+    const response = await this.http.post<any>(`${this.baseUrl}/save-post/`, { post: postId }).toPromise();
+    return response;
+  }
+
+  async deleteFavoritePost(postId: string): Promise<User> {
+    const response = await this.http.delete<any>(`${this.baseUrl}/save-post/${postId}/remove/`).toPromise();
+    return response;
   }
 
 
