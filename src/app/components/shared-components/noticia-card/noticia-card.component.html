@@ -17,9 +17,9 @@
         <div class="category">{{Noticia.category.name}}</div>
         <div class="actions">
         
-            <img [class.favorite]="!isFavorite"  src="./assets/images/heartFilled.svg" alt="" (click)="deletePostFromFavorites(Noticia.id)" (click)="changeFavStatus(Noticia)">
-            <img [class.not-favorite]="isFavorite"  src="./assets/images/heart.svg" alt="" (click)="saveToFavoritePosts(Noticia.id)" (click)="changeFavStatus(Noticia)">
-            <img src="./assets/images/share.svg" alt="">
+            <img [class.favorite]="!isFavorite"  src="./assets/images/heartFilled.svg"  (click)="handleRemoveFavoriteClick(Noticia.id)">
+            <img [class.not-favorite]="isFavorite"  src="./assets/images/heart.svg"  (click)="handleAddFavoriteClick(Noticia.id)">
+            <img src="./assets/images/share.svg" >
        
         </div>
       </div>

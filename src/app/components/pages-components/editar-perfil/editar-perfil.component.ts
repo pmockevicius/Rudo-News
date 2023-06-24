@@ -40,6 +40,20 @@ export class EditarPerfilComponent implements OnInit{
 
 
   ngOnInit(): void {
+
+const departments = this._dbCallService.getAllDepartments()
+
+console.log("all dep",departments)
+
+// this._dbCallService.getAllDepartments().subscribe((departments: any[]) => {
+//   console.log("Received departments:", departments);
+//   // Handle the list of departments here
+// }, (error: any) => {
+//   console.error("An error occurred:", error);
+//   // Handle the error here
+// });
+
+
     this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
       this.user = res;
       console.log('rrrr', this.user);

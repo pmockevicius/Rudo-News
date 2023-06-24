@@ -35,21 +35,28 @@ export class NoticiaCardComponent implements OnInit{
     })
   }
   
-  changeFavStatus(noticia : any){
-    console.log("before", this.isFavorite)
+  changeFavStatus(){
       this.isFavorite = !this.isFavorite
    
     }
    
- 
 
   saveToFavoritePosts(postId: string){
-    console.log(this.Noticia)
     this._dbCallService.saveFavoritePost(postId)
   }
 
   deletePostFromFavorites(postId: string){
     this._dbCallService.deleteFavoritePost(postId).then((res)=>{console.log("result after deleting",res)})
+  }
+
+  handleAddFavoriteClick(noticiaId: any) {
+    this.saveToFavoritePosts(noticiaId);
+    this.changeFavStatus();
+  }
+
+  handleRemoveFavoriteClick(noticiaId: any) {
+    this.deletePostFromFavorites(noticiaId);
+    this.changeFavStatus();
   }
 
 }

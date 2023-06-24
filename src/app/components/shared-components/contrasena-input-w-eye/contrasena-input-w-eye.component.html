@@ -1,7 +1,7 @@
 
 <label class="icon-parent" [for]="inputId">
   <input [formControl]="control"  class="rounded-corners" [type]="hidePassword ? 'password' : 'text'" [id]="inputId" [placeholder]="placeholder"
-  [class.invalid-input]="control && control.invalid && control.touched">
+  [class.invalid-input]=" control.invalid && control.dirty">
     
   <span class="floating-label">{{label}}</span>
   <mat-icon class="mat-icon-eye" mat-icon-button matSuffix (click)="togglePasswordVisibility()"
@@ -9,7 +9,7 @@
     <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
   </mat-icon>
   <div class="errorMsgContainer">
-    <div class="errorMsg" *ngIf="control && control.invalid && control.touched">
+    <div class="errorMsg" *ngIf=" control.invalid && control.dirty">
       <span>{{validationErrorMsg}} </span>
       <img src="./assets/images/error.svg" alt="">
     </div>

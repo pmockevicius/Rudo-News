@@ -5,8 +5,8 @@ import { getDatabase } from 'firebase/database';
 import { environment } from 'src/environments/environment.development';
 import { addDoc, getFirestore } from 'firebase/firestore';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
-import { Post, PostResponse, User } from './interface';
+import { EMPTY, Observable, OperatorFunction, expand, map, reduce, tap } from 'rxjs';
+import { Department, DepartmentData, Post, PostResponse, User } from './interface';
 import constants from '../constants';
 import { IS_PUBLIC_API } from '../interceptors/http.auth.interceptor';
 
@@ -59,6 +59,33 @@ export class DBCallsService {
   }
 
 
+
+
+  getAllDepartments() {
+    const departments: any = [];
+    let pageNr = 1;
+    let result: any;
+  
+    const fetchDepartments = () => {
+      const params = new HttpParams().append('page', pageNr.toString());
+      this.http.get<DepartmentData>(`${this.baseUrl}/departments/`, { params }).subscribe((res) => {
+        result = res;  
+
+        departments.push(...result.results);
+        pageNr++;
+        if (result.next) {
+          fetchDepartments(); 
+        }
+      });
+    };
+  
+    fetchDepartments();
+return departments
+
+  }
+  
+
+ 
   }
 
 

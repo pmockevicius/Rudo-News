@@ -32,21 +32,31 @@ constructor(
   inicioFormValue: any = {}
 
   inicioForm = new FormGroup({
-    loginEmail: new FormControl('ramonpuchades@rudo.es',[Validators.required]),
-    loginPassword: new FormControl("Puchades123!",[Validators.required])
+    loginEmail: new FormControl('paul@rudo.es',[Validators.required]),
+    loginPassword: new FormControl("12345678A!",[Validators.required])
   })
 
-   onLoginPressed = () =>{
-this.inicioFormValue = this.inicioForm.value
-console.log("inicioFormValue", this.inicioForm.controls.loginEmail.value)
-// this.showErrorMessage("El mail o la contraseña son erróneos, vuelve a intentarlo")
- 
- let data: any = {
-  login: this.inicioForm.controls.loginEmail.value,
-   password: this.inicioForm.controls.loginPassword.value,
-}
-this._authService.loginUser(data.login, data.password).subscribe((res)=>{console.log("121212",res)})
+  onLoginPressed = () => {
+    this.inicioFormValue = this.inicioForm.value;
+    console.log("inicioFormValue", this.inicioForm.controls.loginEmail.value);
+  
+    let data: any = {
+      login: this.inicioForm.controls.loginEmail.value,
+      password: this.inicioForm.controls.loginPassword.value,
+    };
+  
+    this._authService.loginUser(data.login, data.password).subscribe(
+      (res) => {
+        if (res) {
+          this.router.navigate(['/noticias']);
+        } 
+      },
+      (error) => {
+        this.showErrorMessage("El mail o la contraseña son erróneos, vuelve a intentarlo");
+      }
+    );
   }
+  
 
   onOlvidadoPressed=()=>{
     console.log("olvidado pressed")

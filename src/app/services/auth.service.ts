@@ -85,4 +85,14 @@ export class AuthService {
       ).toPromise(); 
   }
 
+  updateUserPassword(actual: string | null, nueva: string | null){
+    const data = {
+      password: actual,
+      new_password_1: nueva
+    }
+
+    console.log("data", data)
+    return this.http.post<any>(`${this.baseUrl}users/change-password/`, data).toPromise();
+  }
+
 }

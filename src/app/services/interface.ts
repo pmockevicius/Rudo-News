@@ -53,6 +53,14 @@
     id: number;
     name: string;
 }
+export interface DepartmentData {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  pages: number;
+  page: number;
+  results: Department[];
+}
 
   export interface User {
     id: number;
