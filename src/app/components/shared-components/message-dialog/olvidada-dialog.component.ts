@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-// import { FormGroup, FormControl } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-olvidada-dialog',
@@ -12,7 +12,8 @@ export class OlvidadaDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<OlvidadaDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public _authService: AuthService,
   ) {
     this.dialogMessage = data.message;
     this.needCancelarButton = data.needCancelarButton;
@@ -26,15 +27,23 @@ export class OlvidadaDialogComponent {
   needCancelarButton: boolean;
   messageTitle: string
   buttonText: string
+  // buttonPressed: string = ""
 
 
-  onCloseClicked(): void {
-    this.dialogRef.close();
+  onCloseClicked(buttonPressed: string): void {
+    // console.log("button", this.buttonPressed)
+    this.dialogRef.close(buttonPressed);
   }
 
-  onCerrarConfirmed(){
-    console.log("Closing session!!!")
-    this.onCloseClicked()
+  onCerrarConfirmed(buttonPressed: string){
+    // this._authService.logoutUser().then((res)=>{
+    //   console.log("logout", res)
+    //   // localStorage.clear();
+    // })
+    // console.log("button", this.buttonPressed)
+    this.onCloseClicked(buttonPressed)
+    
+    
   }
 
 }

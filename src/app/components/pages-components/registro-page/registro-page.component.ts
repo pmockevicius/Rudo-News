@@ -6,7 +6,8 @@ import { DepartamentosDialogComponent } from './departamentos-dialog/departament
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DepartamentosDialogButtonComponent } from '../../shared-components/white-button-w-arrow-forward/white-button-w-arrow-forward'; 
-
+import { DBCallsService } from 'src/app/services/db-calls.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -17,7 +18,10 @@ import { DepartamentosDialogButtonComponent } from '../../shared-components/whit
   encapsulation: ViewEncapsulation.None,
 })
 export class RegistroPageComponent {
-  constructor(public dialog: MatDialog, public _dataSharingService: DataSharingService, ) {}
+  constructor(public dialog: MatDialog, 
+    public _dataSharingService: DataSharingService,
+    public _dbCallService: DBCallsService,
+    public _authService: AuthService, ) {}
 
 
 
@@ -25,8 +29,9 @@ export class RegistroPageComponent {
 
   password: string = ''
   registerFormValue = {}
+  departments: any
+  selectedDepartments: string[]=[]
   
-  selectedDepartments = this._dataSharingService.selectedDepartments
 
   contrasenaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -39,21 +44,6 @@ export class RegistroPageComponent {
     politicas: new FormControl('', [Validators.required])
   })
 
-  // get regNombre(){
-  //   return this.registerForm.get('regNombre')
-  // }
-  // get regEmail(){
-  //   return this.registerForm.get('regEmail')
-  // }
-  // get regContrasena(){
-  //   return this.registerForm.get('regContrasena')
-  // }
-  // get departamentos(){
-  //   return this.registerForm.get('departamentos')
-  // }
-  // get politicas(){
-  //   return this.registerForm.get('politicas')
-  // }
 
   passwordValue: any = ''
   doesIncludeNumber: boolean = false
@@ -67,25 +57,36 @@ export class RegistroPageComponent {
   submitFormValue = () =>{
     this.registerFormValue = this.registerForm.value
     // this.registerForm.controls.regNombre.disable()
+    const fullname = this.registerForm.controls.regNombre.value
+    const email = this.registerForm.controls.regEmail.value
+    const password = this.registerForm.controls.regContrasena.value
+    const departamentos = this.generateSelectedDepId()
+
+  this._dbCallService.retrieveLoggedInUserInfo()
     console.log("pressed",this.registerFormValue)
+    this._authService.registerNewUser(fullname, email, password, departamentos)
       }
 
 
 
       openDepartamentosDialog() {
         const dialogRef = this.dialog.open(DepartamentosDialogComponent);
-    
-        dialogRef.afterClosed().subscribe(() => {
-          this.updateDepartamentosInputValue();
+        dialogRef.afterClosed().subscribe((res) => {
+          console.log("result", res.data)
+          this.selectedDepartments = res.data
+          this.updateDepartamentosInputValue(res.data);
+          console.log("11111",this.generateSelectedDepId()) 
+
+
           if(this.registerForm.controls.departamentos.valid){
             this.enableInputs()
           }
         });
       }
     
-      updateDepartamentosInputValue() {
+      updateDepartamentosInputValue(selectedDep: string[]) {
         this.registerForm.patchValue({
-          departamentos: this._dataSharingService.selectedDepartments,
+          departamentos: selectedDep.join(","),
         });
       }
 
@@ -99,6 +100,20 @@ export class RegistroPageComponent {
   }
 
 
+  getAllDepartments(){
+    this._dbCallService.getAllDepartments().then((res)=>{
+      this.departments = res
+      console.log("ngOnInit",this.departments)
+    })
+}
+
+generateSelectedDepId(){
+  const selectedDepartmentIds = this.departments
+    .filter((department: { id: number, name: string }) => this.selectedDepartments.includes(department.name))
+    .map((department: { id: number, name: string }) => department.id);
+  return selectedDepartmentIds.join(" ")
+  }
+
 
 
 ngOnInit() {
@@ -107,6 +122,10 @@ ngOnInit() {
   this.registerForm.controls.regEmail.disable()
   this.registerForm.controls.regContrasena.disable()
   this.registerForm.controls.politicas.disable()
+
+this.getAllDepartments()
+
+
 }
 
 enableInputs() {

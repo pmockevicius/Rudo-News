@@ -32,8 +32,8 @@ constructor(
   inicioFormValue: any = {}
 
   inicioForm = new FormGroup({
-    loginEmail: new FormControl('paul@rudo.es',[Validators.required]),
-    loginPassword: new FormControl("12345678A!",[Validators.required])
+    loginEmail: new FormControl('paulius3@rudo.es',[Validators.required]),
+    loginPassword: new FormControl("12345678!Aa",[Validators.required])
   })
 
   onLoginPressed = () => {

@@ -95,4 +95,52 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}users/change-password/`, data).toPromise();
   }
 
+  
+  async updateProfileInfo(fullname: any, email: any, departments: any) {
+    const data = {
+      fullname,
+      email,
+      departments: departments.join(" ")
+    };
+  
+    console.log("call data", data);
+    const response = await this.http.put<any>(`${this.baseUrl}/users/modify/`, data).toPromise();
+    return response;
+  }
+
+
+  async registerNewUser(fullname: any, email: any, password: any, departments: any) {
+    const data = {
+      fullname,
+      email,
+      password,
+      departments
+    };
+    const response = await this.http.post<any>(`${this.baseUrl}/users/register/`, data).toPromise();
+    return response;
+  }
+
+
+async logoutUser(){
+  const data  = {
+    token: this.getToken(),
+    client_id: environment.appData.client_id,
+    client_secret: environment.appData.client_secret
+  }
+
+  console.log("logout body", data)
+
+  const response = await this.http.post<any>(`${this.baseUrl}auth/revoke-token/`, data).toPromise();
+    return response;
+
+}
+
+clearLocalStorage(){
+  let keysToRemove = ["TOKEN_KEY", "REFRESH_TOKEN_KEY", "TOKEN_EXPIRES_IN_KEY"];
+
+  keysToRemove.forEach(k =>
+    localStorage.removeItem(k))
+}
+
+
 }

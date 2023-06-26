@@ -4,7 +4,7 @@
         <p>{{dialogMessage}}</p>
     </div>
     <div class="btnContainer">
-        <button (click)="onCloseClicked()" class="btn dialog-btn" >{{buttonText}}</button>
+        <button (click)="onCloseClicked(buttonText)" class="btn dialog-btn" >{{buttonText}}</button>
         </div>
 </div>
 
@@ -19,7 +19,7 @@
         <p class="text-cancel">{{dialogMessage}}</p>
     </div>
     <div class="btnContainer-cancelar">
-        <button (click)="onCloseClicked()" class="btn cancelar" >Cancelar</button>
-        <button (click)="onCerrarConfirmed()" class="btn " >{{buttonText}}</button>
+        <button (click)="onCloseClicked('Cancelar')" class="btn cancelar" >Cancelar</button>
+        <button (click)="onCerrarConfirmed('Confirmed')" class="btn " >{{buttonText}}</button>
         </div>
 </div>

@@ -20,10 +20,6 @@ export class DBCallsService {
   baseUrl = environment.appData.baseApiUrl
 
   //************** API CALS *****************/
-
-
-
-
   
   listPosts(): Observable<PostResponse> {
     return this.http.get<PostResponse>(`${this.baseUrl}/posts/?title=asd&page=1`)
@@ -58,31 +54,34 @@ export class DBCallsService {
     return response;
   }
 
-
-
-
-  getAllDepartments() {
-    const departments: any = [];
-    let pageNr = 1;
-    let result: any;
+  getAllDepartments(): Promise<any[]> {
+    return new Promise<any[]>((resolve, reject) => {
+      const departments: any[] = [];
+      let pageNr = 1;
+      let result: any;
   
-    const fetchDepartments = () => {
-      const params = new HttpParams().append('page', pageNr.toString());
-      this.http.get<DepartmentData>(`${this.baseUrl}/departments/`, { params }).subscribe((res) => {
-        result = res;  
-
-        departments.push(...result.results);
-        pageNr++;
-        if (result.next) {
-          fetchDepartments(); 
-        }
-      });
-    };
+      const fetchDepartments = () => {
+        const params = new HttpParams().append('page', pageNr.toString());
+        this.http.get<DepartmentData>(`${this.baseUrl}/departments/`, { params }).subscribe((res) => {
+          result = res;
+          departments.push(...result.results);
+          pageNr++;
+          if (result.next) {
+            fetchDepartments();
+          } else {
+            resolve(departments);
+          }
+        }, (error) => {
+          reject(error);
+        });
+      };
   
-    fetchDepartments();
-return departments
-
+      fetchDepartments();
+    });
   }
+  
+
+  
   
 
  

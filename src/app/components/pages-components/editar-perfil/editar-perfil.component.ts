@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 import { OlvidadaDialogComponent } from '../../shared-components/message-dialog/olvidada-dialog.component';
 import { DBCallsService } from 'src/app/services/db-calls.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { Department } from 'src/app/services/interface';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -25,15 +27,20 @@ export class EditarPerfilComponent implements OnInit{
   user: any;
   fullName: string = '';
   email: string = '';
-  departments: any
+  Alldepartments: any
+  Userdepartments: any
   dialogMessage: string = 'Los cambios se han guardado con éxito,';
+selectedDepartments: any 
+selectedDepartamentosIds: string[] = []
+
 
   constructor(
     public dialog: MatDialog,
     public _dataSharingService: DataSharingService,
     private router: Router,
     public _dbCallService: DBCallsService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    public _authService: AuthService,
   ) {
 
   }
@@ -41,18 +48,9 @@ export class EditarPerfilComponent implements OnInit{
 
   ngOnInit(): void {
 
-const departments = this._dbCallService.getAllDepartments()
-
-console.log("all dep",departments)
-
-// this._dbCallService.getAllDepartments().subscribe((departments: any[]) => {
-//   console.log("Received departments:", departments);
-//   // Handle the list of departments here
-// }, (error: any) => {
-//   console.error("An error occurred:", error);
-//   // Handle the error here
-// });
-
+ this._dbCallService.getAllDepartments().then((res)=>{
+  this.Alldepartments = res
+})
 
     this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
       this.user = res;
@@ -60,12 +58,12 @@ console.log("all dep",departments)
 
       this.fullName = this.user.fullName;
       this.email = this.user.mail;
-      this.departments = this.user.departments;
+      this.Userdepartments = this.user.departments;
 
       this.editPerfilForm.patchValue({
         nombre: this.user.fullname,
         mail: this.user.email,
-        departamentos: this.departments.map((department : any) => department.name).join(', ')
+        departamentos: this.Userdepartments.map((department : any) => department.name).join(', ')
       });
 
     });
@@ -85,13 +83,19 @@ console.log("all dep",departments)
       .open(DepartamentosDialogComponent)
       .afterClosed()
       .subscribe((value) => {
-        console.log('value is ', value.data);
+        this.selectedDepartments = value.data
         this.updateDepartamentosInputValue(value.data);
-        // if(this.registerForm.controls.departamentos.valid){
-        //   this.enableInputs()
-        // }
+        this.selectedDepartamentosIds = this.generateSelectedDepId()
       });
   }
+  
+
+generateSelectedDepId(){
+const selectedDepartmentIds = this.Alldepartments
+  .filter((department: { id: number, name: string }) => this.selectedDepartments.includes(department.name))
+  .map((department: { id: number, name: string }) => department.id);
+return selectedDepartmentIds
+}
 
   updateDepartamentosInputValue(value: any) {
     this.editPerfilForm.patchValue({
@@ -104,6 +108,13 @@ console.log("all dep",departments)
   }
 
   submitChanges() {
+const fullname = this.editPerfilForm.controls.nombre.value
+const email = this.editPerfilForm.controls.mail.value
+const departments = this.selectedDepartamentosIds
+
+this._authService.updateProfileInfo(fullname, email, departments).then((res)=>{
+  this.router.navigate(['/perfil'])
+})
     console.log('changes....', this.editPerfilForm.value);
     this.showConfirmationMessage();
   }

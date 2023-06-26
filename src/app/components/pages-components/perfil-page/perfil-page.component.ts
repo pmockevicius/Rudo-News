@@ -5,6 +5,8 @@ import { OlvidadaDialogComponent } from '../../shared-components/message-dialog/
 import { MatDialog } from '@angular/material/dialog';
 import { DBCallsService } from 'src/app/services/db-calls.service';
 import { User } from 'src/app/services/interface';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-page',
@@ -21,7 +23,9 @@ export class PerfilPageComponent {
   constructor(
     public _dataSharingService: DataSharingService, 
     public dialog: MatDialog,
-    public _dbCallService: DBCallsService
+    public _dbCallService: DBCallsService,
+    public _authService: AuthService,
+    private router: Router
   ){
     this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
       this.user = res; // Save the result to the user variable
@@ -40,19 +44,30 @@ export class PerfilPageComponent {
     departamentos: new FormControl('', [Validators.required]),
   })
 
-  // user = this._dataSharingService.perfils[0]
 
-  
-
-  cerrarSessionClicked(){
-this.showConfirmationMessage()
+  cerrarSessionClicked(){ 
+ this.handleLogout()
   }
 
-showConfirmationMessage(){
+
+handleLogout(){
     const dialogRef = this.dialog.open(OlvidadaDialogComponent, {
       data: { message: this.dialogMessage, needCancelarButton: true, messageTitle: "Cerrar sesión", buttonText: "Cerrar sesión" }
-    });
+    }).afterClosed()
+    .subscribe((buttonPressed)=>{
+      if(buttonPressed === "Confirmed") {
+        this._authService.logoutUser()
+        this._authService.clearLocalStorage()
+        this.redirectToLogin()
+      } else {
+        console.log("action was cancelled")
+      }
+    })
 
+  }
+
+  redirectToLogin(){
+    this.router.navigate(["/"])
   }
 
 }
