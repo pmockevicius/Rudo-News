@@ -25,6 +25,8 @@ export class AuthService {
       password: password
     };
 
+    console.log("login data", data)
+
     return this.http.post<any>(`${this.baseUrl}/auth/token`, data, {
       context: new HttpContext().set(IS_PUBLIC_API, true)
     })

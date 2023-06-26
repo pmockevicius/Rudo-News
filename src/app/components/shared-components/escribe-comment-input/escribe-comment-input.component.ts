@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DBCallsService } from 'src/app/services/db-calls.service';
 
 @Component({
   selector: 'app-escribe-comment-input',
@@ -7,14 +8,22 @@ import { Component } from '@angular/core';
 })
 export class EscribeCommentInputComponent {
 
+  constructor(public _dbCallService: DBCallsService,){}
+
+@Input() noticiaId: string = ""
+
   inputValue = '';
 commentLength = this.inputValue.length
 isInputFocused = false;
 
 
 submitComment(){
+this._dbCallService.postNewComment(this.noticiaId, this.inputValue)
+  
   console.log("submiting comment",this.inputValue)
   this.inputValue = ""
+  window.location.reload()
+
 }
 
 calculateCommentLength(){
@@ -24,6 +33,5 @@ calculateCommentLength(){
     return this.inputValue.length
   }
 }
-
 
 }

@@ -79,9 +79,16 @@ export class DBCallsService {
       fetchDepartments();
     });
   }
+
+  async postNewComment(postId:string, comment: string){
+    const data = {text: comment}
+    const response = await this.http.post<any>(`${this.baseUrl}posts/${postId}/create_comment/`, data).toPromise();
+    return response;
+
+  }
   
 
-  
+
   
 
  
