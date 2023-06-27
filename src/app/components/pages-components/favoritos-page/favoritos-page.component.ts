@@ -13,7 +13,8 @@ import { DBCallsService } from 'src/app/services/db-calls.service';
 })
 export class FavoritosPageComponent {
 
-  constructor(public _dataSharingService: DataSharingService, 
+  constructor(
+    public _dataSharingService: DataSharingService, 
     private router: Router,
     public _dbCallService: DBCallsService,
     public _authService: AuthService
@@ -40,6 +41,7 @@ loadFavoriteNoticias(pageNr:string){
     this._dbCallService.listFavoritePosts(pageNr).subscribe(
       (result: any) => {
         this.favoriteNoticias = result.results
+        console.log("fav", result)
       },
       (error: any) => {
         console.error("Error getting posts from DB:", error);

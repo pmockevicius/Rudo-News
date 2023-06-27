@@ -94,7 +94,7 @@ margin-right: 15px;
   }
 
 
-  @media only screen and (max-width: 870px) {
+  @media only screen and (max-width: 900px) {
     .filters-container {
       flex-direction: column;
       align-items: center;

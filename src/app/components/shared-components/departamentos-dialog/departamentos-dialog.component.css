@@ -98,3 +98,30 @@ ul label {
   outline: 2px solid white;
     accent-color: #FF005F;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  border: 4px solid #f3f3f3; /* Light gray border */
+  border-top: 4px solid #FF005F; /* Blue border on top */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* Animation properties */
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; 
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Starting position */
+  }
+  100% {
+    transform: rotate(360deg); /* Ending position (full rotation) */
+  }
+}

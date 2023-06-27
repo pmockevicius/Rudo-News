@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
-import { DepartamentosDialogComponent } from '../registro-page/departamentos-dialog/departamentos-dialog.component';
+import { DepartamentosDialogComponent } from '../../shared-components/departamentos-dialog/departamentos-dialog.component';
 import {
   FormControl,
   FormGroup,
   Validators,
-  FormsModule,
-  ReactiveFormsModule,
 } from '@angular/forms';
-import { InputWFloatingLabelComponent } from '../../shared-components/input-w-floating-label/input-w-floating-label.component';
 import { Router } from '@angular/router';
 import { OlvidadaDialogComponent } from '../../shared-components/message-dialog/olvidada-dialog.component';
 import { DBCallsService } from 'src/app/services/db-calls.service';
 import { ChangeDetectorRef } from '@angular/core';
-import { Department } from 'src/app/services/interface';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -29,7 +25,7 @@ export class EditarPerfilComponent implements OnInit{
   email: string = '';
   Alldepartments: any
   Userdepartments: any
-  dialogMessage: string = 'Los cambios se han guardado con éxito,';
+  confirmationMessage: string = 'Los cambios se han guardado con éxito,';
 selectedDepartments: any 
 selectedDepartamentosIds: string[] = []
 
@@ -39,34 +35,13 @@ selectedDepartamentosIds: string[] = []
     public _dataSharingService: DataSharingService,
     private router: Router,
     public _dbCallService: DBCallsService,
-    private changeDetectorRef: ChangeDetectorRef,
     public _authService: AuthService,
-  ) {
-
-  }
-
+  ) {}
 
   ngOnInit(): void {
 
- this._dbCallService.getAllDepartments().then((res)=>{
-  this.Alldepartments = res
-})
-
-    this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
-      this.user = res;
-  
-
-      this.fullName = this.user.fullName;
-      this.email = this.user.mail;
-      this.Userdepartments = this.user.departments;
-
-      this.editPerfilForm.patchValue({
-        nombre: this.user.fullname,
-        mail: this.user.email,
-        departamentos: this.Userdepartments.map((department : any) => department.name).join(', ')
-      });
-
-    });
+  this.getDepartments()
+  this.getLoggedInUserInfo()
   }
 
   editPerfilForm = new FormGroup({
@@ -76,7 +51,31 @@ selectedDepartamentosIds: string[] = []
     cambiar: new FormControl('Cambiar contraseña', [Validators.required]),
   });
 
- 
+getLoggedInUserInfo(){
+  this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
+    this.user = res;
+
+    this.fullName = this.user.fullName;
+    this.email = this.user.mail;
+    this.Userdepartments = this.user.departments;
+
+    this.editPerfilForm.patchValue({
+      nombre: this.user.fullname,
+      mail: this.user.email,
+      departamentos: this.Userdepartments.map((department : any) => department.name).join(', ')
+    });
+
+  });
+  
+}
+
+
+ getDepartments(){
+  this._dbCallService.getAllDepartments().then((res)=>{
+    this.Alldepartments = res
+  })
+
+ }
 
   openDialog() {
     const dialogRef = this.dialog
@@ -122,7 +121,7 @@ this._authService.updateProfileInfo(fullname, email, departments).then((res)=>{
   showConfirmationMessage() {
     const dialogRef = this.dialog.open(OlvidadaDialogComponent, {
       data: {
-        message: this.dialogMessage,
+        message: this.confirmationMessage,
         needCancelarButton: false,
         messageTitle: '',
         buttonText: 'Aceptar',

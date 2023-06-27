@@ -19,17 +19,15 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class InicioPageComponent {
 
+  hidePassword = true;
+  inicioFormValue: any = {}
+
 constructor(
   public _dbCallService: DBCallsService,
   public _authService: AuthService,
   public dialog: MatDialog, 
   private router: Router){
-
-
 }
-
-  hidePassword = true;
-  inicioFormValue: any = {}
 
   inicioForm = new FormGroup({
     loginEmail: new FormControl('paul1@paul.com',[Validators.required]),

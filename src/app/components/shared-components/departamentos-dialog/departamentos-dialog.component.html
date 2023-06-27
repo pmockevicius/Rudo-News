@@ -6,7 +6,10 @@
   </div>
   <form [formGroup]="departamentosDialog" (ngSubmit)="onSubmit()">
     <div mat-dialog-content class="mat-dialog-content">
-      <p *ngIf="!departments">Loading.......</p>
+      <!-- <p *ngIf="!departments">Loading.......</p> -->
+      <div *ngIf="!departments" class="loader-container">
+      <div  class="loader"></div>
+    </div>
       <ul>
         <li *ngFor="let departamento of departments; let i = index" [class.highlighted]="checkedOptions[i]">
           <input type="checkbox" class="checkbox" [id]="'option' + (i+1)" name="options" [value]="departamento.id" [(ngModel)]="checkedOptions[i]" [formControlName]="departamento.name">

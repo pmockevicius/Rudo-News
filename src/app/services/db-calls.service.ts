@@ -1,14 +1,9 @@
 import { Injectable } from '@angular/core';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { getDatabase } from 'firebase/database';
 import { environment } from 'src/environments/environment.development';
-import { addDoc, getFirestore } from 'firebase/firestore';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { EMPTY, Observable, OperatorFunction, expand, map, reduce, tap } from 'rxjs';
-import { CategoriesApiResponse, Department, DepartmentData, Post, PostResponse, User } from './interface';
-import constants from '../constants';
-import { IS_PUBLIC_API } from '../interceptors/http.auth.interceptor';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { CategoriesApiResponse, DepartmentData, Post, PostResponse, User } from './interface';
+
 
 
 @Injectable({

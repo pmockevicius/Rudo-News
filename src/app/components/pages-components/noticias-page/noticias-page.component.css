@@ -1,14 +1,7 @@
 /* 
-.noticias-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-auto-rows: minmax(10px, auto);
-    justify-items: center;
-  } */
 
 
-  /* .noticias-wrapper {
+   .noticias-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 10px;
@@ -17,16 +10,19 @@
     justify-content: center;
   }
   
-  
-
    */
 
-   
+ 
+
   .noticias-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
+  
+
+
+  
   
 

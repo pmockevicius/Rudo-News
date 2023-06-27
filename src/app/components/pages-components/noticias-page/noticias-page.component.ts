@@ -24,9 +24,6 @@ export class NoticiasPageComponent {
     ){
   }
 
-
-
-
   ngOnInit(): void {
     this._dbCallService.listPosts().subscribe(
       (result: PostResponse) => {
@@ -36,15 +33,9 @@ export class NoticiasPageComponent {
         console.error("Error getting posts from DB:", error);
       }
     );
-
-
   }
 
-
-
   searchTerm: string | any
-  // noticias = this._dataSharingService.noticias
-  
 
   filterTagsSelected: string = '';
 

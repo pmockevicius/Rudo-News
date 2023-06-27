@@ -15,7 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { RegistroPageComponent } from './components/pages-components/registro-page/registro-page.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DepartamentosDialogComponent } from './components/pages-components/registro-page/departamentos-dialog/departamentos-dialog.component';
+import { DepartamentosDialogComponent } from './components/shared-components/departamentos-dialog/departamentos-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/shared-components/header/header.component';
 import { OlvidadoPageComponent } from './components/pages-components/olvidado-page/olvidado-page.component';
