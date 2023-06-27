@@ -1,5 +1,6 @@
 import { Component,EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DBCallsService } from 'src/app/services/db-calls.service';
 
 @Component({
   selector: 'app-searchbar',
@@ -8,14 +9,23 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SearchbarComponent {
 
+  constructor(public _dbCallService: DBCallsService,){
+    this.getAllCategories()
+     
+  }
+
 @Output() inputValue = new EventEmitter<string>();
 @Output() filtrarPorArrayEmiter =  new EventEmitter<string[]>();
 @Output() filtrarPorArray: string[] = [];
 
-isComidaClicked: boolean = false
-isGamingClicked: boolean = false
-isOcioClicked: boolean = false
-isDeporteClicked: boolean = false
+filteredPosts: any
+
+// isComidaClicked: boolean = false
+// isGamingClicked: boolean = false
+// isOcioClicked: boolean = false
+// isDeporteClicked: boolean = false
+
+categories: string[] = [] 
 
 
 
@@ -24,50 +34,22 @@ isDeporteClicked: boolean = false
   })
 
 
-
-
-
-onTagClicked(tag:string){
-switch(tag){
-  case "Comida":
-    this.isComidaClicked = !this.isComidaClicked
-    if(this.isComidaClicked){
-      this.filtrarPorArray.push(tag)
-    } else{
-      this.filtrarPorArray.splice(this.filtrarPorArray.indexOf(tag), 1);
-    }
-   
-    break;
-
-    case "Gaming":
-      this.isGamingClicked = !this.isGamingClicked;
-      if(this.isGamingClicked){
-        this.filtrarPorArray.push(tag)
-      } else{
-        this.filtrarPorArray.splice(this.filtrarPorArray.indexOf(tag), 1);
-      }
-    break;
-
-    case "Ocio":
-      this.isOcioClicked = !this.isOcioClicked;
-      if(this.isOcioClicked){
-        this.filtrarPorArray.push(tag)
-      } else{
-        this.filtrarPorArray.splice(this.filtrarPorArray.indexOf(tag), 1);
-      }
-    break;
-
-    case "Deporte":
-      this.isDeporteClicked = !this.isDeporteClicked;
-      if(this.isDeporteClicked){
-        this.filtrarPorArray.push(tag)
-      } else{
-        this.filtrarPorArray.splice(this.filtrarPorArray.indexOf(tag), 1);
-      }
-    break;
+isTagClicked(category: string): boolean {
+  return this.filtrarPorArray.includes(category);
 }
-this.updateSelectedTagsInParent(this.filtrarPorArray)
+
+
+ onTagClicked(category: string) {
+  const index = this.filtrarPorArray.indexOf(category);
+  if (index !== -1) {
+    this.filtrarPorArray.splice(index, 1);
+  } else {
+    this.filtrarPorArray.push(category);
+  }
+  this.getFilteredPostsFromDb()
+
 }
+
 
 updateSelectedTagsInParent(array: string[]){
   this.filtrarPorArrayEmiter.emit(array)
@@ -76,6 +58,21 @@ updateSelectedTagsInParent(array: string[]){
   updateInputValueInParent(value: any){
     this.inputValue.emit(value);
   }
+
+
+getAllCategories(){
+  this._dbCallService.getAllCategories().then((res)=>{
+ this.categories = res.results.map((result)=> result.name)
+  })
+}
+
+getFilteredPostsFromDb(){
+  this._dbCallService.filterByCategories(this.filtrarPorArray).then((res)=>{
+    this.filteredPosts = res.results
+   this.updateSelectedTagsInParent(this.filteredPosts)
+  })
+
+}
 
 
 }

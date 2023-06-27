@@ -5,6 +5,9 @@ import { PostResponse,  } from 'src/app/services/interface';
 import { DBCallsService } from 'src/app/services/db-calls.service';
 import { DatePipe } from '@angular/common';
 
+
+
+
 @Component({
   selector: 'app-noticias-page',
   templateUrl: './noticias-page.component.html',
@@ -33,6 +36,8 @@ export class NoticiasPageComponent {
         console.error("Error getting posts from DB:", error);
       }
     );
+
+
   }
 
 
@@ -46,30 +51,14 @@ export class NoticiasPageComponent {
 
 
 
-  handleTagValues(tagsSelected: any){
-// console.log("receiving tags selected in parent",tagsSelected)
-this.filterTagsSelected = tagsSelected.join(',');
-console.log("dddd",this.noticias
-  )
-
+  handleTagValues(filteredByTagPosts: any){
+this.noticias = filteredByTagPosts
   }
 
 handleInputValue(value: any) {
-  // console.log("receiving search value in parent")
   this.searchTerm = value
 
 }
 
-// noticiaClicked(noticia: any){
-//   this.router.navigate(['/noticia', noticia.id], {
-//     state: { noticia: noticia }
-//   })
-// }
-
-// changeFavStatus(noticia : NewsArticle){
-
-// noticia.isFavorite = !noticia.isFavorite
-// console.log("favorite pressed", noticia.isFavorite)
-// }
 
 }

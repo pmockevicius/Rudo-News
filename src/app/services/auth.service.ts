@@ -25,8 +25,6 @@ export class AuthService {
       password: password
     };
 
-    console.log("login data", data)
-
     return this.http.post<any>(`${this.baseUrl}/auth/token`, data, {
       context: new HttpContext().set(IS_PUBLIC_API, true)
     })
@@ -92,8 +90,6 @@ export class AuthService {
       password: actual,
       new_password_1: nueva
     }
-
-    console.log("data", data)
     return this.http.post<any>(`${this.baseUrl}users/change-password/`, data).toPromise();
   }
 
@@ -104,8 +100,6 @@ export class AuthService {
       email,
       departments: departments.join(" ")
     };
-  
-    console.log("call data", data);
     const response = await this.http.put<any>(`${this.baseUrl}/users/modify/`, data).toPromise();
     return response;
   }
@@ -129,8 +123,6 @@ async logoutUser(){
     client_id: environment.appData.client_id,
     client_secret: environment.appData.client_secret
   }
-
-  console.log("logout body", data)
 
   const response = await this.http.post<any>(`${this.baseUrl}auth/revoke-token/`, data).toPromise();
     return response;

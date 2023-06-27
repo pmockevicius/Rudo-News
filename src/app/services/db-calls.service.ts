@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment.development';
 import { addDoc, getFirestore } from 'firebase/firestore';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { EMPTY, Observable, OperatorFunction, expand, map, reduce, tap } from 'rxjs';
-import { Department, DepartmentData, Post, PostResponse, User } from './interface';
+import { CategoriesApiResponse, Department, DepartmentData, Post, PostResponse, User } from './interface';
 import constants from '../constants';
 import { IS_PUBLIC_API } from '../interceptors/http.auth.interceptor';
 
@@ -86,7 +86,25 @@ export class DBCallsService {
     return response;
 
   }
+
+
+  async getAllCategories(): Promise<CategoriesApiResponse> {
+    const response = await this.http.get<any>(`${this.baseUrl}/categories/`).toPromise();
+    return response;
+  }
   
+  
+  
+  async filterByCategories(categories: string[]): Promise<any> {
+    let params = new HttpParams();
+    
+    categories.forEach((category) => {
+      params = params.append('categories', category);
+    });
+    
+    const response = await this.http.get<any>(`${this.baseUrl}/posts/`, { params }).toPromise();
+    return response;
+  }
 
 
   

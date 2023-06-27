@@ -1,7 +1,5 @@
-import {Component, Inject, ViewEncapsulation} from '@angular/core';
+import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
-import {NgIf} from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
 import { DepartamentosDialogComponent } from './departamentos-dialog/departamentos-dialog.component';
 import { DataSharingService } from 'src/app/services/data-sharing.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -17,7 +15,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./registro-page.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class RegistroPageComponent {
+export class RegistroPageComponent implements OnInit{
   constructor(public dialog: MatDialog, 
     public _dataSharingService: DataSharingService,
     public _dbCallService: DBCallsService,
@@ -50,9 +48,15 @@ export class RegistroPageComponent {
   doesIncludeUpperCase: boolean  = false
   doesIncludeLowerCase: boolean  = false
   doesIncludeSpecialChar: boolean  = false
-  isFormValid: boolean = this.registerForm.valid
+  isFormValid: boolean = false
 
   hide = true;
+
+
+
+
+
+
 
   submitFormValue = () =>{
     this.registerFormValue = this.registerForm.value
@@ -63,7 +67,6 @@ export class RegistroPageComponent {
     const departamentos = this.generateSelectedDepId()
 
   this._dbCallService.retrieveLoggedInUserInfo()
-    console.log("pressed",this.registerFormValue)
     this._authService.registerNewUser(fullname, email, password, departamentos)
       }
 
@@ -72,10 +75,8 @@ export class RegistroPageComponent {
       openDepartamentosDialog() {
         const dialogRef = this.dialog.open(DepartamentosDialogComponent);
         dialogRef.afterClosed().subscribe((res) => {
-          console.log("result", res.data)
           this.selectedDepartments = res.data
           this.updateDepartamentosInputValue(res.data);
-          console.log("11111",this.generateSelectedDepId()) 
 
 
           if(this.registerForm.controls.departamentos.valid){
@@ -103,7 +104,6 @@ export class RegistroPageComponent {
   getAllDepartments(){
     this._dbCallService.getAllDepartments().then((res)=>{
       this.departments = res
-      console.log("ngOnInit",this.departments)
     })
 }
 
@@ -125,6 +125,10 @@ ngOnInit() {
 
 this.getAllDepartments()
 
+this.registerForm.valueChanges.subscribe(x => {
+  this.isFormValid = this.registerForm.valid
+})
+
 
 }
 
@@ -136,9 +140,7 @@ enableInputs() {
   
 }
 
-doSomething(){
-  console.log("ngIf")
-}
+
 
 
 

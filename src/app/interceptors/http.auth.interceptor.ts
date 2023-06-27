@@ -49,7 +49,6 @@ export class HttpAuthInterceptor implements HttpInterceptor {
           };
         } else {
           if (refreshToken) {
-            console.log('token expired, sending refresh token');
             try {
               this._authService.refreshToken();
               headers = {

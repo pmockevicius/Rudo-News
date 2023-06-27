@@ -71,3 +71,17 @@ export interface DepartmentData {
     platform: string;
     device_id: string | null;
 }
+
+export interface CategoriesApiResponse {
+  count: number;
+  next: null | string;
+  page: number;
+  pages: number;
+  previous: null | string;
+  results: Result[];
+}
+
+export interface Result {
+  id: number;
+  name: string;
+}

@@ -19,8 +19,6 @@ isInputFocused = false;
 
 submitComment(){
 this._dbCallService.postNewComment(this.noticiaId, this.inputValue)
-  
-  console.log("submiting comment",this.inputValue)
   this.inputValue = ""
   window.location.reload()
 

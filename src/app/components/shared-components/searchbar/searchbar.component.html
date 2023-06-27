@@ -9,11 +9,11 @@
   
 <div class="filter-tags-container">
   
-<div class="tag" (click)="onTagClicked('Comida')" [ngClass]="{ 'tag-selected': isComidaClicked }">
-    <img [ngClass]="{ 'img-not-showing': !isComidaClicked }" src="./assets/images/checker.svg" >
-    <span> Comida</span>
-</div>
-
+    <div class="tag" *ngFor="let category of categories" (click)="onTagClicked(category)" [ngClass]="{ 'tag-selected': isTagClicked(category) }">
+        <img [ngClass]="{ 'img-not-showing': !isTagClicked(category) }" src="./assets/images/checker.svg">
+        <span>{{ category }}</span>
+      </div>
+<!-- 
 <div class="tag" (click)="onTagClicked('Gaming')" [ngClass]="{ 'tag-selected': isGamingClicked }">
     <img [ngClass]="{ 'img-not-showing': !isGamingClicked }" src="./assets/images/checker.svg" >
     <span>Gaming</span>
@@ -27,7 +27,7 @@
 <div class="tag" (click)="onTagClicked('Deporte')" [ngClass]="{ 'tag-selected': isDeporteClicked }">
     <img [ngClass]="{ 'img-not-showing': !isDeporteClicked }" src="./assets/images/checker.svg" >
     <span>Deporte</span>
-</div>
+</div> -->
 
 
 </div>

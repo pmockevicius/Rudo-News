@@ -28,10 +28,9 @@ export class PerfilPageComponent {
     private router: Router
   ){
     this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
-      this.user = res; // Save the result to the user variable
-      this.userName = this.user.fullname; // Use the user variable for further usage
-      this.userEmail = this.user.email; // Use the user variable for further usage
-      console.log(this.user)
+      this.user = res; 
+      this.userName = this.user.fullname; 
+      this.userEmail = this.user.email; 
 
     });
   }

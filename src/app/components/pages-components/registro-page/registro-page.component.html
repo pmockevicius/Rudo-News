@@ -4,7 +4,7 @@
 
 <div class="wrapper-template">
 
-  <form  [formGroup]="registerForm" class="formWrapper">
+  <form  [formGroup]="registerForm" class="formWrapper" >
 
     <white-button-w-arrow-forward (click)="openDepartamentosDialog()" [inputId]="'11'" [control]="registerForm.controls.departamentos" [labelName]="'Departamento/s'" [validationErrorMsg]="'Este campo no puede quedar vacío'"></white-button-w-arrow-forward>
 
@@ -30,7 +30,7 @@
 
 
   </form>
-  <button (click)="submitFormValue()" form="registerForm" class="continuar-btn" [class.disabled-btn] = "!registerForm.valid" class="btn" [disabled]="!registerForm.valid">CONTINUAR</button>
+  <button (click)="submitFormValue()" form="registerForm" class="continuar-btn" [class.disabled-btn] = "!isFormValid" class="btn" [disabled]="!registerForm.valid">CONTINUAR</button>
 </div>
 
 

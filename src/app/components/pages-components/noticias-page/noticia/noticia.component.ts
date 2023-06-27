@@ -28,7 +28,6 @@ export class NoticiaComponent {
     this.noticiaId = this.router.getCurrentNavigation()?.extras?.state?.['noticiaId'];
     this._dbCallService.retrievePost(this.noticiaId).subscribe(
       (result: Post) => {
-        console.log("resres",result)
         this.noticia = result;
       },
       (error: any) => {
@@ -38,6 +37,8 @@ export class NoticiaComponent {
 
   }
 
+
   ngOnInit(){ 
+    
   }
 }

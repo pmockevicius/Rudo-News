@@ -52,7 +52,6 @@ export class NuevaContrPageComponent {
     if (this.checkIfNewPasswordsMatch()) {
       this._authService.updateUserPassword(actual, nueva).then(
         (res) => {
-          console.log('resi', res);
           if (res) {
             this.showPopUpMessage(this.sucessMessage);
             this.redirectToPerfil()

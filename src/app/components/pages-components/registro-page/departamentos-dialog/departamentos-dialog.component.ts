@@ -60,8 +60,6 @@ selectedDepartments : any
   onSubmit(){
 
 const selectedValues = this.checkedOptions.filter((value, index) => value);
-  console.log('Selected values:', selectedValues, );
-    console.log(this.departamentosDialog.value)
     const selectedDepartments = Object.keys(this.departamentosDialog.value)
   .filter(key => this.departamentosDialog.value[key] === true);
   this.selectedDepartments = selectedDepartments

@@ -31,16 +31,10 @@ export class OlvidadaDialogComponent {
 
 
   onCloseClicked(buttonPressed: string): void {
-    // console.log("button", this.buttonPressed)
     this.dialogRef.close(buttonPressed);
   }
 
   onCerrarConfirmed(buttonPressed: string){
-    // this._authService.logoutUser().then((res)=>{
-    //   console.log("logout", res)
-    //   // localStorage.clear();
-    // })
-    // console.log("button", this.buttonPressed)
     this.onCloseClicked(buttonPressed)
     
     

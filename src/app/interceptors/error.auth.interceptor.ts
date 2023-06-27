@@ -20,7 +20,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse): Observable<HttpEvent<any>> => {
         if (error.status === 400) {
-          console.log("Your session has expired and you are being redirected to the login page");
         } else if (error.status === 403) {
         }
 

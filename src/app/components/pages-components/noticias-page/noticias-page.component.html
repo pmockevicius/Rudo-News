@@ -4,6 +4,7 @@
 
  <div class="noticias-wrapper">
   <div class="card" *ngFor="let noticia of noticias | filter: filterTagsSelected | search: searchTerm index as i">
+  <!-- <div class="card" *ngFor="let noticia of noticias  index as i"> -->
 <app-noticia-card [Noticia]="noticia"></app-noticia-card>
   </div>
 </div>

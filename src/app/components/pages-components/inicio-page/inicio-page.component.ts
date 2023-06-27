@@ -32,13 +32,12 @@ constructor(
   inicioFormValue: any = {}
 
   inicioForm = new FormGroup({
-    loginEmail: new FormControl('paulius3@rudo.es',[Validators.required]),
+    loginEmail: new FormControl('paul1@paul.com',[Validators.required]),
     loginPassword: new FormControl("12345678!Aa",[Validators.required])
   })
 
   onLoginPressed = () => {
     this.inicioFormValue = this.inicioForm.value;
-    console.log("inicioFormValue", this.inicioForm.controls.loginEmail.value);
   
     let data: any = {
       login: this.inicioForm.controls.loginEmail.value,

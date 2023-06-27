@@ -54,7 +54,7 @@ selectedDepartamentosIds: string[] = []
 
     this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
       this.user = res;
-      console.log('rrrr', this.user);
+  
 
       this.fullName = this.user.fullName;
       this.email = this.user.mail;
@@ -115,7 +115,7 @@ const departments = this.selectedDepartamentosIds
 this._authService.updateProfileInfo(fullname, email, departments).then((res)=>{
   this.router.navigate(['/perfil'])
 })
-    console.log('changes....', this.editPerfilForm.value);
+  
     this.showConfirmationMessage();
   }
 

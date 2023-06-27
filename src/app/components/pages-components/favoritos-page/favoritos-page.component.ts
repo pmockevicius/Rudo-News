@@ -33,17 +33,12 @@ export class FavoritosPageComponent {
   changeFavStatus(noticia : any){
   
   noticia.isFavorite = !noticia.isFavorite
-  console.log("favorite pressed", noticia.isFavorite)
+
   }
 
 loadFavoriteNoticias(pageNr:string){
     this._dbCallService.listFavoritePosts(pageNr).subscribe(
       (result: any) => {
-        console.log("favorites",result)
-        console.log("current time",this._authService.getCurrentTime())
-        console.log("expiry time",this._authService.getTokenExpiryTime())
-        console.log("token expires in" , this._authService.getTokenExpiryTime() - this._authService.getCurrentTime(), "seconds" )
-        console.log("current token" , this._authService.getToken() )
         this.favoriteNoticias = result.results
       },
       (error: any) => {
