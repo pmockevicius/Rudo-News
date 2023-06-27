@@ -28,7 +28,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { FavoritosPageComponent } from './components/pages-components/favoritos-page/favoritos-page.component';
 import { PerfilPageComponent } from './components/pages-components/perfil-page/perfil-page.component';
 import { FilterPipe } from './pipes/filter.pipe';
-import { NoticiaComponent } from './components/pages-components/noticias-page/noticia/noticia.component';
+import { NoticiaComponent } from './components/pages-components/noticia/noticia.component';
 import { NoticiaCardComponent } from './components/shared-components/noticia-card/noticia-card.component';
 import { PrefilButtonComponent } from './components/shared-components/prefil-button/prefil-button.component';
 import { EditarPerfilComponent } from './components/pages-components/editar-perfil/editar-perfil.component';

@@ -6,10 +6,21 @@
     <div class="title">
     <p>{{noticia.title}}</p>
 </div>
-<div class="image-container"  >
+<!-- <div class="image-container"  >
 
         <img src={{noticia.image}} alt="">
+    </div> -->
+
+    <!-- <div class="image-container">
+      <img [src]="noticia.image" alt="" (load)="onImageLoad()" [class.loaded]="imageLoaded">
+      <img class="placeholder-image" src="./assets/images/thumbnail-360x240.png" alt="" [class.loaded]="imageLoaded">
+    </div> -->
+    
+
+    <div class="image-container">
+      <img [src]="imageSource" alt="" (load)="onImageLoad()" (error)="onImageError()">
     </div>
+
    <div class="location-date">
     <span class="location-name" >{{noticia.title}}</span>
     <div class="date-fav">

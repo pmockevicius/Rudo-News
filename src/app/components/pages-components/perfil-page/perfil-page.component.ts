@@ -62,7 +62,6 @@ handleLogout(){
         console.log("action was cancelled")
       }
     })
-
   }
 
   redirectToLogin(){

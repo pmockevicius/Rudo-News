@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/services/interface';
 import { DBCallsService } from 'src/app/services/db-calls.service';
@@ -9,7 +9,7 @@ import { DBCallsService } from 'src/app/services/db-calls.service';
   templateUrl: './noticia.component.html',
   styleUrls: ['./noticia.component.css']
 })
-export class NoticiaComponent {
+export class NoticiaComponent implements OnInit, AfterViewInit {
 
 
  
@@ -22,6 +22,23 @@ export class NoticiaComponent {
 
   noticia: any 
   noticiaId: any
+
+  imageSource: string = ""
+  imageLoaded: boolean = false;
+
+  ngOnInit() {
+    this.imageSource = './assets/images/thumbnail-360x240.png';
+  }
+
+  onImageLoad() {
+    this.imageLoaded = true;
+    this.imageSource = this.noticia.image
+  }
+
+  onImageError() {
+    this.imageSource = './assets/images/thumbnail-360x240.png';
+    this.imageLoaded = true;
+  }
 
 
   loadNoticia(){
@@ -37,8 +54,9 @@ export class NoticiaComponent {
 
   }
 
+ 
 
-  ngOnInit(){ 
+  ngAfterViewInit(): void {
     
   }
 }

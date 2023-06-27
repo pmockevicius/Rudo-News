@@ -7,7 +7,7 @@ import { NuevaContrPageComponent } from './components/pages-components/nueva-con
 import { NoticiasPageComponent } from './components/pages-components/noticias-page/noticias-page.component';
 import { PerfilPageComponent } from './components/pages-components/perfil-page/perfil-page.component';
 import { FavoritosPageComponent } from './components/pages-components/favoritos-page/favoritos-page.component';
-import { NoticiaComponent } from './components/pages-components/noticias-page/noticia/noticia.component';
+import { NoticiaComponent } from './components/pages-components/noticia/noticia.component';
 import { EditarPerfilComponent } from './components/pages-components/editar-perfil/editar-perfil.component';
 import { FAQComponent } from './components/pages-components/faq/faq.component';
 import { TerminosCondicionesComponent } from './components/pages-components/terminos-condiciones/terminos-condiciones.component';

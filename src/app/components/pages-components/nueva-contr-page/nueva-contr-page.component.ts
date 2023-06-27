@@ -92,10 +92,3 @@ export class NuevaContrPageComponent {
     }
   }
 }
-
-
-// updateDepartamentosInputValue() {
-//   this.registerForm.patchValue({
-//     departamentos: this._dataSharingService.selectedDepartments,
-//   });
-// }

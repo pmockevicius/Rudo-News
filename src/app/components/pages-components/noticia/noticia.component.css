@@ -76,3 +76,7 @@ line-height: 24px;
     display: none;
 }
 
+.image-container {
+    position: relative;
+  }
+  

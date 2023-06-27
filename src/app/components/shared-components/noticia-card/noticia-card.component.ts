@@ -24,6 +24,17 @@ export class NoticiaCardComponent implements OnInit{
     searchTerm: string | any
 
   filterTagsSelected: string = '';
+
+
+  imageLoaded: boolean = false;
+
+onImageLoad() {
+  this.imageLoaded = true;
+}
+onImageError() {
+  // Handle error if necessary
+  this.imageLoaded = true; // Mark as loaded to hide placeholder
+}
   
   ngOnInit() {
     this.isFavorite = this.Noticia.is_favorite;
