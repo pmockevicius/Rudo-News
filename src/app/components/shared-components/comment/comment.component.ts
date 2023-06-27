@@ -4,6 +4,7 @@ import constants from 'src/app/constants';
 import { DepartamentosDialogComponent } from '../departamentos-dialog/departamentos-dialog.component';
 import { EditCommentComponent } from '../../edit-comment/edit-comment.component';
 import { DBCallsService } from 'src/app/services/db-calls.service';
+import { OlvidadaDialogComponent } from '../message-dialog/olvidada-dialog.component';
 
 
 @Component({
@@ -22,6 +23,9 @@ export class CommentComponent {
 
 @Input() comment: any 
 userImagePlaceholder: string = "./assets/images/user-photo.png"
+succesfullyDeletedMessage: string = "tu comentario ha sido borrado exitosamente"
+succesfullyUpdateddMessage: string = "tu comentario ha sido actualizado exitosamente"
+updatedCommentEmptyMessage: string = "El nuevo comentario no puede estar vacío, inténtalo de nuevo."
 
 
 getDepartmentNames(departments: any[]): string {
@@ -37,20 +41,28 @@ editComment(){
   this.dialog.open(EditCommentComponent).afterClosed().subscribe((res)=>{
     if(res === "delete"){
       this._dbCallService.deleteComment(this.comment.id).then((res)=>{
-        window.location.reload()
+        this.showConfirmationMessage(this.succesfullyDeletedMessage).then((res)=>{
+          window.location.reload()
+        })
+        
       })
     } else if (res){
       this._dbCallService.updateComment(this.comment.id, res).then((res)=>{
         console.log("update res", res)
+        this.showConfirmationMessage(this.succesfullyUpdateddMessage)
         window.location.reload()
       })
+    } else{
+      this.showConfirmationMessage(this.updatedCommentEmptyMessage)
     }
-    
-    
-    
-    
-    
-    console.log("res",res, "comentID",this.comment.id)})
+  })
+}
+
+
+async showConfirmationMessage(message: string) {
+  const dialogRef = await this.dialog.open(OlvidadaDialogComponent, {
+    data: { message, needCancelarButton: false, messageTitle: "", buttonText: "OK" }
+  })
 }
 
 
