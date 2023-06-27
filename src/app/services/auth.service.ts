@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpContext, HttpContextToken, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { Post, PostResponse } from './interface';
+import { Post, PostResponse, User } from './interface';
 import constants from '../constants'
 import { environment } from 'src/environments/environment.development';
 import { IS_PUBLIC_API } from '../interceptors/http.auth.interceptor';
@@ -32,6 +32,10 @@ export class AuthService {
         tap(response => {
           const {access_token, refresh_token, expires_in} = response; 
           this.setTokens(access_token, refresh_token, expires_in);
+          this.retrieveLoggedInUserInfo().then((res)=>{
+            console.log("user",res.id)
+            localStorage.setItem(constants.LOGGED_IN_USER_ID_KEY, res.id.toString());
+          })
         })
       );
   }
@@ -130,10 +134,18 @@ async logoutUser(){
 }
 
 clearLocalStorage(){
-  let keysToRemove = ["TOKEN_KEY", "REFRESH_TOKEN_KEY", "TOKEN_EXPIRES_IN_KEY"];
+  let keysToRemove = ["TOKEN_KEY", "REFRESH_TOKEN_KEY", "TOKEN_EXPIRES_IN_KEY","LOGGED_IN_USER_ID_KEY"];
 
   keysToRemove.forEach(k =>
     localStorage.removeItem(k))
+}
+
+async retrieveLoggedInUserInfo(): Promise<User> {
+  const response = await this.http.get<User>(`${this.baseUrl}/users/profile/`).toPromise();
+  if (response === undefined) {
+    throw new Error('User data not found.');
+  }
+  return response;
 }
 
 

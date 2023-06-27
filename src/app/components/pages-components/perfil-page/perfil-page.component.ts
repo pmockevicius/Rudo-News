@@ -27,7 +27,7 @@ export class PerfilPageComponent {
     public _authService: AuthService,
     private router: Router
   ){
-    this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
+    this._authService.retrieveLoggedInUserInfo().then((res) => {
       this.user = res; 
       this.userName = this.user.fullname; 
       this.userEmail = this.user.email; 

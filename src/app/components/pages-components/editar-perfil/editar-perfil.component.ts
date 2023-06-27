@@ -52,7 +52,7 @@ selectedDepartamentosIds: string[] = []
   });
 
 getLoggedInUserInfo(){
-  this._dbCallService.retrieveLoggedInUserInfo().then((res) => {
+  this._authService.retrieveLoggedInUserInfo().then((res) => {
     this.user = res;
 
     this.fullName = this.user.fullName;

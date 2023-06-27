@@ -15,6 +15,7 @@
         </div>
         <div>
           <!-- <span class="posted-at">{{ calculateTime(comment.datePosted) }}</span> -->
+          <button class="btn delete-comment-btn"  *ngIf="comment.user.id == getLoggedInUserId()" (click)="editComment()">Edit</button>
         </div>
       </div>
     </div>

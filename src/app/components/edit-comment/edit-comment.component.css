@@ -1,0 +1,27 @@
+.edit-wrapper{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-comment-input{
+    border-radius: 32px;
+    width: 250px;
+    height: 30px;
+    background-color: #e8e8e8;
+    border: 1px solid grey;
+}
+
+.input-box{
+    margin-bottom: 15px;
+}
+
+
+    .button-box{
+        display: flex;
+        justify-content: space-evenly;
+        width: 60%;
+    }

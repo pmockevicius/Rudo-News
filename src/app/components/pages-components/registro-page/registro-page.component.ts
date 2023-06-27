@@ -60,7 +60,7 @@ export class RegistroPageComponent implements OnInit {
     const password = this.registerForm.controls.regContrasena.value;
     const departamentos = this.generateSelectedDepId();
 
-    this._dbCallService.retrieveLoggedInUserInfo();
+    this._authService.retrieveLoggedInUserInfo();
     this._authService.registerNewUser(fullname, email, password, departamentos);
   };
 

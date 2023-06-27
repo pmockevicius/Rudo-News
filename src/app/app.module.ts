@@ -52,6 +52,7 @@ import { CommentComponent } from './components/shared-components/comment/comment
 import { EscribeCommentInputComponent } from './components/shared-components/escribe-comment-input/escribe-comment-input.component';
 import { HttpAuthInterceptor } from './interceptors/http.auth.interceptor';
 import { HttpErrorInterceptor } from './interceptors/error.auth.interceptor';
+import { EditCommentComponent } from './components/edit-comment/edit-comment.component';
 
 
 @NgModule({
@@ -87,6 +88,7 @@ import { HttpErrorInterceptor } from './interceptors/error.auth.interceptor';
     ButtonTransparentComponent,
     CommentComponent,
     EscribeCommentInputComponent,
+    EditCommentComponent,
    
   ],
   imports: [

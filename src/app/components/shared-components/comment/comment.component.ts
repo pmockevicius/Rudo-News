@@ -1,4 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import constants from 'src/app/constants';
+import { DepartamentosDialogComponent } from '../departamentos-dialog/departamentos-dialog.component';
+import { EditCommentComponent } from '../../edit-comment/edit-comment.component';
+import { DBCallsService } from 'src/app/services/db-calls.service';
 
 
 @Component({
@@ -8,6 +13,13 @@ import { Component, Input } from '@angular/core';
 })
 export class CommentComponent {
 
+  constructor(public dialog: MatDialog,
+    public _dbCallService: DBCallsService,
+    
+    ){
+
+  }
+
 @Input() comment: any 
 userImagePlaceholder: string = "./assets/images/user-photo.png"
 
@@ -15,6 +27,32 @@ userImagePlaceholder: string = "./assets/images/user-photo.png"
 getDepartmentNames(departments: any[]): string {
   return departments.map(department => department.name).join(', ');
 }
+
+getLoggedInUserId(){
+  return localStorage.getItem(constants.LOGGED_IN_USER_ID_KEY)
+}
+
+
+editComment(){
+  this.dialog.open(EditCommentComponent).afterClosed().subscribe((res)=>{
+    if(res === "delete"){
+      this._dbCallService.deleteComment(this.comment.id).then((res)=>{
+        window.location.reload()
+      })
+    } else if (res){
+      this._dbCallService.updateComment(this.comment.id, res).then((res)=>{
+        console.log("update res", res)
+        window.location.reload()
+      })
+    }
+    
+    
+    
+    
+    
+    console.log("res",res, "comentID",this.comment.id)})
+}
+
 
 
 calculateTime(date: any){

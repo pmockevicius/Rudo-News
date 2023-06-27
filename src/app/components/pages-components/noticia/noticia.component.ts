@@ -18,6 +18,7 @@ export class NoticiaComponent implements OnInit, AfterViewInit {
     private router: Router,
     public _dbCallService: DBCallsService, ){
       this.loadNoticia()
+      
   }
 
   noticia: any 
@@ -28,6 +29,7 @@ export class NoticiaComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.imageSource = './assets/images/thumbnail-360x240.png';
+
   }
 
   onImageLoad() {
@@ -46,6 +48,7 @@ export class NoticiaComponent implements OnInit, AfterViewInit {
     this._dbCallService.retrievePost(this.noticiaId).subscribe(
       (result: Post) => {
         this.noticia = result;
+        console.log("noticia",this.noticia)
       },
       (error: any) => {
         console.error("Error getting posts from DB:", error);
