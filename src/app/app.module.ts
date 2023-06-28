@@ -40,11 +40,7 @@ import { BackTitleForPerfilComponent } from './components/shared-components/back
 import { DepartamentosDialogButtonComponent } from './components/shared-components/white-button-w-arrow-forward/white-button-w-arrow-forward';
 import { InputWFloatingLabelComponent } from './components/shared-components/input-w-floating-label/input-w-floating-label.component';
 import { SimpleFusiaButtonComponent } from './components/shared-components/simple-fusia-button/simple-fusia-button.component';
-import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { environment } from 'src/environments/environment';
-import { provideFirebaseApp } from '@angular/fire/app';
-import { initializeApp } from 'firebase/app';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ContrasenaInputWEyeComponent } from './components/shared-components/contrasena-input-w-eye/contrasena-input-w-eye.component';
 import { ButtonTransparentComponent } from './components/shared-components/button-transparent/button-transparent.component';
@@ -105,8 +101,6 @@ import { EditCommentComponent } from './components/edit-comment/edit-comment.com
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    // AngularFireModule.initializeApp(environment.firebase),   
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpAuthInterceptor, multi: true,  },

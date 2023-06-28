@@ -1,6 +1,6 @@
 .edit-wrapper{
-    width: 300px;
-    height: 100px;
+    width: 437px;
+    height: 182px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -9,10 +9,12 @@
 
 .edit-comment-input{
     border-radius: 32px;
-    width: 250px;
-    height: 30px;
+    width: 329px;
+    height: 45px;
     background-color: #e8e8e8;
-    border: 1px solid grey;
+    border: 1px solid #d5cfcf;
+    text-indent: 10px;
+    outline: none;
 }
 
 .input-box{
@@ -23,5 +25,15 @@
     .button-box{
         display: flex;
         justify-content: space-evenly;
-        width: 60%;
+        width: 90%;
+    }
+
+    .button-box button{
+        width: 90px;
+    height: 32px;
+   
+    }
+
+    .mat-mdc-dialog-container .mdc-dialog__surface {
+        border-radius: 32px 
     }

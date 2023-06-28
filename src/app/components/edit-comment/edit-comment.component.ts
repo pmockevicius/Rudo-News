@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -6,6 +6,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   selector: 'app-edit-comment',
   templateUrl: './edit-comment.component.html',
   styleUrls: ['./edit-comment.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class EditCommentComponent {
   constructor(public dialogRef: MatDialogRef<EditCommentComponent>) {}

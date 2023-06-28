@@ -1,10 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import constants from 'src/app/constants';
 import { DepartamentosDialogComponent } from '../departamentos-dialog/departamentos-dialog.component';
 import { EditCommentComponent } from '../../edit-comment/edit-comment.component';
 import { DBCallsService } from 'src/app/services/db-calls.service';
 import { OlvidadaDialogComponent } from '../message-dialog/olvidada-dialog.component';
+import { ViewChild } from '@angular/core';
+
+
 
 
 @Component({
@@ -22,10 +25,17 @@ export class CommentComponent {
   }
 
 @Input() comment: any 
+@Output() removeComment = new EventEmitter<string>();
+@Output() updateComment = new EventEmitter<any>();
+
+
 userImagePlaceholder: string = "./assets/images/user-photo.png"
 succesfullyDeletedMessage: string = "tu comentario ha sido borrado exitosamente"
 succesfullyUpdateddMessage: string = "tu comentario ha sido actualizado exitosamente"
 updatedCommentEmptyMessage: string = "El nuevo comentario no puede estar vacío, inténtalo de nuevo."
+
+isHovering: boolean = false;
+
 
 
 getDepartmentNames(departments: any[]): string {
@@ -41,16 +51,29 @@ editComment(){
   this.dialog.open(EditCommentComponent).afterClosed().subscribe((res)=>{
     if(res === "delete"){
       this._dbCallService.deleteComment(this.comment.id).then((res)=>{
-        this.showConfirmationMessage(this.succesfullyDeletedMessage).then((res)=>{
-          window.location.reload()
-        })
+        if(res){
         
+          this.removeComment.emit(this.comment.id);
+          // Call setTimeout to wait for the view to render fully
+          setTimeout(() => {
+            this.showConfirmationMessage(this.succesfullyDeletedMessage);
+          },500)
+         
+        }
+    
       })
     } else if (res){
-      this._dbCallService.updateComment(this.comment.id, res).then((res)=>{
-        console.log("update res", res)
-        this.showConfirmationMessage(this.succesfullyUpdateddMessage)
-        window.location.reload()
+      this._dbCallService.updateComment(this.comment.id, res).then(()=>{
+        const data = {
+          commentId: this.comment.id,
+          updatedText: res
+        }
+        // this.showConfirmationMessage(this.succesfullyUpdateddMessage)
+        this.updateComment.emit(data);
+
+        setTimeout(() => {
+          this.showConfirmationMessage(this.succesfullyUpdateddMessage);
+        },500)
       })
     } else{
       this.showConfirmationMessage(this.updatedCommentEmptyMessage)

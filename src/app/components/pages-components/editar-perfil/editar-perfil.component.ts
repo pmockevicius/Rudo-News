@@ -79,7 +79,9 @@ getLoggedInUserInfo(){
 
   openDialog() {
     const dialogRef = this.dialog
-      .open(DepartamentosDialogComponent)
+      .open(DepartamentosDialogComponent, {
+        width: '400px'
+      })
       .afterClosed()
       .subscribe((value) => {
         this.selectedDepartments = value.data
@@ -120,6 +122,7 @@ this._authService.updateProfileInfo(fullname, email, departments).then((res)=>{
 
   showConfirmationMessage() {
     const dialogRef = this.dialog.open(OlvidadaDialogComponent, {
+      width: '312px',
       data: {
         message: this.confirmationMessage,
         needCancelarButton: false,

@@ -14,7 +14,7 @@ interface DepartamentosDialogForm {
   selector: 'app-departamentos-dialog',
   templateUrl: './departamentos-dialog.component.html',
   styleUrls: ['./departamentos-dialog.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
 })
 export class DepartamentosDialogComponent implements OnInit {
 

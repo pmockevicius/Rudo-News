@@ -37,10 +37,11 @@
 
 
   <ng-container *ngFor="let comment of noticia.comments">
-  <app-comment [comment]="comment"></app-comment>
+    <app-comment [comment]="comment" (removeComment)="removeDeletedCommentFromUi($event)" (updateComment)="updateCommentInUI($event)"></app-comment>
+
 </ng-container>
 
-<app-escribe-comment-input [noticiaId]="noticia.id"></app-escribe-comment-input>
+<app-escribe-comment-input [noticiaId]="noticia.id" (addComment)="addNewCommentToUI($event)"></app-escribe-comment-input>
 
 </div>
 

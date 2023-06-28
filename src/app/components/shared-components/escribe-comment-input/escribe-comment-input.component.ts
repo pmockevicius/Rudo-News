@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DBCallsService } from 'src/app/services/db-calls.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class EscribeCommentInputComponent {
   constructor(public _dbCallService: DBCallsService,){}
 
 @Input() noticiaId: string = ""
+@Output() addComment = new EventEmitter<any>();
 
   inputValue = '';
 commentLength = this.inputValue.length
@@ -18,9 +19,16 @@ isInputFocused = false;
 
 
 submitComment(){
-this._dbCallService.postNewComment(this.noticiaId, this.inputValue)
+this._dbCallService.postNewComment(this.noticiaId, this.inputValue).then((res)=>{
+  const data = {
+    commentId: res.id,
+    commentText: res.text
+  }
+
+  this.addComment.emit(data);
+})
   this.inputValue = ""
-  window.location.reload()
+
 
 }
 

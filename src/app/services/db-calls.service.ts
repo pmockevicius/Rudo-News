@@ -120,9 +120,6 @@ export class DBCallsService {
     const data = {
       text: updatedComment,
     };
-
-    console.log("comentID", commentId, "updated", data )
-
     const response = await this.http
       .put<any>(`${this.baseUrl}comments/${commentId}/edit/`,  data )
       .toPromise();

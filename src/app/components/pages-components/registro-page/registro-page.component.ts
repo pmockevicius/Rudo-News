@@ -65,7 +65,11 @@ export class RegistroPageComponent implements OnInit {
   };
 
   openDepartamentosDialog() {
-    const dialogRef = this.dialog.open(DepartamentosDialogComponent);
+    const dialogRef = this.dialog.open(DepartamentosDialogComponent, {
+   
+      width: '400px',
+      
+    });
     dialogRef.afterClosed().subscribe((res) => {
       this.selectedDepartments = res.data;
       this.updateDepartamentosInputValue(res.data);
